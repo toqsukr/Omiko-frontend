@@ -1,10 +1,5 @@
-import css from './Header.module.css'
+import css from './Header.module.css';
 
 export default function Header() {
-  return (
-    <div className={css.headerContainer}>
-
-    </div>
-  )
+  return <div className={css.headerContainer}></div>;
 }
-
