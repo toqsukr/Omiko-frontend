@@ -1,0 +1,11 @@
+.shoppingCartContainer {
+  display: flex;
+  justify-content: end;
+  margin-right: 30px;
+  width: 20%;
+}
+
+#shoppingCart {
+  max-width: 49px;
+  max-height: 35px;
+}

@@ -1,0 +1,32 @@
+.locationContainer {
+  display: flex;
+  width: 20%;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+  margin-left: 30px;
+}
+
+#locationPoint {
+  width: 17.04px;
+  height: 23px;
+  background: #ffffff;
+}
+
+p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  margin: 0px;
+  padding: 3px 3px 0px 3px;
+}
+
+p:hover {
+  text-decoration: underline;
+}
