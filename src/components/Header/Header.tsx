@@ -15,7 +15,7 @@ export default function Header() {
             <ShoppingCart />
           </div>
         </div>
-        <div className={css.iconInnerContainer}></div>
+        {/* <div className={css.iconInnerContainer}></div> */}
       </div>
     </>
   );
