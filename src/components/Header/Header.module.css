@@ -4,6 +4,65 @@
   height: 10vh;
   max-height: 70px;
   min-height: 60px;
+  position: fixed;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shoppingCartContainer {
+  display: flex;
+  justify-content: end;
+  margin-right: 30px;
+  width: 30%;
+}
+
+.locationContainer {
+  display: flex;
+  width: 30%;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+  margin-left: 30px;
+}
+
+.iconContainer {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+#locationPoint {
+  width: 17.04px;
+  height: 23px;
+  background: #ffffff;
+}
+
+#shoppingCart {
+  max-width: 49px;
+  max-height: 35px;
+}
+
+#icon {
+  margin: 5px;
+}
+
+p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  margin: 0px;
+  padding: 3px 3px 0px 3px;
+}
+
+p:hover {
+  text-decoration: underline;
 }
