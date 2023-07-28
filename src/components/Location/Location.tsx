@@ -1,12 +1,11 @@
 import { useContext } from 'react';
 import { ReactSVG } from 'react-svg';
-import { locations } from '../../utils/data';
 import { LocationContext } from '../../providers/LocationProvider';
+import LocationWrapper from '../LocationWrapper/LocationWrapper';
 import css from './Location.module.css';
 
 export default function Location() {
-  const { currentCity, setCurrentCity, isHide, setIsHide } =
-    useContext(LocationContext);
+  const { currentCity, isHide, setIsHide } = useContext(LocationContext);
 
   return (
     <>
@@ -17,26 +16,7 @@ export default function Location() {
         <ReactSVG id={css.locationPoint} src='icons/location.svg' />
         <p>{currentCity}</p>
 
-        {isHide || (
-          <div className={css.wrapper} onMouseLeave={() => setIsHide(true)}>
-            {locations.map((el: string, i: number) => {
-              if (el === currentCity) return null;
-              else
-                return (
-                  <div
-                    key={i}
-                    id={css.locationElementContainer}
-                    onClick={() => {
-                      setIsHide(true);
-                      setCurrentCity(locations[i]);
-                    }}
-                  >
-                    <p id={css.locationElementText}>{el}</p>
-                  </div>
-                );
-            })}
-          </div>
-        )}
+        {isHide || <LocationWrapper />}
       </div>
     </>
   );
