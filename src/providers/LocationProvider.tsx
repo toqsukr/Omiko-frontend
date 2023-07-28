@@ -1,9 +1,14 @@
 import { useState, createContext, ReactNode } from 'react';
 import { locations } from '../utils/data';
 
+export interface ILocation {
+  city: string;
+  phoneNumbers: string[];
+}
+
 export const LocationContext = createContext({
-  currentCity: '',
-  setCurrentCity: (value: string) => {
+  location: { city: '', phoneNumbers: [''] },
+  setLocation: (value: ILocation) => {
     value;
   },
   isHide: true,
@@ -11,16 +16,17 @@ export const LocationContext = createContext({
     value;
   },
 });
+
 interface Props {
   children?: ReactNode;
 }
 
 export default function LocationProvider({ children }: Props) {
-  const [currentCity, setCurrentCity] = useState(locations[0]);
+  const [location, setLocation] = useState(locations[0]);
   const [isHide, setIsHide] = useState(true);
   return (
     <LocationContext.Provider
-      value={{ currentCity, setCurrentCity, isHide, setIsHide }}
+      value={{ location, setLocation, isHide, setIsHide }}
     >
       {children}
     </LocationContext.Provider>

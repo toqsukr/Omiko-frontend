@@ -6,11 +6,11 @@ interface IContact {
 }
 
 export default function ContactInfo({ children }: IContact) {
-  const { currentCity } = useContext(LocationContext);
+  const { location } = useContext(LocationContext);
   return (
     <div className={css.infoContainer}>
       <p id={css.mainPhoneNumber}>{children}</p>
-      {currentCity === 'Санкт-Петербург' && (
+      {(location.city === 'Санкт-Петербург' || location.city === 'Другой') && (
         <p id={css.phoneNumberInfo}>Звонок бесплатный по России</p>
       )}
     </div>

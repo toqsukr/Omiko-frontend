@@ -8,7 +8,7 @@ import ShoppingCart from '../ShoppingCart/ShoppingCart';
 import Location from '../Location/Location';
 
 export default function Header() {
-  const { setIsHide } = useContext(LocationContext);
+  const { location, setIsHide } = useContext(LocationContext);
 
   return (
     <>
@@ -19,7 +19,7 @@ export default function Header() {
             onMouseLeave={() => setIsHide(true)}
           >
             <Location />
-            <ContactInfo>8(800)333-64-88</ContactInfo>
+            <ContactInfo>{location.phoneNumbers[0]}</ContactInfo>
             <ShoppingCart />
           </div>
           <LogoNav />

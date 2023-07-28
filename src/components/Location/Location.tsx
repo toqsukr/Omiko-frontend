@@ -5,7 +5,7 @@ import LocationWrapper from '../LocationWrapper/LocationWrapper';
 import css from './Location.module.css';
 
 export default function Location() {
-  const { currentCity, isHide, setIsHide } = useContext(LocationContext);
+  const { location, isHide, setIsHide } = useContext(LocationContext);
 
   return (
     <>
@@ -14,7 +14,7 @@ export default function Location() {
         onMouseEnter={() => setIsHide(false)}
       >
         <ReactSVG id={css.locationPoint} src='icons/location.svg' />
-        <p>{currentCity}</p>
+        <p>{location.city}</p>
 
         {isHide || <LocationWrapper />}
       </div>
