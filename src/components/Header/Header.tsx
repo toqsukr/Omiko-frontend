@@ -2,7 +2,8 @@ import css from './Header.module.css';
 import 'typeface-inter';
 import { useContext } from 'react';
 import { LocationContext } from '../../providers/LocationProvider';
-import { ReactSVG } from 'react-svg';
+import ContactInfo from '../ContactInfo/ContactInfo';
+import LogoNav from '../Nav/LogoNav/LogoNav';
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 import Location from '../Location/Location';
 
@@ -11,7 +12,6 @@ export default function Header() {
 
   return (
     <>
-      {/* <ReactSVG id={css.icon} src='icons/fullicon.svg'></ReactSVG> */}
       <div className={css.iconContainer}>
         <div className={css.headerContainer}>
           <div
@@ -19,10 +19,11 @@ export default function Header() {
             onMouseLeave={() => setIsHide(true)}
           >
             <Location />
+            <ContactInfo>8(800)333-64-88</ContactInfo>
             <ShoppingCart />
           </div>
+          <LogoNav />
         </div>
-        {/* <div className={css.iconInnerContainer}></div> */}
       </div>
     </>
   );

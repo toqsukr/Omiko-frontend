@@ -1,6 +1,10 @@
 .headerContainer {
   display: flex;
+  position: fixed;
+  flex-direction: column;
   justify-content: center;
+  border-bottom: 1px solid #989898;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .headerInnerContainer {
@@ -9,37 +13,15 @@
   height: 10vh;
   max-height: 70px;
   min-height: 60px;
-  position: fixed;
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #989898;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 0;
 }
 
 .iconContainer {
   display: flex;
   flex-direction: column;
-}
-
-.iconInnerContainer {
-  background: #ffffff;
-  border-width: 0px 1px 1px 1px;
-  border-style: solid;
-  border-color: #989898;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 0px 0px 24px 24px;
-  height: 20px;
-  width: 30%;
-  display: flex;
-  max-width: 400px;
-  z-index: 2;
-}
-
-#icon {
-  margin: 10px 0px 10px 0px;
-  z-index: 2;
 }

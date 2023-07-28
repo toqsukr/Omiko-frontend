@@ -1,0 +1,44 @@
+.iconInnerContainer {
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.catigoryContainer {
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-around;
+  width: 34%;
+  flex-direction: row;
+}
+
+#left {
+  background: linear-gradient(
+    90deg,
+    #ececec 0%,
+    rgba(244, 244, 244, 0.497727) 81.17%,
+    rgba(244, 244, 244, 0) 97.16%
+  );
+  margin-left: 45px;
+}
+
+#right {
+  background: linear-gradient(
+    -90deg,
+    #ececec 0%,
+    rgba(244, 244, 244, 0.497727) 81.17%,
+    rgba(244, 244, 244, 0) 97.16%
+  );
+  border-radius: 16px;
+  margin-right: 45px;
+}
+
+#icon {
+  margin: 10px 0px 10px 0px;
+  z-index: 2;
+}
+
+#catigoryText {
+  padding: 13px 10px 13px 10px;
+}
