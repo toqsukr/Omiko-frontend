@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { ReactSVG } from 'react-svg';
-import css from './Location.module.css';
 import { locations } from '../../utils/data';
+import { LocationContext } from '../../providers/LocationProvider';
+import css from './Location.module.css';
 
 export default function Location() {
-  const [currentCity, setCurrentCity] = useState(locations[0]);
-  const [isHide, setIsHide] = useState(true);
+  const { currentCity, setCurrentCity, isHide, setIsHide } =
+    useContext(LocationContext);
 
   return (
     <>
