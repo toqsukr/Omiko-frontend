@@ -3,6 +3,7 @@
   justify-content: end;
   margin-right: 30px;
   width: 20%;
+  max-width: 200px;
 }
 
 #shoppingCart {

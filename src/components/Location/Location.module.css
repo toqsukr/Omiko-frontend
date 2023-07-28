@@ -1,8 +1,9 @@
 .locationContainer {
   display: flex;
   width: 20%;
+  max-width: 200px;
   align-items: center;
-  gap: 18px;
+  gap: 10px;
   flex-direction: row;
   margin-left: 30px;
   padding: auto 0px auto 0px;
