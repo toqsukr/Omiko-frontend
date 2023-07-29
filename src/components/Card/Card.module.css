@@ -1,10 +1,11 @@
 .cardContainer {
   width: 310px;
   height: 470px;
-  margin: 25px;
+  margin: 20px;
   background-color: white;
   background: #ffffff;
   border-radius: 24px;
+  justify-self: center;
 }
 
 .imageContainer {
