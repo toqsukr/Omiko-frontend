@@ -1,6 +1,7 @@
 .headerContainer {
   display: flex;
   position: fixed;
+  top: 0px;
   flex-direction: column;
   justify-content: center;
   border-bottom: 1px solid #989898;
@@ -19,9 +20,4 @@
   justify-content: space-between;
   align-items: center;
   z-index: 0;
-}
-
-.iconContainer {
-  display: flex;
-  flex-direction: column;
 }

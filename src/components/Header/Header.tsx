@@ -7,23 +7,29 @@ import LogoNav from '../Nav/LogoNav/LogoNav';
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 import Location from '../Location/Location';
 
-export default function Header() {
+interface IHeader {
+  scrolledDown: boolean;
+}
+
+export default function Header({ scrolledDown }: IHeader) {
   const { location, setIsHide } = useContext(LocationContext);
 
   return (
     <>
-      <div className={css.iconContainer}>
-        <div className={css.headerContainer}>
-          <div
-            className={css.headerInnerContainer}
-            onMouseLeave={() => setIsHide(true)}
-          >
-            <Location />
-            <ContactInfo>{location.phoneNumbers[0]}</ContactInfo>
-            <ShoppingCart />
-          </div>
-          <LogoNav />
+      <div
+        className={
+          scrolledDown ? css.headerContainerHidden : css.headerContainer
+        }
+      >
+        <div
+          className={css.headerInnerContainer}
+          onMouseLeave={() => setIsHide(true)}
+        >
+          <Location />
+          <ContactInfo>{location.phoneNumbers[0]}</ContactInfo>
+          <ShoppingCart />
         </div>
+        <LogoNav />
       </div>
     </>
   );
