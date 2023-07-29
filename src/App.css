@@ -1,20 +1,3 @@
-.glyfContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 124px;
-  width: 100%;
-  height: 100vh;
-  gap: 8%;
-  background: url('background/soap.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.backgroundContainer {
-}
-
 #root {
   background-color: rgb(238, 238, 238);
   width: auto;

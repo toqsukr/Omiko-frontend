@@ -1,6 +1,6 @@
 import LocationProvider from './providers/LocationProvider';
 import Header from './components/Header/Header';
-import Glyf from './components/Glyf/Glyf';
+import GlyfContainer from './components/GlyfContainer/GlyfContainer';
 import './App.css';
 
 export default function App() {
@@ -9,13 +9,7 @@ export default function App() {
       <LocationProvider>
         <Header />
       </LocationProvider>
-      <div className='backgroundContainer'>
-        <div className='glyfContainer'>
-          <Glyf></Glyf>
-          <Glyf></Glyf>
-          <Glyf></Glyf>
-        </div>
-      </div>
+      <GlyfContainer />
     </>
   );
 }

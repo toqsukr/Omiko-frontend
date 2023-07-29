@@ -1,5 +1,10 @@
+import { ReactNode } from 'react';
 import css from './Glyf.module.css';
 
-export default function Glyf() {
-  return <div className={css.mainContainer}></div>;
+interface IGlyf {
+  children: ReactNode;
+}
+
+export default function Glyf({ children }: IGlyf) {
+  return <div className={css.mainContainer}>{children}</div>;
 }
