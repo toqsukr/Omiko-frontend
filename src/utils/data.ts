@@ -46,3 +46,11 @@ export const footer = {
   description:
     '©omi-ko 2007-2023 Одноразовая продукция и текстильные товары для гостиниц и салонов оптом. Все права защищены. Информация на сайте не является публичной офертой.',
 };
+
+export const products = [
+  {
+    url: 'https://omi-ko.ru/images/stories/virtuemart/product/resized/t_max_optima_plus2_33_400x400.jpg',
+    price: '45,80₽',
+    title: 'Тапочки махровые оптима плюс',
+  },
+];
