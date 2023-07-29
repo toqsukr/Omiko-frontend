@@ -9,10 +9,12 @@ export default function App() {
       <LocationProvider>
         <Header />
       </LocationProvider>
-      <div className='glyfContainer'>
-        <Glyf></Glyf>
-        <Glyf></Glyf>
-        <Glyf></Glyf>
+      <div className='backgroundContainer'>
+        <div className='glyfContainer'>
+          <Glyf></Glyf>
+          <Glyf></Glyf>
+          <Glyf></Glyf>
+        </div>
       </div>
     </>
   );
