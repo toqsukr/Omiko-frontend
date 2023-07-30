@@ -10,9 +10,9 @@ export interface IGlyf {
 export default function Glyf({ title, description }: IGlyf) {
   return (
     <div className={css.mainContainer}>
-      <h1 className={css.title}>{title ? title : ''}</h1>
+      {title && <h1 className={css.title}>{title}</h1>}
       <div className={css.descriptionContainer}>
-        <p className={css.description}>{description ? description : ''}</p>
+        {description && <p className={css.description}>{description}</p>}
       </div>
     </div>
   );

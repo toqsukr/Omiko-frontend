@@ -14,9 +14,13 @@ export default function App() {
       <LocationProvider>
         <Header scrolledDown={scrolledDown} />
         <div id='bodyContainer'>
-          <GlyfContainer key='sections' glyfs={sectionGlyfs} />
+          <GlyfContainer type='sections' glyfs={sectionGlyfs} />
           <PopularProducts />
-          <GlyfContainer key='advantages' glyfs={advantageGlyfs} />
+          <GlyfContainer
+            type='advantages'
+            title='Преимущества'
+            glyfs={advantageGlyfs}
+          />
           <Footer />
         </div>
       </LocationProvider>
