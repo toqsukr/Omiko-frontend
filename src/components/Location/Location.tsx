@@ -14,7 +14,7 @@ export default function Location() {
         onMouseEnter={() => setIsHide(false)}
       >
         <ReactSVG id={css.locationPoint} src='icons/location.svg' />
-        <p>{location.city}</p>
+        <p id={css.city}>{location.city}</p>
 
         {isHide || <LocationWrapper />}
       </div>

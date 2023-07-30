@@ -43,3 +43,7 @@
 #catigoryText {
   padding: 13px 10px 13px 10px;
 }
+
+#catigoryText:hover {
+  text-decoration: underline;
+}

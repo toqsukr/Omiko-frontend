@@ -26,7 +26,3 @@ p {
   margin: 0px;
   padding: 3px 3px 0px 3px;
 }
-
-p:hover {
-  text-decoration: underline;
-}
