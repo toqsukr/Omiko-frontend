@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { LocationContext } from '../../providers/LocationProvider';
 import ContactInfo from '../ContactInfo/ContactInfo';
 import LogoNav from '../Nav/LogoNav/LogoNav';
+import LocationWrapper from '../LocationWrapper/LocationWrapper';
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 import Location from '../Location/Location';
 
@@ -12,7 +13,7 @@ interface IHeader {
 }
 
 export default function Header({ scrolledDown }: IHeader) {
-  const { location, setIsHide } = useContext(LocationContext);
+  const { location, isHide, setIsHide } = useContext(LocationContext);
 
   return (
     <>
@@ -22,14 +23,17 @@ export default function Header({ scrolledDown }: IHeader) {
         }
       >
         <div
+          onMouseEnter={() => setIsHide(true)}
           className={css.headerInnerContainer}
-          onMouseLeave={() => setIsHide(true)}
         >
-          <Location />
-          <ContactInfo>{location.phoneNumbers[0]}</ContactInfo>
-          <ShoppingCart />
+          <div className={css.headerUpperContainer}>
+            <Location />
+            <ContactInfo>{location.phoneNumbers[0]}</ContactInfo>
+            <ShoppingCart />
+          </div>
+          {isHide || <LocationWrapper />}
+          <LogoNav />
         </div>
-        <LogoNav />
       </div>
     </>
   );

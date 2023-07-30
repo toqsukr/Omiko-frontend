@@ -1,11 +1,10 @@
 import { useContext } from 'react';
 import { ReactSVG } from 'react-svg';
 import { LocationContext } from '../../providers/LocationProvider';
-import LocationWrapper from '../LocationWrapper/LocationWrapper';
 import css from './Location.module.css';
 
 export default function Location() {
-  const { location, isHide, setIsHide } = useContext(LocationContext);
+  const { location, setIsHide } = useContext(LocationContext);
 
   return (
     <>
@@ -15,8 +14,6 @@ export default function Location() {
       >
         <ReactSVG id={css.locationPoint} src='icons/location.svg' />
         <p id={css.city}>{location.city}</p>
-
-        {isHide || <LocationWrapper />}
       </div>
     </>
   );

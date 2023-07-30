@@ -1,17 +1,17 @@
 .headerContainer {
+  background-color: rgb(255, 255, 255);
   display: flex;
-  position: fixed;
-  top: 0px;
-  flex-direction: column;
   justify-content: center;
+  position: fixed;
+  width: 100vw;
+  top: 0px;
   border-bottom: 1px solid #989898;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 2;
 }
 
-.headerInnerContainer {
+.headerUpperContainer {
   background-color: rgb(255, 255, 255);
-  width: 100vw;
   height: 164px;
   max-height: 70px;
   min-height: 60px;
@@ -20,4 +20,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.headerInnerContainer {
+  display: flex;
+  width: 100vw;
+  max-width: 1920px;
+  flex-direction: column;
 }

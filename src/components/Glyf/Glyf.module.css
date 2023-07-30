@@ -12,11 +12,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0.8;
   transition: all 0.3s;
 }
 
 .mainContainer:hover {
-  opacity: 1;
+  background: rgba(125, 125, 125, 0.5);
+
   transition: all 0.3s;
 }
