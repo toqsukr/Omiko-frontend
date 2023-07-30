@@ -13,7 +13,7 @@ interface IHeader {
 }
 
 export default function Header({ scrolledDown }: IHeader) {
-  const { location, isHide, setIsHide } = useContext(LocationContext);
+  const { location, isHide } = useContext(LocationContext);
 
   return (
     <>
@@ -22,10 +22,7 @@ export default function Header({ scrolledDown }: IHeader) {
           scrolledDown ? css.headerContainerHidden : css.headerContainer
         }
       >
-        <div
-          onMouseEnter={() => setIsHide(true)}
-          className={css.headerInnerContainer}
-        >
+        <div className={css.headerInnerContainer}>
           <div className={css.headerUpperContainer}>
             <Location />
             <ContactInfo>{location.phoneNumbers[0]}</ContactInfo>

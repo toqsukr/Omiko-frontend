@@ -12,9 +12,11 @@ export default function App() {
     <>
       <LocationProvider>
         <Header scrolledDown={scrolledDown} />
-        <GlyfContainer />
-        <PopularProducts />
-        <Footer />
+        <div id='bodyContainer'>
+          <GlyfContainer />
+          <PopularProducts />
+          <Footer />
+        </div>
       </LocationProvider>
     </>
   );
