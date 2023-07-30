@@ -1,20 +1,27 @@
-import { glyfs } from '../../utils/data';
+import { ReactNode } from 'react';
+import classnames from 'classnames';
 import Glyf from '../Glyf/Glyf';
+import { IGlyf } from '../Glyf/Glyf';
 import css from './GlyfContainer.module.css';
 
-export default function GlyfContainer() {
+interface IGlyfContainer {
+  children?: ReactNode;
+  key: string;
+  glyfs: IGlyf[];
+  background?: string;
+}
+
+export default function GlyfContainer({ key, glyfs }: IGlyfContainer) {
   return (
-    <div className={css.glyfContainer}>
-      {glyfs.map((el, index: number) => {
-        return (
-          <Glyf key={index}>
-            <h1 className={css.title}>{el.title}</h1>
-            <div className={css.descriptionContainer}>
-              <p className={css.description}>{el.description}</p>
-            </div>
-          </Glyf>
-        );
+    <div
+      className={classnames({
+        [css.sectionContainer]: key === 'sections',
+        [css.advantageContainer]: key === 'advantages',
       })}
+    >
+      {glyfs.map((el, index: number) => (
+        <Glyf key={index} title={el.title} description={el.description} />
+      ))}
     </div>
   );
 }
