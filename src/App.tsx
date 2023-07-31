@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { sectionGlyfs, advantageGlyfs } from './utils/data';
 import LocationProvider from './providers/LocationProvider';
 import Header from './components/Header/Header';
@@ -9,6 +9,7 @@ import './App.css';
 
 export default function App() {
   const [scrolledDown, setScrolledDown] = useState(false);
+  const advantageRef = useRef(null);
   return (
     <>
       <LocationProvider>
