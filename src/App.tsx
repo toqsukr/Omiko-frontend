@@ -4,6 +4,7 @@ import LocationProvider from './providers/LocationProvider';
 import Header from './components/Header/Header';
 import GlyfContainer from './components/GlyfContainer/GlyfContainer';
 import PopularProducts from './components/PopularProducts/PopularProducts';
+import DeliverySection from './components/DeliverySection/DeliverySection';
 import Footer from './components/Footer/Footer';
 import './App.css';
 
@@ -22,6 +23,7 @@ export default function App() {
             title='Преимущества'
             glyfs={advantageGlyfs}
           />
+          <DeliverySection />
           <Footer />
         </div>
       </LocationProvider>
