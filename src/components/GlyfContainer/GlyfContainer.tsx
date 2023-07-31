@@ -26,7 +26,13 @@ export default function GlyfContainer({ type, title, glyfs }: IGlyfContainer) {
           <h1 id={css.titleText}>{title}</h1>
         </div>
       )}
-      <div className={css.glyfContainer}>
+      <div
+        className={classnames({
+          [css.glyfContainer]: true,
+          [css.sectionContainer]: type === 'sections',
+          [css.advantageContainer]: type === 'advantages',
+        })}
+      >
         {glyfs.map((el, index: number) => (
           <Glyf key={index} title={el.title} description={el.description} />
         ))}
