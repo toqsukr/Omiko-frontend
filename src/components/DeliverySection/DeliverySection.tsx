@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { ReactSVG } from 'react-svg';
 import css from './DeliverySection.module.css';
 import { deliveryInfo } from '../../utils/data';
 import { LocationContext } from '../../providers/LocationProvider';
@@ -26,11 +27,16 @@ export default function DeliverySection() {
         </div>
         <div className={css.convertor}>
           <div className={css.convertorData}>
-            <input type='text' />
-            <p>коробок</p>
-            <a id={css.productionComboBox}></a>
+            <input id={css.boxCount} type='text' />
+            <p className={css.boxText}>коробок</p>
+            <div id={css.productionComboBox}>
+              <p className={css.boxText}>тапочек</p>
+            </div>
           </div>
-          <div className={css.convertorResult}></div>
+          <ReactSVG src='icons/arrow.svg' />
+          <div className={css.convertorResult}>
+            <p id={css.price}>600₽</p>
+          </div>
         </div>
       </div>
     </div>
