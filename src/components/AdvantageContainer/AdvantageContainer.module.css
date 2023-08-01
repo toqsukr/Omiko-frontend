@@ -1,0 +1,37 @@
+.glyfContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  gap: 8%;
+  max-height: 840px;
+}
+
+.advantage {
+  background: url('background/work.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0 0 0;
+}
+
+#titleText {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 65px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  color: #ffffff;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

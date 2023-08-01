@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { sectionGlyfs, advantageGlyfs } from './utils/data';
 import LocationProvider from './providers/LocationProvider';
 import Header from './components/Header/Header';
-import GlyfContainer from './components/GlyfContainer/GlyfContainer';
 import PopularProducts from './components/PopularProducts/PopularProducts';
 import DeliverySection from './components/DeliverySection/DeliverySection';
 import Footer from './components/Footer/Footer';
 import './App.css';
+import SectionContainer from './components/SectionContainer/SectionContainer';
+import AdvantageContainer from './components/AdvantageContainer/AdvantageContainer';
 
 export default function App() {
   // const [scrolledDown, setScrolledDown] = useState(false);
@@ -17,17 +17,13 @@ export default function App() {
       <LocationProvider>
         <Header />
         <div id='bodyContainer'>
-          <GlyfContainer type='sections' glyfs={sectionGlyfs} />
+          <SectionContainer />
           <PopularProducts />
           <DeliverySection
             isShow={deliveryDetail}
             setShow={setDeliveryDetail}
           />
-          <GlyfContainer
-            type='advantages'
-            title='Преимущества'
-            glyfs={advantageGlyfs}
-          />
+          <AdvantageContainer />
           <Footer />
         </div>
       </LocationProvider>
