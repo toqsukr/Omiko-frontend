@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import classnames from 'classnames';
+import { scroller } from 'react-scroll';
 import css from './Glyf.module.css';
 
 export interface IGlyf {
@@ -12,13 +13,20 @@ export interface IGlyf {
 function handleClick(type: string | undefined) {
   switch (type) {
     case 'advantage':
-      console.log('scroll to advantage');
+      scroller.scrollTo('advantage', {
+        offset: -120,
+        duration: 800,
+        smooth: 'easeInOutQuart',
+      });
       break;
     case 'delivery':
-      console.log('scroll to delivery');
+      scroller.scrollTo('delivery', {
+        offset: -120,
+        duration: 800,
+        smooth: 'easeInOutQuart',
+      });
       break;
     case 'about':
-      console.log('scroll to about');
       break;
   }
 }

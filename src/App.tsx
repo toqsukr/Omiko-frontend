@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Element } from 'react-scroll';
 import LocationProvider from './providers/LocationProvider';
 import Header from './components/Header/Header';
 import PopularProducts from './components/PopularProducts/PopularProducts';
@@ -19,11 +20,15 @@ export default function App() {
         <div id='bodyContainer'>
           <SectionContainer />
           <PopularProducts />
-          <DeliverySection
-            isShow={deliveryDetail}
-            setShow={setDeliveryDetail}
-          />
-          <AdvantageContainer />
+          <Element name='delivery'>
+            <DeliverySection
+              isShow={deliveryDetail}
+              setShow={setDeliveryDetail}
+            />
+          </Element>
+          <Element name='advantage'>
+            <AdvantageContainer />
+          </Element>
           <Footer />
         </div>
       </LocationProvider>
