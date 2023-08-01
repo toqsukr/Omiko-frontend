@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { sectionGlyfs, advantageGlyfs } from './utils/data';
 import LocationProvider from './providers/LocationProvider';
 import Header from './components/Header/Header';
@@ -9,16 +9,20 @@ import Footer from './components/Footer/Footer';
 import './App.css';
 
 export default function App() {
-  const [scrolledDown, setScrolledDown] = useState(false);
-  const advantageRef = useRef(null);
+  // const [scrolledDown, setScrolledDown] = useState(false);
+  // const advantageRef = useRef(null);
+  const [deliveryDetail, setDeliveryDetail] = useState(false);
   return (
     <>
       <LocationProvider>
-        <Header scrolledDown={scrolledDown} />
+        <Header />
         <div id='bodyContainer'>
           <GlyfContainer type='sections' glyfs={sectionGlyfs} />
           <PopularProducts />
-          <DeliverySection />
+          <DeliverySection
+            isShow={deliveryDetail}
+            setShow={setDeliveryDetail}
+          />
           <GlyfContainer
             type='advantages'
             title='Преимущества'

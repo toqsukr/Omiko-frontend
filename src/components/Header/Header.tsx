@@ -8,20 +8,16 @@ import LocationWrapper from '../LocationWrapper/LocationWrapper';
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 import Location from '../Location/Location';
 
-interface IHeader {
-  scrolledDown: boolean;
-}
+// interface IHeader {
+//   scrolledDown: boolean;
+// }
 
-export default function Header({ scrolledDown }: IHeader) {
+export default function Header() {
   const { location, isHide } = useContext(LocationContext);
 
   return (
     <>
-      <div
-        className={
-          scrolledDown ? css.headerContainerHidden : css.headerContainer
-        }
-      >
+      <div className={css.headerContainer}>
         <div className={css.headerInnerContainer}>
           <div className={css.headerUpperContainer}>
             <Location />

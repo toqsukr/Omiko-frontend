@@ -2,9 +2,15 @@ import { useContext } from 'react';
 import { ReactSVG } from 'react-svg';
 import css from './DeliverySection.module.css';
 import { deliveryInfo } from '../../utils/data';
+import PopupWindow from '../PopupWindow/PopupWindow';
 import { LocationContext } from '../../providers/LocationProvider';
 
-export default function DeliverySection() {
+interface IDeliverySection {
+  isShow: boolean;
+  setShow: (value: boolean) => void;
+}
+
+export default function DeliverySection({ isShow, setShow }: IDeliverySection) {
   const { location } = useContext(LocationContext);
   return (
     <div className={css.sectionContainer}>
@@ -21,7 +27,7 @@ export default function DeliverySection() {
           <div className={css.infoTextContainer}>
             <p id={css.infoText}>{deliveryInfo}</p>
           </div>
-          <div className={css.infoButton}>
+          <div className={css.infoButton} onClick={() => setShow(true)}>
             <p id={css.infoButtonText}>детали доставки</p>
           </div>
         </div>
@@ -40,6 +46,7 @@ export default function DeliverySection() {
           </div>
         </div>
       </div>
+      {isShow && <PopupWindow />}
     </div>
   );
 }
