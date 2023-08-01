@@ -8,6 +8,7 @@
   justify-self: center;
   transition: all 0.3s;
   z-index: 0;
+  cursor: pointer;
 }
 
 .cardContainer:hover {

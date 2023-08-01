@@ -31,4 +31,11 @@
   height: 26px;
   position: absolute;
   right: 30px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+#close:hover {
+  opacity: 0.6;
+  transition: all 0.2s;
 }

@@ -35,13 +35,15 @@
   margin-right: 45px;
 }
 
-#icon {
+#logo {
   margin: 10px 0px 10px 0px;
   z-index: 2;
+  cursor: pointer;
 }
 
 #catigoryText {
   padding: 13px 10px 13px 10px;
+  cursor: pointer;
 }
 
 #catigoryText:hover {

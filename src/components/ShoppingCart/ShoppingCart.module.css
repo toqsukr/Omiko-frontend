@@ -9,4 +9,5 @@
 #shoppingCart {
   max-width: 49px;
   max-height: 35px;
+  cursor: pointer;
 }

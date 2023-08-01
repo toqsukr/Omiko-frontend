@@ -22,7 +22,7 @@ export default function LogoNav() {
           else return null;
         })}
       </div>
-      <ReactSVG id={css.icon} src='icons/fullicon.svg'></ReactSVG>
+      <ReactSVG id={css.logo} src='icons/fullicon.svg'></ReactSVG>
       <div className={css.catigoryContainer} id={css.right}>
         {catigories.map((el: string, index: number) => {
           if (index >= 3)
