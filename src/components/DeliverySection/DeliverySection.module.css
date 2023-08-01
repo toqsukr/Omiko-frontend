@@ -1,7 +1,6 @@
 .sectionContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
@@ -17,11 +16,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 80px 0 0 0;
 }
 
 .sectionInnerContainer {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   width: 80%;
   height: 70%;
   max-height: 550px;
@@ -38,7 +39,6 @@
   align-items: center;
   gap: 152px;
   max-width: 500px;
-  margin: 0 130px 0 130px;
 }
 
 .infoButton {
@@ -56,7 +56,6 @@
   align-items: center;
   width: 100%;
   max-width: 500px;
-  margin: 0 130px 0 130px;
   gap: 60px;
 }
 
@@ -71,7 +70,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
   flex-direction: row;
 }
 
@@ -81,7 +80,7 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  padding: 10px 13px 10px 13px;
+  padding: 8px 13px 8px 13px;
 }
 
 .convertorResult {
@@ -146,6 +145,10 @@
 
 #productionComboBox {
   background: #d9d9d9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #000000;
   border-radius: 10px;
 }
@@ -160,4 +163,28 @@
   align-items: center;
   text-align: center;
   color: #000000;
+}
+
+#boxCount {
+  width: 4%;
+  padding: 10px 13px 10px 13px;
+  min-width: 80px;
+  background: rgba(0, 179, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+
+#buttonArrow {
+  padding: 0 12px 0 0;
 }

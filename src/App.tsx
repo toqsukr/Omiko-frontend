@@ -18,12 +18,12 @@ export default function App() {
         <div id='bodyContainer'>
           <GlyfContainer type='sections' glyfs={sectionGlyfs} />
           <PopularProducts />
+          <DeliverySection />
           <GlyfContainer
             type='advantages'
             title='Преимущества'
             glyfs={advantageGlyfs}
           />
-          <DeliverySection />
           <Footer />
         </div>
       </LocationProvider>

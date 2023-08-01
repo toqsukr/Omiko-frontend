@@ -31,6 +31,7 @@ export default function DeliverySection() {
             <p className={css.boxText}>коробок</p>
             <div id={css.productionComboBox}>
               <p className={css.boxText}>тапочек</p>
+              <ReactSVG id={css.buttonArrow} src='icons/buttonArrow.svg' />
             </div>
           </div>
           <ReactSVG src='icons/arrow.svg' />
