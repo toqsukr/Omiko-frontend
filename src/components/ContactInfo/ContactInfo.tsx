@@ -1,36 +1,46 @@
-import { useContext } from 'react';
+import { useRef, useContext } from 'react';
 import { useTransition, animated } from 'react-spring';
 import css from './ContactInfo.module.css';
 import { LocationContext } from '../../providers/LocationProvider';
 
 export default function ContactInfo() {
   const { location } = useContext(LocationContext);
+  const phoneNumberRef = useRef({
+    phoneNumber: location.phoneNumbers[0],
+    description: location.description,
+  });
   const numberTransition = useTransition(location, {
-    from: { opacity: 0, scale: 0 },
-    enter: { opacity: 1, scale: 1 },
-    leave: { opacity: 0, scale: 0 },
+    from: { opacity: 0, scale: 0, transform: 'translateY(-100px)' },
+    enter: { opacity: 1, scale: 1, transform: 'translateY(0px)' },
+    leave: { opacity: 0, scale: 0, transform: 'translateY(-100px)' },
     exitBeforeEnter: true,
     unique: true,
     trail: 400,
     config: {
       duration: 300,
     },
+    onRest: () =>
+      (phoneNumberRef.current = {
+        phoneNumber: location.phoneNumbers[0],
+        description: location.description,
+      }),
   });
   return (
     <div className={css.infoContainer}>
       {numberTransition((style) => (
         <>
-          <animated.div style={style}>
-            <p id={css.mainPhoneNumber}>{location.phoneNumbers[0]}</p>
-          </animated.div>
-          <animated.div style={style}>
-            {location.city === 'Санкт-Петербург' ||
-            location.city === 'Другой' ? (
-              <p id={css.phoneNumberInfo}>Звонок бесплатный по России</p>
-            ) : (
-              <p id={css.phoneNumberInfo}>Есть вопрос? Позвоните нам!</p>
-            )}
-          </animated.div>
+          <animated.p
+            style={{ opacity: style.opacity, transform: style.transform }}
+            id={css.mainPhoneNumber}
+          >
+            {phoneNumberRef.current.phoneNumber}
+          </animated.p>
+          <animated.p
+            style={{ opacity: style.opacity, scale: style.scale }}
+            id={css.phoneNumberInfo}
+          >
+            {phoneNumberRef.current.description}
+          </animated.p>
         </>
       ))}
     </div>

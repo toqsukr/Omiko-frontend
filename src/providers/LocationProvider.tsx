@@ -4,10 +4,11 @@ import { locations } from '../utils/data';
 export interface ILocation {
   city: string;
   phoneNumbers: string[];
+  description: string;
 }
 
 export const LocationContext = createContext({
-  location: { city: '', phoneNumbers: [''] },
+  location: { city: '', phoneNumbers: [''], description: '' },
   setLocation: (value: ILocation) => {
     value;
   },

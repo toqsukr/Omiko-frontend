@@ -10,8 +10,6 @@ import SectionContainer from './components/SectionContainer/SectionContainer';
 import AdvantageContainer from './components/AdvantageContainer/AdvantageContainer';
 
 export default function App() {
-  // const [scrolledDown, setScrolledDown] = useState(false);
-  // const advantageRef = useRef(null);
   const [deliveryDetail, setDeliveryDetail] = useState(false);
   return (
     <>

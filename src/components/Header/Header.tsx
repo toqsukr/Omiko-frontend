@@ -6,10 +6,6 @@ import LocationWrapper from '../LocationWrapper/LocationWrapper';
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 import Location from '../Location/Location';
 
-// interface IHeader {
-//   scrolledDown: boolean;
-// }
-
 export default function Header() {
   return (
     <>

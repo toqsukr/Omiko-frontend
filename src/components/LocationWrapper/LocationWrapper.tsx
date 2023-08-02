@@ -44,6 +44,7 @@ export default function LocationWrapper() {
                         setLocation({
                           city: locations[i].city,
                           phoneNumbers: locations[i].phoneNumbers,
+                          description: locations[i].description,
                         });
                       }}
                     >
