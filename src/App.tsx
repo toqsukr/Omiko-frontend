@@ -16,7 +16,9 @@ export default function App() {
       <LocationProvider>
         <Header />
         <div id='bodyContainer'>
-          <SectionContainer />
+          <Element name='top'>
+            <SectionContainer />
+          </Element>
           <PopularProducts />
           <Element name='delivery'>
             <DeliverySection

@@ -1,5 +1,6 @@
 import { ReactSVG } from 'react-svg';
 import { useContext } from 'react';
+import { scroller } from 'react-scroll';
 import { LocationContext } from '../../../providers/LocationProvider';
 import css from './LogoNav.module.css';
 import { catigories } from '../../../utils/data';
@@ -22,7 +23,17 @@ export default function LogoNav() {
           else return null;
         })}
       </div>
-      <ReactSVG id={css.logo} src='icons/fullicon.svg'></ReactSVG>
+      <ReactSVG
+        id={css.logo}
+        src='icons/fullicon.svg'
+        onClick={() =>
+          scroller.scrollTo('top', {
+            offset: -124,
+            duration: 800,
+            smooth: 'easeInOutQuart',
+          })
+        }
+      ></ReactSVG>
       <div className={css.catigoryContainer} id={css.right}>
         {catigories.map((el: string, index: number) => {
           if (index >= 3)
