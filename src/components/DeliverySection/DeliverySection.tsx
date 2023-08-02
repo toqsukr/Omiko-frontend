@@ -1,5 +1,6 @@
-import { useContext } from 'react';
+import { useRef, useContext } from 'react';
 import { ReactSVG } from 'react-svg';
+import { useTransition, animated } from 'react-spring';
 import css from './DeliverySection.module.css';
 import { deliveryInfo } from '../../utils/data';
 import PopupWindow from '../PopupWindow/PopupWindow';
@@ -12,15 +13,33 @@ interface IDeliverySection {
 
 export default function DeliverySection({ isShow, setShow }: IDeliverySection) {
   const { location } = useContext(LocationContext);
+  const cityRef = useRef(
+    location.city === 'Другой' ? 'в регионы России' : `г. ${location.city}`
+  );
+  const cityTransition = useTransition(location, {
+    from: { opacity: 0, transform: 'translateX(-50px)' },
+    enter: { opacity: 1, transform: 'translateX(0px)' },
+    leave: { opacity: 0, transform: 'translateX(50px)' },
+    exitBeforeEnter: true,
+    config: {
+      duration: 300,
+    },
+    onRest: () =>
+      (cityRef.current =
+        location.city === 'Другой'
+          ? 'в регионы России'
+          : `г. ${location.city}`),
+  });
+
   return (
     <div className={css.sectionContainer}>
       <div className={css.titleContainer}>
         <h1 id={css.title}>Доставка</h1>
-        <p id={css.city}>
-          {location.city === 'Другой'
-            ? 'в регионы России'
-            : `г. ${location.city}`}
-        </p>
+        {cityTransition((style) => (
+          <animated.p style={style} id={css.city}>
+            {cityRef.current}
+          </animated.p>
+        ))}
       </div>
       <div className={css.sectionInnerContainer}>
         <div className={css.info}>
