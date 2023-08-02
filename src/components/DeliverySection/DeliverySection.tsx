@@ -46,7 +46,7 @@ export default function DeliverySection({ isShow, setShow }: IDeliverySection) {
           </div>
         </div>
       </div>
-      {isShow && <PopupWindow isShow={isShow} setShow={setShow} />}
+      <PopupWindow isShow={isShow} setShow={setShow} />
     </div>
   );
 }
