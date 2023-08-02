@@ -13,7 +13,7 @@ import Location from '../Location/Location';
 // }
 
 export default function Header() {
-  const { location, isHide } = useContext(LocationContext);
+  const { location } = useContext(LocationContext);
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function Header() {
             <ContactInfo>{location.phoneNumbers[0]}</ContactInfo>
             <ShoppingCart />
           </div>
-          {isHide || <LocationWrapper />}
+          <LocationWrapper />
           <LogoNav />
         </div>
       </div>
