@@ -12,16 +12,16 @@ export default function PopupWindow({ isShow, setShow }: IPopupWindow) {
     from: {
       scale: 0,
       opacity: 0,
+      transform: 'translateY(-50%)',
     },
     enter: {
       scale: 1,
       opacity: 1,
-      transform: 'translateY(30%)',
     },
     leave: {
       scale: 0,
       opacity: 0,
-      transform: 'translateY(0)',
+      transform: 'translateY(-50%)',
     },
   });
   return (
