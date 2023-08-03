@@ -27,6 +27,11 @@ function handleClick(type: string | undefined) {
       });
       break;
     case 'about':
+      scroller.scrollTo('about', {
+        offset: -120,
+        duration: 800,
+        smooth: 'easeInOutQuart',
+      });
       break;
   }
 }

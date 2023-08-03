@@ -1,9 +1,9 @@
 import GlyfContainer from '../GlyfContainer/GlyfContainer';
 import { advantageGlyfs } from '../../utils/data';
 import Glyf from '../Glyf/Glyf';
-import css from './AdvantageContainer.module.css';
+import css from './AdvantageSection.module.css';
 
-export default function AdvantageContainer() {
+export default function AdvantageSection() {
   return (
     <GlyfContainer style={css.advantage}>
       <div className={css.titleContainer}>

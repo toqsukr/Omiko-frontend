@@ -26,7 +26,10 @@ export default function Footer() {
               skeesh24
             </a>
           </div>
-          <ReactSVG src='icons/github.svg' />
+          <ReactSVG
+            src='icons/github.svg'
+            href='https://github.com/toqsukr/Omiko-frontend'
+          />
         </div>
       </div>
     </div>

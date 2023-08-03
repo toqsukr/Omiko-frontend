@@ -5,9 +5,10 @@ import Header from './components/Header/Header';
 import PopularProducts from './components/PopularProducts/PopularProducts';
 import DeliverySection from './components/DeliverySection/DeliverySection';
 import Footer from './components/Footer/Footer';
+import AboutSection from './components/AboutSection/AboutSection';
 import './App.css';
 import SectionContainer from './components/SectionContainer/SectionContainer';
-import AdvantageContainer from './components/AdvantageContainer/AdvantageContainer';
+import AdvantageSection from './components/AdvantageSection/AdvantageSection';
 
 export default function App() {
   const [deliveryDetail, setDeliveryDetail] = useState(false);
@@ -27,7 +28,10 @@ export default function App() {
             />
           </Element>
           <Element name='advantage'>
-            <AdvantageContainer />
+            <AdvantageSection />
+          </Element>
+          <Element name='about'>
+            <AboutSection />
           </Element>
           <Footer />
         </div>
