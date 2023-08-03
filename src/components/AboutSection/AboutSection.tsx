@@ -9,7 +9,13 @@ export default function AboutSection() {
       </div>
       <div className={css.aboutInnerContainer}>
         <div className={css.contactContainer}>
-          <p id={css.contact}>{aboutInfo.contact}</p>
+          <div className={css.contactTextContainer}>
+            {aboutInfo.contact.map((el, index) => (
+              <p key={index} id={css.contact}>
+                {el}
+              </p>
+            ))}
+          </div>
         </div>
         <img src='address/map_spb.png' id={css.map} />
       </div>
