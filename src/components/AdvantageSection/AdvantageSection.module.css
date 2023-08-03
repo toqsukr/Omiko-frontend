@@ -21,6 +21,32 @@
   margin: 80px 0 0 0;
 }
 
+.descriptionContainer {
+  height: 100%;
+  width: 100%;
+  max-width: 292px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  margin: 20px 16px 16px 16px;
+}
+
+.description {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 34px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0 0 0 0;
+}
+
 #titleText {
   font-family: 'Inter';
   font-style: normal;
@@ -34,4 +60,18 @@
   color: #ffffff;
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#textContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.plusContainer {
+  display: flex;
+  max-height: 17px;
+  width: 17px;
 }

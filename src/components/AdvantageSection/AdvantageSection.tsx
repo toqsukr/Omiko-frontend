@@ -1,5 +1,6 @@
 import GlyfContainer from '../GlyfContainer/GlyfContainer';
 import { advantageGlyfs } from '../../utils/data';
+import { ReactSVG } from 'react-svg';
 import Glyf from '../Glyf/Glyf';
 import css from './AdvantageSection.module.css';
 
@@ -10,8 +11,23 @@ export default function AdvantageSection() {
         <h1 id={css.titleText}>Преимущества</h1>
       </div>
       <div className={css.glyfContainer}>
-        {advantageGlyfs.map((el, index: number) => (
-          <Glyf key={index} description={el.description} />
+        {advantageGlyfs.map((gEl, gIndex: number) => (
+          <Glyf>
+            <div key={gIndex} className={css.descriptionContainer}>
+              {gEl.description.map((pEl, pIndex) => (
+                <div id={css.textContainer}>
+                  {gIndex === 1 && (
+                    <div className={css.plusContainer}>
+                      <ReactSVG src='icons/plus.svg' />
+                    </div>
+                  )}
+                  <p key={pIndex} className={css.description}>
+                    {pEl}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Glyf>
         ))}
       </div>
     </GlyfContainer>
