@@ -28,3 +28,12 @@
   max-width: 2880px;
   flex-direction: column;
 }
+
+.headerInnerContainerHide {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}

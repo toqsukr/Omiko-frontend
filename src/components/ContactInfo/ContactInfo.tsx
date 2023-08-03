@@ -9,6 +9,7 @@ export default function ContactInfo() {
     phoneNumber: location.phoneNumbers[0],
     description: location.description,
   });
+
   const numberTransition = useTransition(location, {
     from: { opacity: 0, scale: 0, transform: 'translateY(-100px)' },
     enter: { opacity: 1, scale: 1, transform: 'translateY(0px)' },
@@ -29,18 +30,20 @@ export default function ContactInfo() {
     <div className={css.infoContainer}>
       {numberTransition((style) => (
         <>
-          <animated.p
-            style={{ opacity: style.opacity, transform: style.transform }}
-            id={css.mainPhoneNumber}
-          >
-            {phoneNumberRef.current.phoneNumber}
-          </animated.p>
-          <animated.p
-            style={{ opacity: style.opacity, scale: style.scale }}
-            id={css.phoneNumberInfo}
-          >
-            {phoneNumberRef.current.description}
-          </animated.p>
+          <>
+            <animated.p
+              style={{ opacity: style.opacity, transform: style.transform }}
+              id={css.mainPhoneNumber}
+            >
+              {phoneNumberRef.current.phoneNumber}
+            </animated.p>
+            <animated.p
+              style={{ opacity: style.opacity, scale: style.scale }}
+              id={css.phoneNumberInfo}
+            >
+              {phoneNumberRef.current.description}
+            </animated.p>
+          </>
         </>
       ))}
     </div>

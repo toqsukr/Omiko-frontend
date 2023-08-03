@@ -12,21 +12,21 @@ function handleClick(type: string | undefined) {
   switch (type) {
     case 'advantage':
       scroller.scrollTo('advantage', {
-        offset: -120,
+        offset: -70,
         duration: 800,
         smooth: 'easeInOutQuart',
       });
       break;
     case 'delivery':
       scroller.scrollTo('delivery', {
-        offset: -120,
+        offset: -80,
         duration: 800,
         smooth: 'easeInOutQuart',
       });
       break;
     case 'about':
       scroller.scrollTo('about', {
-        offset: -120,
+        offset: -25,
         duration: 800,
         smooth: 'easeInOutQuart',
       });

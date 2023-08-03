@@ -12,6 +12,7 @@ import AdvantageSection from './components/AdvantageSection/AdvantageSection';
 
 export default function App() {
   const [deliveryDetail, setDeliveryDetail] = useState(false);
+
   return (
     <>
       <LocationProvider>
