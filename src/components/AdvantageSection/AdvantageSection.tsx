@@ -12,10 +12,10 @@ export default function AdvantageSection() {
       </div>
       <div className={css.glyfContainer}>
         {advantageGlyfs.map((gEl, gIndex: number) => (
-          <Glyf>
-            <div key={gIndex} className={css.descriptionContainer}>
+          <Glyf key={gIndex}>
+            <div className={css.descriptionContainer}>
               {gEl.description.map((pEl, pIndex) => (
-                <div id={css.textContainer}>
+                <div key={pIndex} id={css.textContainer}>
                   {gIndex === 1 && (
                     <div className={css.plusContainer}>
                       <ReactSVG src='icons/plus.svg' />

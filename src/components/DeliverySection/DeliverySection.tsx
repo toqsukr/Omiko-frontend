@@ -44,8 +44,10 @@ export default function DeliverySection({ isShow, setShow }: IDeliverySection) {
       <div className={css.sectionInnerContainer}>
         <div className={css.info}>
           <div className={css.infoTextContainer}>
-            {deliveryInfo.map((el) => (
-              <p id={css.infoText}>{el}</p>
+            {deliveryInfo.map((el, index) => (
+              <p key={index} id={css.infoText}>
+                {el}
+              </p>
             ))}
           </div>
           <div className={css.infoButton} onClick={() => setShow(true)}>
