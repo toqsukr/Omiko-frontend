@@ -7,6 +7,7 @@ import LocationWrapper from '../LocationWrapper/LocationWrapper';
 import classnames from 'classnames';
 import { ReactSVG } from 'react-svg';
 import { scroller } from 'react-scroll';
+import Signin from '../Signin/Signin';
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 import Location from '../Location/Location';
 
