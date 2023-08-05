@@ -8,9 +8,15 @@ import classnames from 'classnames';
 import { ReactSVG } from 'react-svg';
 import { scroller } from 'react-scroll';
 import Profile from '../Profile/Profile';
+import Sign from '../Sign/Sign';
 import Location from '../Location/Location';
 
-export default function Header() {
+interface IHeader {
+  sign: boolean;
+  setSign: (value: boolean) => void;
+}
+
+export default function Header({ sign, setSign }: IHeader) {
   const scrollDirection = useScroll();
   return (
     <>
@@ -35,7 +41,7 @@ export default function Header() {
                   })
                 }
               />
-              <Profile />
+              <Profile sign={sign} setSign={setSign} />
             </>
           )}
 
@@ -44,7 +50,7 @@ export default function Header() {
               <div className={css.headerUpperContainer}>
                 <Location />
                 <ContactInfo />
-                <Profile />
+                <Profile sign={sign} setSign={setSign} />
               </div>
               <LogoNav />
               <LocationWrapper />
@@ -52,6 +58,7 @@ export default function Header() {
           )}
         </div>
       </div>
+      <Sign sign={sign} setSign={setSign} />
     </>
   );
 }

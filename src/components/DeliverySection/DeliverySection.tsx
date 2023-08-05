@@ -2,6 +2,7 @@ import { useRef, useContext } from 'react';
 import { ReactSVG } from 'react-svg';
 import { useTransition, animated } from 'react-spring';
 import css from './DeliverySection.module.css';
+import DeliveryDetail from '../DeliveryDetail/DeliveryDetail';
 import { deliveryInfo } from '../../utils/data';
 import PopupWindow from '../PopupWindow/PopupWindow';
 import { LocationContext } from '../../providers/LocationProvider';
@@ -69,7 +70,9 @@ export default function DeliverySection({ isShow, setShow }: IDeliverySection) {
           </div>
         </div>
       </div>
-      <PopupWindow isShow={isShow} setShow={setShow} />
+      <PopupWindow isShow={isShow} setShow={setShow}>
+        <DeliveryDetail />
+      </PopupWindow>
     </div>
   );
 }

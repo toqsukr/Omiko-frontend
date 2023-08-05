@@ -1,13 +1,19 @@
 import css from './PopupWindow.module.css';
+import { ReactNode } from 'react';
 import { useTransition, animated } from 'react-spring';
 import { ReactSVG } from 'react-svg';
-import DeliveryDetail from '../DeliveryDetail/DeliveryDetail';
+
 interface IPopupWindow {
   isShow: boolean;
   setShow: (value: boolean) => void;
+  children: ReactNode;
 }
 
-export default function PopupWindow({ isShow, setShow }: IPopupWindow) {
+export default function PopupWindow({
+  isShow,
+  setShow,
+  children,
+}: IPopupWindow) {
   const transition = useTransition(isShow, {
     from: {
       scale: 0,
@@ -36,7 +42,7 @@ export default function PopupWindow({ isShow, setShow }: IPopupWindow) {
                 onClick={() => setShow(false)}
               ></animated.div>
               <animated.div style={style} className={css.mainSideWindow}>
-                <DeliveryDetail />
+                {children}
                 <ReactSVG
                   id={css.close}
                   src='icons/close.svg'
