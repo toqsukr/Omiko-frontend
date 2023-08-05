@@ -11,7 +11,7 @@ interface ISign {
 export default function Sign({ sign, setSign }: ISign) {
   //   const { isLogin, setIsLogin } = useContext(LoginContext);
   return (
-    <PopupWindow isShow={sign} setShow={setSign}>
+    <PopupWindow windowStyle={css.signWindow} isShow={sign} setShow={setSign}>
       <div></div>
     </PopupWindow>
   );

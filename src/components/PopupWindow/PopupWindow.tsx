@@ -6,6 +6,7 @@ import { ReactSVG } from 'react-svg';
 interface IPopupWindow {
   isShow: boolean;
   setShow: (value: boolean) => void;
+  windowStyle: string;
   children: ReactNode;
 }
 
@@ -13,6 +14,7 @@ export default function PopupWindow({
   isShow,
   setShow,
   children,
+  windowStyle,
 }: IPopupWindow) {
   const transition = useTransition(isShow, {
     from: {
@@ -41,7 +43,7 @@ export default function PopupWindow({
                 style={{ opacity: style.opacity }}
                 onClick={() => setShow(false)}
               ></animated.div>
-              <animated.div style={style} className={css.mainSideWindow}>
+              <animated.div style={style} className={windowStyle}>
                 {children}
                 <ReactSVG
                   id={css.close}
