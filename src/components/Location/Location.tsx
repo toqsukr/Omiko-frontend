@@ -7,14 +7,12 @@ export default function Location() {
   const { location, setIsHide } = useContext(LocationContext);
 
   return (
-    <>
-      <div
-        className={css.locationContainer}
-        onMouseEnter={() => setIsHide(false)}
-      >
-        <ReactSVG id={css.locationPoint} src='icons/location.svg' />
-        <p id={css.city}>{location.city}</p>
-      </div>
-    </>
+    <div
+      className={css.locationContainer}
+      onMouseEnter={() => setIsHide(false)}
+    >
+      <ReactSVG id={css.locationPoint} src='icons/location.svg' />
+      <p id={css.city}>{location.city}</p>
+    </div>
   );
 }

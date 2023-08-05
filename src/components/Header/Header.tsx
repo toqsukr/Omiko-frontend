@@ -7,8 +7,7 @@ import LocationWrapper from '../LocationWrapper/LocationWrapper';
 import classnames from 'classnames';
 import { ReactSVG } from 'react-svg';
 import { scroller } from 'react-scroll';
-import Signin from '../Signin/Signin';
-import ShoppingCart from '../ShoppingCart/ShoppingCart';
+import Profile from '../Profile/Profile';
 import Location from '../Location/Location';
 
 export default function Header() {
@@ -36,7 +35,7 @@ export default function Header() {
                   })
                 }
               />
-              <ShoppingCart />
+              <Profile />
             </>
           )}
 
@@ -45,7 +44,7 @@ export default function Header() {
               <div className={css.headerUpperContainer}>
                 <Location />
                 <ContactInfo />
-                <ShoppingCart />
+                <Profile />
               </div>
               <LogoNav />
               <LocationWrapper />

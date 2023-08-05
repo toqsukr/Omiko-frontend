@@ -1,0 +1,29 @@
+.profileContainer {
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  max-width: 200px;
+  justify-content: end;
+}
+
+.signinContainer {
+  display: flex;
+  width: 30%;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 15px;
+  margin-right: 30px;
+}
+
+#cart {
+  max-width: 49px;
+  max-height: 35px;
+  cursor: pointer;
+}
+
+#signin {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
