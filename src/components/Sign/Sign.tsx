@@ -18,9 +18,8 @@ export default function Sign({ sign, setSign }: ISign) {
           <h1 id={css.title}>Вход</h1>
         </div>
         <div className={css.inputContainer}>
-          <Input className={css.input} type='text' />
-          <Input className={css.input} type='text' />
-          <Input className={css.input} type='text' />
+          <Input className={css.input} label='Email' type='email' />
+          <Input className={css.input} label='Пароль' type='password' />
         </div>
       </div>
     </PopupWindow>
