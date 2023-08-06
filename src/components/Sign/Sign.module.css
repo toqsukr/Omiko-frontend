@@ -28,6 +28,34 @@
   justify-content: space-evenly;
 }
 
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 40%;
+  width: 40%;
+}
+
+.button {
+  padding: 15px 20px 15px 20px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #d9dde3;
+  color: #797979;
+  background-color: #e3e3e3;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #f64545;
+  color: rgb(255, 255, 255);
+  transition: all 0.3s;
+}
+
 #title {
   font-family: 'Inter';
   font-style: normal;
