@@ -9,7 +9,9 @@ interface IInput {
 export default function Input({ type, ...props }: IInput) {
   return (
     <div {...props}>
-      <input className={css.input} type={type} />
+      <label className={css.label}>
+        <input className={css.input} type={type} />
+      </label>
     </div>
   );
 }
