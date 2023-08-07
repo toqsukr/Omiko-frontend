@@ -1,5 +1,5 @@
 import PopupWindow from '../PopupWindow/PopupWindow';
-import { useState, useContext } from 'react';
+import { useRef, useState, useContext } from 'react';
 import { LoginContext } from '../../providers/LoginProvider';
 import Input from '../Input/Input';
 import css from './Sign.module.css';
@@ -17,6 +17,15 @@ enum SignMode {
 export default function Sign({ sign, setSign }: ISign) {
   //   const { isLogin, setIsLogin } = useContext(LoginContext);
   const [signMode, setSignMode] = useState(SignMode.Enter);
+  const emailRef = useRef(null);
+  const passRef = useRef(null);
+  const repeatPassRef = useRef(null);
+
+  function handleModeBtn() {
+    setSignMode(
+      signMode === SignMode.Register ? SignMode.Enter : SignMode.Register
+    );
+  }
   return (
     <PopupWindow windowStyle={css.signWindow} isShow={sign} setShow={setSign}>
       <div className={css.signInnerContainer}>
@@ -26,13 +35,24 @@ export default function Sign({ sign, setSign }: ISign) {
           </h1>
         </div>
         <div className={css.inputContainer}>
-          <Input className={css.input} label='Email' type='email' />
-          <Input className={css.input} label='Пароль' type='password' />
+          <Input
+            className={css.input}
+            label='Email'
+            type='email'
+            inputRef={emailRef}
+          />
+          <Input
+            className={css.input}
+            label='Пароль'
+            type='password'
+            inputRef={passRef}
+          />
           {signMode === SignMode.Register && (
             <Input
               className={css.input}
               label='Подтвердите пароль'
               type='password'
+              inputRef={repeatPassRef}
             />
           )}
         </div>
@@ -40,18 +60,12 @@ export default function Sign({ sign, setSign }: ISign) {
           <button className={css.button}>
             {signMode === SignMode.Register ? 'Зарегистрироваться' : 'Войти'}
           </button>
-          <button
-            className={css.button}
-            onClick={() =>
-              setSignMode(
-                signMode === SignMode.Register
-                  ? SignMode.Enter
-                  : SignMode.Register
-              )
-            }
-          >
+          <button className={css.button} onClick={handleModeBtn}>
             {signMode === SignMode.Register ? 'Вход' : 'Регистрация'}
           </button>
+          {signMode === SignMode.Enter && (
+            <button className={css.button}>Забыли пароль?</button>
+          )}
         </div>
       </div>
     </PopupWindow>

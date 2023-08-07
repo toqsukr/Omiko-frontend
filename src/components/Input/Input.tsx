@@ -1,16 +1,16 @@
-import { useRef, useState } from 'react';
+import { useState, MutableRefObject } from 'react';
 import classnames from 'classnames';
 import css from './Input.module.css';
 
 interface IInput {
+  inputRef: MutableRefObject<null>;
   label?: string;
   type?: string;
   className?: string;
   id?: string;
 }
 
-export default function Input({ type, label, ...props }: IInput) {
-  const inputRef = useRef(null);
+export default function Input({ type, label, inputRef, ...props }: IInput) {
   const [focused, setFocused] = useState(false);
   return (
     <div {...props}>
