@@ -35,10 +35,10 @@
 }
 
 .contactTextContainer {
+  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px;
 }
 
 .manufactureContainer {
@@ -67,11 +67,12 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 38px;
+  font-size: 18px;
+  line-height: 40px;
   display: flex;
   align-items: center;
   color: #ffffff;
+  padding: 0;
 }
 
 #map {
