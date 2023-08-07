@@ -30,7 +30,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 19px;
-  color: #d9dde3;
+  color: #818181;
   padding: 0 0 10px 5px;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .withoutContent {
-  font-size: 24px;
+  font-size: 20px;
   transform: translateY(0px);
   transition: all 0.3s;
 }

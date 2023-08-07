@@ -32,7 +32,7 @@ export default function Header({ sign, setSign }: IHeader) {
               <Location />
               <ReactSVG
                 id={css.logo}
-                src='icons/fullicon.svg'
+                src='icons/fulllogo.svg'
                 onClick={() =>
                   scroller.scrollTo('top', {
                     offset: -124,
