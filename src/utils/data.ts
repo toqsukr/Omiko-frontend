@@ -172,8 +172,6 @@ export const aboutInfo = {
     'тел. +7 (931) 989-15-88',
     'sales@vkusnayakosmetika.ru',
     'retail@vkusnayakosmetika.ru',
-    'krilovama79@mail.ru',
+    'krilovama79@mail.ru - менеджер Крылова Мария',
   ],
-  manufacture:
-    'наше производство располагается по адресу Ленинградская обл., г. Всеволожск, Всеволожский пр., д.12, 3-й этаж',
 };
