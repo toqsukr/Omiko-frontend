@@ -1,7 +1,7 @@
-import PopupWindow from '../PopupWindow/PopupWindow';
+import PopupWindow from '../popupWindow/popupWindow.component';
 import { useRef, useState, useContext, FC } from 'react';
 import { LoginContext } from '../../providers/LoginProvider';
-import Input from '../Input/Input';
+import Input from '../input/input.component';
 import css from './Sign.module.css';
 
 export interface ISign {

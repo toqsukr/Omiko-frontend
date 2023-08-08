@@ -2,9 +2,9 @@ import { useRef, useContext, FC } from 'react';
 import { ReactSVG } from 'react-svg';
 import { useTransition, animated } from 'react-spring';
 import css from './DeliverySection.module.css';
-import DeliveryDetail from '../DeliveryDetail/DeliveryDetail';
+import DeliveryDetail from '../deliveryDetail/deliveryDetail.component';
 import { deliveryInfo } from '../../utils/data';
-import PopupWindow from '../PopupWindow/PopupWindow';
+import PopupWindow from '../popupWindow/popupWindow.component';
 import { LocationContext } from '../../providers/LocationProvider';
 
 interface IDeliveryDetail {

@@ -1,9 +1,9 @@
 import css from './SectionContainer.module.css';
-import Glyf from '../Glyf/Glyf';
+import Glyf from '../glyf/glyf.component';
 import classnames from 'classnames';
 import { FC } from 'react';
 import { sectionGlyfs } from '../../utils/data';
-import GlyfContainer from '../GlyfContainer/GlyfContainer';
+import GlyfContainer from '../glyfContainer/glyfContainer.component';
 
 const SectionContainer: FC = () => {
   return (
