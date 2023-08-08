@@ -1,11 +1,8 @@
 import { FC } from 'react';
-import Icon from '../Icon/Icon';
-import css from './Profile.module.css';
+import Icon from '../icon/icon.component';
 
-interface IProfile {
-  sign: boolean;
-  setSign: (value: boolean) => void;
-}
+import type { IProfile } from './profile';
+import css from './Profile.module.css';
 
 const Profile: FC<IProfile> = ({ sign, setSign }) => {
   return (

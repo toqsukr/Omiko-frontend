@@ -1,18 +1,9 @@
 import { FC, PropsWithChildren } from 'react';
 import classnames from 'classnames';
 import { scroller } from 'react-scroll';
+
+import { IGlyf, GlyfType } from './glyf';
 import css from './Glyf.module.css';
-
-export interface IGlyf {
-  type: GlyfType | string;
-}
-
-export enum GlyfType {
-  ADVANTAGE = 'advantage',
-  DELIVERY = 'delivery',
-  ABOUT = 'about',
-  NONE = 'none',
-}
 
 function handleClick(type: string | undefined) {
   switch (type) {

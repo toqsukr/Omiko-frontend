@@ -2,17 +2,8 @@ import PopupWindow from '../popupWindow/popupWindow.component';
 import { useRef, useState, useContext, FC } from 'react';
 import { LoginContext } from '../../providers/LoginProvider';
 import Input from '../input/input.component';
+import { ISign, SignMode } from './sign';
 import css from './Sign.module.css';
-
-export interface ISign {
-  sign: boolean;
-  setSign: (value: boolean) => void;
-}
-
-enum SignMode {
-  Register,
-  Enter,
-}
 
 const Sign: FC<ISign> = ({ sign, setSign }) => {
   //   const { isLogin, setIsLogin } = useContext(LoginContext);

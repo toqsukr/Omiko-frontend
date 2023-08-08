@@ -2,8 +2,9 @@ import { ReactSVG } from 'react-svg';
 import { useContext, FC } from 'react';
 import { scroller } from 'react-scroll';
 import { LocationContext } from '../../../providers/LocationProvider';
-import css from './LogoNav.module.css';
 import { catigories } from '../../../utils/data';
+
+import css from './LogoNav.module.css';
 
 const LogoNav: FC = () => {
   const { setIsHide } = useContext(LocationContext);

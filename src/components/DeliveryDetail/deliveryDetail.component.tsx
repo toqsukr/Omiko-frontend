@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import css from './DeliveryDetail.module.css';
 import { deliveryDetails } from '../../utils/data';
+
+import css from './DeliveryDetail.module.css';
 
 const DeliveryDetail: FC = () => {
   return (

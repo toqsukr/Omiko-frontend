@@ -1,13 +1,7 @@
 import { FC } from 'react';
-import css from './Icon.module.css';
 
-interface IIcon {
-  src: string;
-  className?: string;
-  onClick?: React.MouseEventHandler<HTMLSpanElement> | undefined;
-  id?: string;
-  alt?: string;
-}
+import type { IIcon } from './icon';
+import css from './Icon.module.css';
 
 const Icon: FC<IIcon> = ({ onClick, ...props }) => {
   return (

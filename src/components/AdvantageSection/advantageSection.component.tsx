@@ -3,6 +3,7 @@ import GlyfContainer from '../glyfContainer/glyfContainer.component';
 import { advantageGlyfs } from '../../utils/data';
 import { ReactSVG } from 'react-svg';
 import Glyf from '../glyf/glyf.component';
+
 import css from './AdvantageSection.module.css';
 
 const AdvantageSection: FC = () => {

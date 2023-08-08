@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import type { ICard } from './Card';
+
+import type { ICard } from './card';
 import css from './Card.module.css';
 
 const Card: FC<ICard> = ({ price, title, url }) => {

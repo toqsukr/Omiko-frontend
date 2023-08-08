@@ -1,13 +1,9 @@
-import css from './PopupWindow.module.css';
 import { FC, PropsWithChildren } from 'react';
 import { useTransition, animated } from 'react-spring';
 import { ReactSVG } from 'react-svg';
 
-interface IPopupWindow {
-  isShow: boolean;
-  setShow: (value: boolean) => void;
-  windowStyle: string;
-}
+import type { IPopupWindow } from './popup';
+import css from './PopupWindow.module.css';
 
 const PopupWindow: FC<PropsWithChildren<IPopupWindow>> = ({
   isShow,

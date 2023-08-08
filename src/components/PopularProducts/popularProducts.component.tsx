@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import css from './PopularProducts.module.css';
 import { products } from '../../utils/data';
-import Card from '../Card/Card';
+import Card from '../card/card.component';
+
+import css from './PopularProducts.module.css';
 
 const PopularProducts: FC = () => {
   return (

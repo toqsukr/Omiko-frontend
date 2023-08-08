@@ -2,14 +2,14 @@ import { useState, FC } from 'react';
 import { Element } from 'react-scroll';
 import LocationProvider from './providers/LocationProvider';
 import LoginProvider from './providers/LoginProvider';
-import Header from './components/Header/Header';
-import PopularProducts from './components/PopularProducts/PopularProducts';
-import DeliverySection from './components/DeliverySection/DeliverySection';
-import Footer from './components/Footer/Footer';
-import AboutSection from './components/AboutSection/AboutSection';
+import Header from './components/header/header.component';
+import PopularProducts from './components/popularProducts/popularProducts.component';
+import DeliverySection from './components/deliverySection/deliverySection.component';
+import Footer from './components/footer/footer.component';
+import AboutSection from './components/aboutSection/aboutSection.component';
 import './App.css';
-import SectionContainer from './components/SectionContainer/SectionContainer';
-import AdvantageSection from './components/AdvantageSection/AdvantageSection';
+import SectionContainer from './components/sectionContainer/sectionContainer.component';
+import AdvantageSection from './components/advantageSection/advantageSection.component';
 
 const App: FC = () => {
   const [deliveryDetail, setDeliveryDetail] = useState(false);
@@ -26,10 +26,8 @@ const App: FC = () => {
             <PopularProducts />
             <Element name='delivery'>
               <DeliverySection
-                deliveryDetail={{
-                  isShow: deliveryDetail,
-                  setShow: setDeliveryDetail,
-                }}
+                isShow={deliveryDetail}
+                setShow={setDeliveryDetail}
               />
             </Element>
             <Element name='advantage'>

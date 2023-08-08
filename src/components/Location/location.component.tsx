@@ -1,6 +1,7 @@
 import { useContext, FC } from 'react';
 import { ReactSVG } from 'react-svg';
 import { LocationContext } from '../../providers/LocationProvider';
+
 import css from './Location.module.css';
 
 const Location: FC = () => {

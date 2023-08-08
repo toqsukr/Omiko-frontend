@@ -1,7 +1,8 @@
 import { useRef, useContext, FC } from 'react';
 import { useTransition, animated } from 'react-spring';
-import css from './ContactInfo.module.css';
 import { LocationContext } from '../../providers/LocationProvider';
+
+import css from './ContactInfo.module.css';
 
 const ContactInfo: FC = () => {
   const { location } = useContext(LocationContext);

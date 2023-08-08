@@ -1,14 +1,8 @@
-import { useState, FC, ForwardedRef, RefObject } from 'react';
+import { useState, FC, ForwardedRef } from 'react';
 import classnames from 'classnames';
-import css from './Input.module.css';
 
-interface IInput {
-  label?: string;
-  type?: string;
-  className?: string;
-  id?: string;
-  ref?: RefObject<HTMLInputElement>;
-}
+import type { IInput } from './input';
+import css from './Input.module.css';
 
 const Input: FC<IInput> = (
   { label, type, ...props },

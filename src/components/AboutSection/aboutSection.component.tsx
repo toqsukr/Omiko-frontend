@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { aboutInfo } from '../../utils/data';
+
 import css from './AboutSection.module.css';
 
 const AboutSection: FC = () => {

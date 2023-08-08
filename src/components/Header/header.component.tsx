@@ -1,17 +1,18 @@
-import css from './Header.module.css';
 import 'typeface-inter';
 import { FC } from 'react';
 import { useScroll } from '../../hooks/useScroll.hook';
-import ContactInfo from '../ContactInfo/ContactInfo';
-import LogoNav from '../Nav/LogoNav/LogoNav';
-import LocationWrapper from '../LocationWrapper/LocationWrapper';
+import ContactInfo from '../contactInfo/contactInfo.component';
+import LogoNav from '../nav/logoNav/logoNav.component';
+import LocationWrapper from '../locationWrapper/locationWrapper.component';
 import classnames from 'classnames';
 import { ReactSVG } from 'react-svg';
 import { scroller } from 'react-scroll';
-import Profile from '../Profile/Profile';
-import Sign from '../Sign/Sign';
-import { ISign } from '../Sign/Sign';
-import Location from '../Location/Location';
+import Profile from '../profile/profile.component';
+import Sign from '../sign/sign.component';
+import Location from '../location/location.component';
+
+import type { ISign } from '../sign/sign';
+import css from './Header.module.css';
 
 const Header: FC<ISign> = ({ sign, setSign }) => {
   const scrollDirection = useScroll();

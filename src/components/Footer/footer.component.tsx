@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { ReactSVG } from 'react-svg';
-import css from './Footer.module.css';
 import { footer } from '../../utils/data';
+
+import css from './Footer.module.css';
 
 const Footer: FC = () => {
   return (
