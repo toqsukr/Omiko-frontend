@@ -1,4 +1,4 @@
-import { useRef, useContext } from 'react';
+import { useRef, useContext, FC } from 'react';
 import { ReactSVG } from 'react-svg';
 import { useTransition, animated } from 'react-spring';
 import css from './DeliverySection.module.css';
@@ -7,12 +7,15 @@ import { deliveryInfo } from '../../utils/data';
 import PopupWindow from '../PopupWindow/PopupWindow';
 import { LocationContext } from '../../providers/LocationProvider';
 
-interface IDeliverySection {
+interface IDeliveryDetail {
   isShow: boolean;
   setShow: (value: boolean) => void;
 }
 
-export default function DeliverySection({ isShow, setShow }: IDeliverySection) {
+const DeliverySection: FC<{ deliveryDetail: IDeliveryDetail }> = ({
+  deliveryDetail,
+}) => {
+  const { isShow, setShow } = deliveryDetail;
   const { location } = useContext(LocationContext);
   const cityRef = useRef(
     location.city === 'Другой' ? 'в регионы России' : `г. ${location.city}`
@@ -79,4 +82,6 @@ export default function DeliverySection({ isShow, setShow }: IDeliverySection) {
       </PopupWindow>
     </div>
   );
-}
+};
+
+export default DeliverySection;

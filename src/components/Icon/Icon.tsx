@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import css from './Icon.module.css';
 
 interface IIcon {
@@ -8,10 +9,12 @@ interface IIcon {
   alt?: string;
 }
 
-export default function Icon({ onClick, ...props }: IIcon) {
+const Icon: FC<IIcon> = ({ onClick, ...props }) => {
   return (
     <span onClick={onClick} className={css.iconContainer}>
       <img {...props} />
     </span>
   );
-}
+};
+
+export default Icon;

@@ -1,22 +1,25 @@
-import { useState, MutableRefObject } from 'react';
+import { useState, FC, ForwardedRef, RefObject } from 'react';
 import classnames from 'classnames';
 import css from './Input.module.css';
 
 interface IInput {
-  inputRef: MutableRefObject<null>;
   label?: string;
   type?: string;
   className?: string;
   id?: string;
+  ref?: RefObject<HTMLInputElement>;
 }
 
-export default function Input({ type, label, inputRef, ...props }: IInput) {
+const Input: FC<IInput> = (
+  { label, type, ...props },
+  ref: ForwardedRef<HTMLInputElement>
+) => {
   const [focused, setFocused] = useState(false);
   return (
     <div {...props}>
       <label className={css.label}>
         <input
-          ref={inputRef}
+          ref={ref}
           onFocus={() => setFocused(true)}
           onBlur={(e) => setFocused(e.target.value ? true : false)}
           className={css.input}
@@ -34,4 +37,6 @@ export default function Input({ type, label, inputRef, ...props }: IInput) {
       </label>
     </div>
   );
-}
+};
+
+export default Input;

@@ -1,10 +1,11 @@
+import { FC } from 'react';
 import GlyfContainer from '../GlyfContainer/GlyfContainer';
 import { advantageGlyfs } from '../../utils/data';
 import { ReactSVG } from 'react-svg';
 import Glyf from '../Glyf/Glyf';
 import css from './AdvantageSection.module.css';
 
-export default function AdvantageSection() {
+const AdvantageSection: FC = () => {
   return (
     <GlyfContainer style={css.advantage}>
       <div className={css.titleContainer}>
@@ -32,4 +33,6 @@ export default function AdvantageSection() {
       </div>
     </GlyfContainer>
   );
-}
+};
+
+export default AdvantageSection;

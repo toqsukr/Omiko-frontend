@@ -1,5 +1,5 @@
 import css from './PopupWindow.module.css';
-import { ReactNode } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import { useTransition, animated } from 'react-spring';
 import { ReactSVG } from 'react-svg';
 
@@ -7,15 +7,14 @@ interface IPopupWindow {
   isShow: boolean;
   setShow: (value: boolean) => void;
   windowStyle: string;
-  children: ReactNode;
 }
 
-export default function PopupWindow({
+const PopupWindow: FC<PropsWithChildren<IPopupWindow>> = ({
   isShow,
   setShow,
-  children,
   windowStyle,
-}: IPopupWindow) {
+  children,
+}) => {
   const transition = useTransition(isShow, {
     from: {
       scale: 0,
@@ -56,4 +55,6 @@ export default function PopupWindow({
       )}
     </>
   );
-}
+};
+
+export default PopupWindow;

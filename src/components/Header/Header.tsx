@@ -1,5 +1,6 @@
 import css from './Header.module.css';
 import 'typeface-inter';
+import { FC } from 'react';
 import { useScroll } from '../../hooks/useScroll.hook';
 import ContactInfo from '../ContactInfo/ContactInfo';
 import LogoNav from '../Nav/LogoNav/LogoNav';
@@ -9,14 +10,10 @@ import { ReactSVG } from 'react-svg';
 import { scroller } from 'react-scroll';
 import Profile from '../Profile/Profile';
 import Sign from '../Sign/Sign';
+import { ISign } from '../Sign/Sign';
 import Location from '../Location/Location';
 
-interface IHeader {
-  sign: boolean;
-  setSign: (value: boolean) => void;
-}
-
-export default function Header({ sign, setSign }: IHeader) {
+const Header: FC<ISign> = ({ sign, setSign }) => {
   const scrollDirection = useScroll();
   return (
     <>
@@ -61,4 +58,6 @@ export default function Header({ sign, setSign }: IHeader) {
       <Sign sign={sign} setSign={setSign} />
     </>
   );
-}
+};
+
+export default Header;

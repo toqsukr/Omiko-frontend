@@ -1,7 +1,8 @@
+import { FC } from 'react';
 import css from './DeliveryDetail.module.css';
 import { deliveryDetails } from '../../utils/data';
 
-export default function DeliveryDetail() {
+const DeliveryDetail: FC = () => {
   return (
     <div className={css.sideInnerContainer}>
       <div className={css.titleSideContainer}>
@@ -15,4 +16,6 @@ export default function DeliveryDetail() {
       </div>
     </div>
   );
-}
+};
+
+export default DeliveryDetail;

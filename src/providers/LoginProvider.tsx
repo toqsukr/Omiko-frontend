@@ -1,4 +1,4 @@
-import { useState, createContext, ReactNode } from 'react';
+import { useState, createContext, FC, PropsWithChildren } from 'react';
 
 export const LoginContext = createContext({
   isLogin: false,
@@ -7,15 +7,13 @@ export const LoginContext = createContext({
   },
 });
 
-interface Props {
-  children?: ReactNode;
-}
-
-export default function LoginProvider({ children }: Props) {
+const LoginProvider: FC<PropsWithChildren> = ({ children }) => {
   const [isLogin, setIsLogin] = useState(false);
   return (
     <LoginContext.Provider value={{ isLogin, setIsLogin }}>
       {children}
     </LoginContext.Provider>
   );
-}
+};
+
+export default LoginProvider;

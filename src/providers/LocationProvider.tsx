@@ -1,4 +1,4 @@
-import { useState, createContext, ReactNode } from 'react';
+import { useState, createContext, FC, PropsWithChildren } from 'react';
 import { locations } from '../utils/data';
 
 export interface ILocation {
@@ -18,11 +18,7 @@ export const LocationContext = createContext({
   },
 });
 
-interface Props {
-  children?: ReactNode;
-}
-
-export default function LocationProvider({ children }: Props) {
+const LocationProvider: FC<PropsWithChildren> = ({ children }) => {
   const [location, setLocation] = useState(locations[0]);
   const [isHide, setIsHide] = useState(true);
   return (
@@ -32,4 +28,6 @@ export default function LocationProvider({ children }: Props) {
       {children}
     </LocationContext.Provider>
   );
-}
+};
+
+export default LocationProvider;

@@ -1,8 +1,9 @@
+import { FC } from 'react';
 import { ReactSVG } from 'react-svg';
 import css from './Footer.module.css';
 import { footer } from '../../utils/data';
 
-export default function Footer() {
+const Footer: FC = () => {
   return (
     <footer id={css.footerContainer}>
       <div id={css.contentContainer}>
@@ -34,4 +35,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

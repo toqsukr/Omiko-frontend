@@ -1,8 +1,9 @@
+import { FC } from 'react';
 import css from './PopularProducts.module.css';
 import { products } from '../../utils/data';
 import Card from '../Card/Card';
 
-export default function PopularProducts() {
+const PopularProducts: FC = () => {
   return (
     <div id={css.mainContainer}>
       <div id={css.titleContainer}>
@@ -15,4 +16,6 @@ export default function PopularProducts() {
       </div>
     </div>
   );
-}
+};
+
+export default PopularProducts;

@@ -1,11 +1,10 @@
-import { useContext } from 'react';
+import { useContext, FC } from 'react';
 import { ReactSVG } from 'react-svg';
 import { LocationContext } from '../../providers/LocationProvider';
 import css from './Location.module.css';
 
-export default function Location() {
+const Location: FC = () => {
   const { location, setIsHide } = useContext(LocationContext);
-
   return (
     <div
       className={css.locationContainer}
@@ -15,4 +14,6 @@ export default function Location() {
       <p id={css.city}>{location.city}</p>
     </div>
   );
-}
+};
+
+export default Location;

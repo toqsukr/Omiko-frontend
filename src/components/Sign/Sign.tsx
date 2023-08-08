@@ -1,10 +1,10 @@
 import PopupWindow from '../PopupWindow/PopupWindow';
-import { useRef, useState, useContext } from 'react';
+import { useRef, useState, useContext, FC } from 'react';
 import { LoginContext } from '../../providers/LoginProvider';
 import Input from '../Input/Input';
 import css from './Sign.module.css';
 
-interface ISign {
+export interface ISign {
   sign: boolean;
   setSign: (value: boolean) => void;
 }
@@ -14,12 +14,12 @@ enum SignMode {
   Enter,
 }
 
-export default function Sign({ sign, setSign }: ISign) {
+const Sign: FC<ISign> = ({ sign, setSign }) => {
   //   const { isLogin, setIsLogin } = useContext(LoginContext);
   const [signMode, setSignMode] = useState(SignMode.Enter);
-  const emailRef = useRef(null);
-  const passRef = useRef(null);
-  const repeatPassRef = useRef(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passRef = useRef<HTMLInputElement>(null);
+  const repeatPassRef = useRef<HTMLInputElement>(null);
 
   function handleModeBtn() {
     setSignMode(
@@ -39,20 +39,20 @@ export default function Sign({ sign, setSign }: ISign) {
             className={css.input}
             label='Email'
             type='email'
-            inputRef={emailRef}
+            ref={emailRef}
           />
           <Input
             className={css.input}
             label='Пароль'
             type='password'
-            inputRef={passRef}
+            ref={passRef}
           />
           {signMode === SignMode.Register && (
             <Input
               className={css.input}
               label='Подтвердите пароль'
               type='password'
-              inputRef={repeatPassRef}
+              ref={repeatPassRef}
             />
           )}
         </div>
@@ -70,4 +70,6 @@ export default function Sign({ sign, setSign }: ISign) {
       </div>
     </PopupWindow>
   );
-}
+};
+
+export default Sign;

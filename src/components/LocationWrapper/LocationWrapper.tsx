@@ -1,11 +1,11 @@
-import { useContext } from 'react';
+import { useContext, FC } from 'react';
 import { LocationContext } from '../../providers/LocationProvider';
 import { locations } from '../../utils/data';
 import { useTransition, animated } from 'react-spring';
 
 import css from './LocationWrapper.module.css';
 
-export default function LocationWrapper() {
+const LocationWrapper: FC = () => {
   const { location, setLocation, isHide, setIsHide } =
     useContext(LocationContext);
   const locationTransition = useTransition(isHide, {
@@ -57,4 +57,6 @@ export default function LocationWrapper() {
       )}
     </>
   );
-}
+};
+
+export default LocationWrapper;

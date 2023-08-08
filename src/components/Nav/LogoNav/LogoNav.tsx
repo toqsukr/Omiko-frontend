@@ -1,11 +1,11 @@
 import { ReactSVG } from 'react-svg';
-import { useContext } from 'react';
+import { useContext, FC } from 'react';
 import { scroller } from 'react-scroll';
 import { LocationContext } from '../../../providers/LocationProvider';
 import css from './LogoNav.module.css';
 import { catigories } from '../../../utils/data';
 
-export default function LogoNav() {
+const LogoNav: FC = () => {
   const { setIsHide } = useContext(LocationContext);
   return (
     <div
@@ -49,4 +49,6 @@ export default function LogoNav() {
       </div>
     </div>
   );
-}
+};
+
+export default LogoNav;

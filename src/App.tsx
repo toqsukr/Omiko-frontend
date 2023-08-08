@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FC } from 'react';
 import { Element } from 'react-scroll';
 import LocationProvider from './providers/LocationProvider';
 import LoginProvider from './providers/LoginProvider';
@@ -11,7 +11,7 @@ import './App.css';
 import SectionContainer from './components/SectionContainer/SectionContainer';
 import AdvantageSection from './components/AdvantageSection/AdvantageSection';
 
-export default function App() {
+const App: FC = () => {
   const [deliveryDetail, setDeliveryDetail] = useState(false);
   const [sign, setSign] = useState(false);
   return (
@@ -26,8 +26,10 @@ export default function App() {
             <PopularProducts />
             <Element name='delivery'>
               <DeliverySection
-                isShow={deliveryDetail}
-                setShow={setDeliveryDetail}
+                deliveryDetail={{
+                  isShow: deliveryDetail,
+                  setShow: setDeliveryDetail,
+                }}
               />
             </Element>
             <Element name='advantage'>
@@ -42,4 +44,6 @@ export default function App() {
       </LocationProvider>
     </>
   );
-}
+};
+
+export default App;

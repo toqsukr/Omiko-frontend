@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import Icon from '../Icon/Icon';
 import css from './Profile.module.css';
 
@@ -6,7 +7,7 @@ interface IProfile {
   setSign: (value: boolean) => void;
 }
 
-export default function Profile({ sign, setSign }: IProfile) {
+const Profile: FC<IProfile> = ({ sign, setSign }) => {
   return (
     <div className={css.profileContainer}>
       <div className={css.signinContainer}>
@@ -19,4 +20,6 @@ export default function Profile({ sign, setSign }: IProfile) {
       </div>
     </div>
   );
-}
+};
+
+export default Profile;

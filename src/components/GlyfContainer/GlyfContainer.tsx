@@ -1,13 +1,15 @@
-import { ReactNode } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import classnames from 'classnames';
 import css from './GlyfContainer.module.css';
 
 interface IGlyfContainer {
-  children: ReactNode;
   style: string;
 }
 
-export default function GlyfContainer({ children, style }: IGlyfContainer) {
+const GlyfContainer: FC<PropsWithChildren<IGlyfContainer>> = ({
+  children,
+  style,
+}) => {
   return (
     <section
       className={classnames({ [css.mainContainer]: true, [style]: style })}
@@ -15,4 +17,6 @@ export default function GlyfContainer({ children, style }: IGlyfContainer) {
       {children}
     </section>
   );
-}
+};
+
+export default GlyfContainer;

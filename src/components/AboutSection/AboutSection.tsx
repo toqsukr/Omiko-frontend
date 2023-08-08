@@ -1,7 +1,8 @@
+import { FC } from 'react';
 import { aboutInfo } from '../../utils/data';
 import css from './AboutSection.module.css';
 
-export default function AboutSection() {
+const AboutSection: FC = () => {
   return (
     <div className={css.aboutContainer}>
       <div className={css.titleContainer}>
@@ -24,4 +25,6 @@ export default function AboutSection() {
       </div>
     </div>
   );
-}
+};
+
+export default AboutSection;

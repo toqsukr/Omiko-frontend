@@ -1,31 +1,37 @@
-import { ReactNode } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import classnames from 'classnames';
 import { scroller } from 'react-scroll';
 import css from './Glyf.module.css';
 
 export interface IGlyf {
-  children?: ReactNode;
-  type?: string;
+  type: GlyfType | string;
+}
+
+export enum GlyfType {
+  ADVANTAGE = 'advantage',
+  DELIVERY = 'delivery',
+  ABOUT = 'about',
+  NONE = 'none',
 }
 
 function handleClick(type: string | undefined) {
   switch (type) {
-    case 'advantage':
-      scroller.scrollTo('advantage', {
+    case GlyfType.ADVANTAGE:
+      scroller.scrollTo(GlyfType.ADVANTAGE, {
         offset: -70,
         duration: 800,
         smooth: 'easeInOutQuart',
       });
       break;
-    case 'delivery':
-      scroller.scrollTo('delivery', {
+    case GlyfType.DELIVERY:
+      scroller.scrollTo(GlyfType.DELIVERY, {
         offset: -80,
         duration: 800,
         smooth: 'easeInOutQuart',
       });
       break;
-    case 'about':
-      scroller.scrollTo('about', {
+    case GlyfType.ABOUT:
+      scroller.scrollTo(GlyfType.ABOUT, {
         offset: -25,
         duration: 800,
         smooth: 'easeInOutQuart',
@@ -34,17 +40,25 @@ function handleClick(type: string | undefined) {
   }
 }
 
-export default function Glyf({ type, children }: IGlyf) {
+const Glyf: FC<PropsWithChildren<{ glyfInfo?: IGlyf }>> = ({
+  glyfInfo,
+  children,
+}) => {
+  const type = glyfInfo ? glyfInfo.type : GlyfType.NONE;
   return (
     <div
       className={classnames({
         [css.mainContainer]: true,
         [css.clickable]:
-          type === 'advantage' || type === 'delivery' || type === 'about',
+          type === GlyfType.ADVANTAGE ||
+          type === GlyfType.DELIVERY ||
+          type === GlyfType.ABOUT,
       })}
       onClick={() => handleClick(type)}
     >
       {children}
     </div>
   );
-}
+};
+
+export default Glyf;

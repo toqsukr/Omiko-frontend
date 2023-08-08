@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import css from './Card.module.css';
 
 interface ICard {
@@ -6,19 +7,19 @@ interface ICard {
   url?: string;
 }
 
-export default function Card({ ...props }: ICard) {
+const Card: FC<ICard> = ({ price, title, url }) => {
   return (
     <div className={css.cardContainer}>
       <div className={css.imageContainer}>
-        <img id={css.image} src={props.url ? props.url : ''} alt='' />
+        <img id={css.image} src={url ? url : ''} alt='' />
       </div>
       <div className={css.cardInfo}>
-        <p id={css.price}>{props.price ? props.price : 'Цена'}</p>
+        <p id={css.price}>{price ? price : 'Цена'}</p>
         <p id={css.title}>
-          {props.title
-            ? props.title.length > 28
-              ? `${props.title.slice(0, 27)}...`
-              : props.title
+          {title
+            ? title.length > 28
+              ? `${title.slice(0, 27)}...`
+              : title
             : 'Название'}
         </p>
       </div>
@@ -29,4 +30,6 @@ export default function Card({ ...props }: ICard) {
       </div>
     </div>
   );
-}
+};
+
+export default Card;

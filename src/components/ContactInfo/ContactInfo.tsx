@@ -1,9 +1,9 @@
-import { useRef, useContext } from 'react';
+import { useRef, useContext, FC } from 'react';
 import { useTransition, animated } from 'react-spring';
 import css from './ContactInfo.module.css';
 import { LocationContext } from '../../providers/LocationProvider';
 
-export default function ContactInfo() {
+const ContactInfo: FC = () => {
   const { location } = useContext(LocationContext);
   const phoneNumberRef = useRef({
     phoneNumber: location.phoneNumbers[0],
@@ -46,4 +46,6 @@ export default function ContactInfo() {
       ))}
     </div>
   );
-}
+};
+
+export default ContactInfo;
