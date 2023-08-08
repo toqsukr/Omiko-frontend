@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import Icon from '../icon/icon.component';
 
-import type { IProfile } from './profile';
+import type { IShow } from '../popupWindow/popup';
 import css from './Profile.module.css';
 
-const Profile: FC<IProfile> = ({ sign, setSign }) => {
+const Profile: FC<IShow> = ({ isShow, setShow }) => {
   return (
     <div className={css.profileContainer}>
       <div className={css.signinContainer}>
@@ -12,7 +12,7 @@ const Profile: FC<IProfile> = ({ sign, setSign }) => {
         <Icon
           src='icons/signin.svg'
           id={css.signin}
-          onClick={() => setSign(!sign)}
+          onClick={() => setShow(!isShow)}
         />
       </div>
     </div>

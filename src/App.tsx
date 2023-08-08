@@ -18,7 +18,7 @@ const App: FC = () => {
     <>
       <LocationProvider>
         <LoginProvider>
-          <Header sign={sign} setSign={setSign} />
+          <Header isShow={sign} setShow={setSign} />
           <div id='bodyContainer'>
             <Element name='top'>
               <SectionContainer />

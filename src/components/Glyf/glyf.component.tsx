@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from 'react';
 import classnames from 'classnames';
 import { scroller } from 'react-scroll';
 
-import { IGlyf, GlyfType } from './glyf';
+import { IGlyf, GlyfType } from './glyf.d';
 import css from './Glyf.module.css';
 
 function handleClick(type: string | undefined) {

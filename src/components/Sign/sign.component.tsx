@@ -2,10 +2,12 @@ import PopupWindow from '../popupWindow/popupWindow.component';
 import { useRef, useState, useContext, FC } from 'react';
 import { LoginContext } from '../../providers/LoginProvider';
 import Input from '../input/input.component';
-import { ISign, SignMode } from './sign';
+
+import { SignMode } from './sign.d';
+import type { IShow } from '../popupWindow/popup.d';
 import css from './Sign.module.css';
 
-const Sign: FC<ISign> = ({ sign, setSign }) => {
+const Sign: FC<IShow> = ({ isShow, setShow }) => {
   //   const { isLogin, setIsLogin } = useContext(LoginContext);
   const [signMode, setSignMode] = useState(SignMode.Enter);
   const emailRef = useRef<HTMLInputElement>(null);
@@ -18,7 +20,10 @@ const Sign: FC<ISign> = ({ sign, setSign }) => {
     );
   }
   return (
-    <PopupWindow windowStyle={css.signWindow} isShow={sign} setShow={setSign}>
+    <PopupWindow
+      windowStyle={css.signWindow}
+      windowVisualization={{ isShow, setShow }}
+    >
       <div className={css.signInnerContainer}>
         <div className={css.titleContainer}>
           <h1 id={css.title}>

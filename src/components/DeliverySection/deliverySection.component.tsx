@@ -6,10 +6,10 @@ import { deliveryInfo } from '../../utils/data';
 import PopupWindow from '../popupWindow/popupWindow.component';
 import { LocationContext } from '../../providers/LocationProvider';
 
-import type { IDeliveryDetail } from './deliverySection';
+import type { IShow } from '../popupWindow/popup';
 import css from './DeliverySection.module.css';
 
-const DeliverySection: FC<IDeliveryDetail> = ({ isShow, setShow }) => {
+const DeliverySection: FC<IShow> = ({ isShow, setShow }) => {
   const { location } = useContext(LocationContext);
   const cityRef = useRef(
     location.city === 'Другой' ? 'в регионы России' : `г. ${location.city}`
@@ -69,8 +69,7 @@ const DeliverySection: FC<IDeliveryDetail> = ({ isShow, setShow }) => {
       </div>
       <PopupWindow
         windowStyle={css.detailWindow}
-        isShow={isShow}
-        setShow={setShow}
+        windowVisualization={{ isShow, setShow }}
       >
         <DeliveryDetail />
       </PopupWindow>

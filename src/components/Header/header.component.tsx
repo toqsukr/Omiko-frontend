@@ -11,10 +11,10 @@ import Profile from '../profile/profile.component';
 import Sign from '../sign/sign.component';
 import Location from '../location/location.component';
 
-import type { ISign } from '../sign/sign';
+import type { IShow } from '../popupWindow/popup';
 import css from './Header.module.css';
 
-const Header: FC<ISign> = ({ sign, setSign }) => {
+const Header: FC<IShow> = ({ isShow, setShow }) => {
   const scrollDirection = useScroll();
   return (
     <>
@@ -39,7 +39,7 @@ const Header: FC<ISign> = ({ sign, setSign }) => {
                   })
                 }
               />
-              <Profile sign={sign} setSign={setSign} />
+              <Profile isShow={isShow} setShow={setShow} />
             </>
           )}
 
@@ -48,7 +48,7 @@ const Header: FC<ISign> = ({ sign, setSign }) => {
               <div className={css.headerUpperContainer}>
                 <Location />
                 <ContactInfo />
-                <Profile sign={sign} setSign={setSign} />
+                <Profile isShow={isShow} setShow={setShow} />
               </div>
               <LogoNav />
               <LocationWrapper />
@@ -56,7 +56,7 @@ const Header: FC<ISign> = ({ sign, setSign }) => {
           )}
         </div>
       </header>
-      <Sign sign={sign} setSign={setSign} />
+      <Sign isShow={isShow} setShow={setShow} />
     </>
   );
 };
