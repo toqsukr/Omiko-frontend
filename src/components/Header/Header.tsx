@@ -20,7 +20,7 @@ export default function Header({ sign, setSign }: IHeader) {
   const scrollDirection = useScroll();
   return (
     <>
-      <div className={css.headerContainer}>
+      <header className={css.headerContainer}>
         <div
           className={classnames({
             [css.headerInnerContainer]: scrollDirection === 'up',
@@ -57,7 +57,7 @@ export default function Header({ sign, setSign }: IHeader) {
             </>
           )}
         </div>
-      </div>
+      </header>
       <Sign sign={sign} setSign={setSign} />
     </>
   );

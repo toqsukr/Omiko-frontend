@@ -15,8 +15,6 @@ export default function ContactInfo() {
     enter: { opacity: 1, scale: 1, transform: 'translateY(0px)' },
     leave: { opacity: 0, scale: 0, transform: 'translateY(-100px)' },
     exitBeforeEnter: true,
-    unique: true,
-    trail: 400,
     config: {
       duration: 300,
     },

@@ -9,8 +9,10 @@ interface IGlyfContainer {
 
 export default function GlyfContainer({ children, style }: IGlyfContainer) {
   return (
-    <div className={classnames({ [css.mainContainer]: true, [style]: style })}>
+    <section
+      className={classnames({ [css.mainContainer]: true, [style]: style })}
+    >
       {children}
-    </div>
+    </section>
   );
 }

@@ -8,7 +8,6 @@
 
 .signinContainer {
   display: flex;
-  width: 30%;
   flex-direction: row;
   justify-content: end;
   align-items: center;

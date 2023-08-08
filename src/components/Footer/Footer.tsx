@@ -4,7 +4,7 @@ import { footer } from '../../utils/data';
 
 export default function Footer() {
   return (
-    <div id={css.footerContainer}>
+    <footer id={css.footerContainer}>
       <div id={css.contentContainer}>
         <div id={css.descriptionContainer}>
           <p className={css.footerText}>{footer.description}</p>
@@ -32,6 +32,6 @@ export default function Footer() {
           />
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
