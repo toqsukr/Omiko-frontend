@@ -1,6 +1,6 @@
-import PopupWindow from '../popupWindow/popupWindow.component';
 import { useRef, useState, useContext, FC } from 'react';
 import { LoginContext } from '../../providers/LoginProvider';
+import PopupWindow from '../popupWindow/popupWindow.component';
 import Input from '../input/input.component';
 
 import { SignMode } from './sign.d';

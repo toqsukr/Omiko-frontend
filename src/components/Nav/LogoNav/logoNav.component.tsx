@@ -1,5 +1,5 @@
-import { ReactSVG } from 'react-svg';
 import { useContext, FC } from 'react';
+import { ReactSVG } from 'react-svg';
 import { scroller } from 'react-scroll';
 import { LocationContext } from '../../../providers/LocationProvider';
 import { catigories } from '../../../utils/data';

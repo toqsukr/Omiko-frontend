@@ -1,8 +1,8 @@
-import Glyf from '../glyf/glyf.component';
-import classnames from 'classnames';
 import { FC } from 'react';
-import { sectionGlyfs } from '../../utils/data';
+import classnames from 'classnames';
+import Glyf from '../glyf/glyf.component';
 import GlyfContainer from '../glyfContainer/glyfContainer.component';
+import { sectionGlyfs } from '../../utils/data';
 
 import css from './SectionContainer.module.css';
 

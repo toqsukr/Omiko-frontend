@@ -1,7 +1,7 @@
 import { useContext, FC } from 'react';
+import { useTransition, animated } from 'react-spring';
 import { LocationContext } from '../../providers/LocationProvider';
 import { locations } from '../../utils/data';
-import { useTransition, animated } from 'react-spring';
 
 import css from './LocationWrapper.module.css';
 

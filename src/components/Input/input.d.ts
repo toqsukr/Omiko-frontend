@@ -3,5 +3,4 @@ export interface IInput {
   type?: string;
   className?: string;
   id?: string;
-  ref?: RefObject<HTMLInputElement>;
 }

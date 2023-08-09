@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import GlyfContainer from '../glyfContainer/glyfContainer.component';
-import { advantageGlyfs } from '../../utils/data';
 import { ReactSVG } from 'react-svg';
+import GlyfContainer from '../glyfContainer/glyfContainer.component';
 import Glyf from '../glyf/glyf.component';
+import { advantageGlyfs } from '../../utils/data';
 
 import css from './AdvantageSection.module.css';
 
