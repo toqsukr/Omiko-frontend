@@ -27,12 +27,12 @@ const Wrapper: FC<PropsWithChildren<IPopupWindow>> = ({
   return (
     <>
       {wrapperTransition(
-        (style, isHide) =>
-          !isHide && (
+        (style, isShow) =>
+          isShow && (
             <animated.div
               className={css.wrapper}
               id={windowStyleID}
-              onMouseLeave={() => setShow(true)}
+              onMouseLeave={() => setShow(false)}
               style={style}
             >
               {children}

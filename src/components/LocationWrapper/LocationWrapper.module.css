@@ -7,16 +7,3 @@
   left: 8px;
   flex-direction: column;
 }
-
-#locationElementContainer {
-  width: 100%;
-  cursor: pointer;
-}
-
-#locationElementText {
-  padding: 8px 20px 8px 20px;
-}
-
-#locationElementText:hover {
-  text-decoration: underline;
-}

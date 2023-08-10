@@ -175,10 +175,3 @@ export const aboutInfo = {
     'krilovama79@mail.ru - менеджер Крылова Мария',
   ],
 };
-
-export const profileList = [
-  'Личные данные',
-  'История заказов',
-  'Избранное',
-  'Выйти',
-];

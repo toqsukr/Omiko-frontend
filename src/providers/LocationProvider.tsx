@@ -12,18 +12,18 @@ export const LocationContext = createContext({
   setLocation: (value: ILocation) => {
     value;
   },
-  isHide: true,
-  setIsHide: (value: boolean) => {
+  showWrapper: false,
+  setShowWrapper: (value: boolean) => {
     value;
   },
 });
 
 const LocationProvider: FC<PropsWithChildren> = ({ children }) => {
   const [location, setLocation] = useState(locations[0]);
-  const [isHide, setIsHide] = useState(true);
+  const [showWrapper, setShowWrapper] = useState(false);
   return (
     <LocationContext.Provider
-      value={{ location, setLocation, isHide, setIsHide }}
+      value={{ location, setLocation, showWrapper, setShowWrapper }}
     >
       {children}
     </LocationContext.Provider>

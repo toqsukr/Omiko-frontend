@@ -7,10 +7,10 @@ import { catigories } from '../../../utils/data';
 import css from './LogoNav.module.css';
 
 const LogoNav: FC = () => {
-  const { setIsHide } = useContext(LocationContext);
+  const { setShowWrapper } = useContext(LocationContext);
   return (
     <div
-      onMouseEnter={() => setIsHide(true)}
+      onMouseEnter={() => setShowWrapper(false)}
       className={css.iconInnerContainer}
     >
       {

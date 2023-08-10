@@ -6,11 +6,11 @@ import LocationWrapper from '../locationWrapper/locationWrapper.component';
 import css from './Location.module.css';
 
 const Location: FC = () => {
-  const { location, setIsHide } = useContext(LocationContext);
+  const { location, setShowWrapper } = useContext(LocationContext);
   return (
     <div
       className={css.locationContainer}
-      onMouseEnter={() => setIsHide(false)}
+      onMouseEnter={() => setShowWrapper(true)}
     >
       <ReactSVG id={css.locationPoint} src='icons/location.svg' />
       <p id={css.city}>{location.city}</p>

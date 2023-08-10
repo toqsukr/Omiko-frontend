@@ -1,22 +1,22 @@
+import { FC } from 'react';
 import Wrapper from '../wrapper/wrapper.component';
 import ProfileElement from './profileElement/profileElement.component';
-import { profileList } from '../../utils/data';
 
 import css from './profileWrapper.module.css';
+import { IShow } from '../popupWindow/popup';
 
-function ProfileWrapper() {
+const ProfileWrapper: FC<IShow> = ({ isShow, setShow }) => {
   return (
     <Wrapper
-      windowVisualization={{ isShow: false, setShow: () => {} }}
+      windowVisualization={{ isShow, setShow }}
       windowStyleID={css.profileWrapper}
     >
-      <div id={css.innerWrapperContainer}>
-        {profileList.map((el) => (
-          <ProfileElement>{el}</ProfileElement>
-        ))}
-      </div>
+      <ProfileElement>Личный кабинет</ProfileElement>
+      <ProfileElement>История заказов</ProfileElement>
+      <ProfileElement>Избранное</ProfileElement>
+      <ProfileElement>Выйти</ProfileElement>
     </Wrapper>
   );
-}
+};
 
 export default ProfileWrapper;
