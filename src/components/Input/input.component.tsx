@@ -5,7 +5,7 @@ import type { IInput } from './input';
 import css from './Input.module.css';
 
 const Input = forwardRef<HTMLInputElement, IInput>(
-  ({ label, type, value, onChange, required, ...props }, ref) => {
+  ({ label, type, onChange, required, ...props }, ref) => {
     const [focused, setFocused] = useState(false);
     return (
       <div {...props}>

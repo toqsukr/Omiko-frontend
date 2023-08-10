@@ -15,6 +15,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const repeatPassRef = useRef<HTMLInputElement>(null);
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
+  const [repeatPasswordValue, setRepeatPasswordValue] = useState('');
 
   function handleModeBtn() {
     setSignMode(
@@ -24,7 +25,11 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
 
   function handleRegisterSubmit(event: SyntheticEvent) {
     event.preventDefault();
-    console.log(`Registred new user: ${emailValue} ${passwordValue}`);
+    console.log(
+      passwordValue === repeatPasswordValue
+        ? `Registred new user: ${emailValue} ${passwordValue}`
+        : "Passwords don't equal"
+    );
   }
 
   function handleEnterSubmit(event: SyntheticEvent) {
@@ -56,7 +61,6 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
             className={css.input}
             label='Email'
             type='email'
-            value={emailValue}
             onChange={setEmailValue}
           />
           <Input
@@ -65,15 +69,16 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
             className={css.input}
             label='Пароль'
             type='password'
-            value={passwordValue}
             onChange={setPasswordValue}
           />
           {signMode === SignMode.Register && (
             <Input
+              ref={repeatPassRef}
+              required={true}
               className={css.input}
               label='Подтвердите пароль'
               type='password'
-              ref={repeatPassRef}
+              onChange={setRepeatPasswordValue}
             />
           )}
           {signMode === SignMode.Register ? (
