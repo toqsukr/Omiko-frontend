@@ -16,6 +16,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [repeatPasswordValue, setRepeatPasswordValue] = useState('');
+  const { setIsLogin } = useContext(LoginContext);
 
   function handleModeBtn() {
     setSignMode(
@@ -25,16 +26,16 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
 
   function handleRegisterSubmit(event: SyntheticEvent) {
     event.preventDefault();
-    console.log(
-      passwordValue === repeatPasswordValue
-        ? `Registred new user: ${emailValue} ${passwordValue}`
-        : "Passwords don't equal"
-    );
+    if (passwordValue === repeatPasswordValue) {
+      setShow(false);
+      setIsLogin(true);
+    } else return "Passwords don't equal";
   }
 
   function handleEnterSubmit(event: SyntheticEvent) {
     event.preventDefault();
-    console.log(`Entered old user: ${emailValue} ${passwordValue}`);
+    setShow(false);
+    setIsLogin(true);
   }
   return (
     <PopupWindow
