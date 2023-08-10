@@ -1,0 +1,12 @@
+.profileElementContainer {
+  width: 100%;
+  cursor: pointer;
+}
+
+.profileElementText {
+  padding: 8px 20px 8px 20px;
+}
+
+.profileElementText:hover {
+  text-decoration: underline;
+}
