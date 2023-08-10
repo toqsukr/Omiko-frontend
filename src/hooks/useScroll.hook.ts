@@ -7,7 +7,6 @@ export function useScroll() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-
       if (currentScrollPos > prevScrollPos) {
         setScrollDirection('down');
       } else {
@@ -15,9 +14,7 @@ export function useScroll() {
       }
       setPrevScrollPos(currentScrollPos);
     };
-
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

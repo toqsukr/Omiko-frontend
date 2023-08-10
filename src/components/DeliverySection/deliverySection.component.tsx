@@ -48,9 +48,13 @@ const DeliverySection: FC<IShow> = ({ isShow, setShow }) => {
               </p>
             ))}
           </div>
-          <div className={css.infoButton} onClick={() => setShow(true)}>
+          <button
+            type='button'
+            className={css.infoButton}
+            onClick={() => setShow(true)}
+          >
             <p id={css.infoButtonText}>детали доставки</p>
-          </div>
+          </button>
         </div>
         <div className={css.convertor}>
           <div className={css.convertorData}>

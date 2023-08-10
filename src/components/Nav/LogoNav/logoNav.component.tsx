@@ -27,12 +27,13 @@ const LogoNav: FC = () => {
         </div>
       }
       <ReactSVG
+        type='button'
         id={css.logo}
         src='icons/fulllogo.svg'
         onClick={() =>
           scroller.scrollTo('top', {
             offset: -124,
-            duration: 800,
+            duration: 1200,
             smooth: 'easeInOutQuart',
           })
         }

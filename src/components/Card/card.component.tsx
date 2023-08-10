@@ -11,7 +11,7 @@ const Card: FC<ICard> = ({ price, title, url }) => {
       </div>
       <div className={css.cardInfo}>
         <p id={css.price}>{price ? price : 'Цена'}</p>
-        <p id={css.title}>
+        <p id={css.title} title={title}>
           {title
             ? title.length > 28
               ? `${title.slice(0, 27)}...`

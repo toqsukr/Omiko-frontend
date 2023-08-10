@@ -10,21 +10,21 @@ function handleClick(type: string | undefined) {
     case GlyfType.ADVANTAGE:
       scroller.scrollTo(GlyfType.ADVANTAGE, {
         offset: -70,
-        duration: 800,
+        duration: 1200,
         smooth: 'easeInOutQuart',
       });
       break;
     case GlyfType.DELIVERY:
       scroller.scrollTo(GlyfType.DELIVERY, {
         offset: -80,
-        duration: 800,
+        duration: 1200,
         smooth: 'easeInOutQuart',
       });
       break;
     case GlyfType.ABOUT:
       scroller.scrollTo(GlyfType.ABOUT, {
         offset: -25,
-        duration: 800,
+        duration: 1200,
         smooth: 'easeInOutQuart',
       });
       break;
