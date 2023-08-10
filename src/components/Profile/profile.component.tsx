@@ -1,5 +1,6 @@
 import { FC, useContext } from 'react';
 import Icon from '../icon/icon.component';
+import ProfileWrapper from '../profileWrapper/profileWrapper.component';
 import { LoginContext } from '../../providers/LoginProvider';
 
 import type { IShow } from '../popupWindow/popup';
@@ -21,6 +22,7 @@ const Profile: FC<IShow> = ({ isShow, setShow }) => {
           />
         )}
       </div>
+      <ProfileWrapper />
     </div>
   );
 };

@@ -27,6 +27,7 @@
   width: 100vw;
   max-width: 2880px;
   flex-direction: column;
+  position: relative;
 }
 
 .headerInnerContainerHide {

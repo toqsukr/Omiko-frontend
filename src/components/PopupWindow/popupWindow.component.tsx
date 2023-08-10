@@ -7,7 +7,7 @@ import css from './PopupWindow.module.css';
 
 const PopupWindow: FC<PropsWithChildren<IPopupWindow>> = ({
   windowVisualization,
-  windowStyle,
+  windowStyleID,
   children,
 }) => {
   const { isShow, setShow } = windowVisualization;
@@ -39,7 +39,7 @@ const PopupWindow: FC<PropsWithChildren<IPopupWindow>> = ({
                 style={{ opacity: style.opacity }}
                 onClick={() => setShow(false)}
               ></animated.div>
-              <animated.div style={style} className={windowStyle}>
+              <animated.div style={style} id={windowStyleID}>
                 {children}
                 <ReactSVG
                   id={css.close}
