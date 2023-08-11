@@ -1,4 +1,5 @@
 import { IGlyf } from '../../glyf/glyf';
-export interface IAdvantageGlyf extends IGlyf {
+export interface ISectionGlyf extends IGlyf {
+  title: string;
   description: string[];
 }
