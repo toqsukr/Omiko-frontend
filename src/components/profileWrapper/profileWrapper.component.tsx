@@ -17,7 +17,7 @@ const ProfileWrapper: FC<IShow> = ({ isShow, setShow }) => {
       windowVisualization={{ isShow, setShow }}
       windowStyleID={css.profileWrapper}
     >
-      <ProfileElement>Личный кабинет</ProfileElement>
+      <ProfileElement>Личные данные</ProfileElement>
       <ProfileElement>История заказов</ProfileElement>
       <ProfileElement>Избранное</ProfileElement>
       <ProfileElement onClick={handleExitClick}>Выйти</ProfileElement>

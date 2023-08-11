@@ -1,52 +1,15 @@
 import { FC, PropsWithChildren } from 'react';
-import classnames from 'classnames';
-import { scroller } from 'react-scroll';
+import { IGlyf } from './glyf.d';
 
-import { IGlyf, GlyfType } from './glyf.d';
 import css from './Glyf.module.css';
 
-function handleClick(type: string | undefined) {
-  switch (type) {
-    case GlyfType.ADVANTAGE:
-      scroller.scrollTo(GlyfType.ADVANTAGE, {
-        offset: -70,
-        duration: 1200,
-        smooth: 'easeInOutQuart',
-      });
-      break;
-    case GlyfType.DELIVERY:
-      scroller.scrollTo(GlyfType.DELIVERY, {
-        offset: -80,
-        duration: 1200,
-        smooth: 'easeInOutQuart',
-      });
-      break;
-    case GlyfType.ABOUT:
-      scroller.scrollTo(GlyfType.ABOUT, {
-        offset: -25,
-        duration: 1200,
-        smooth: 'easeInOutQuart',
-      });
-      break;
-  }
-}
-
-const Glyf: FC<PropsWithChildren<{ glyfInfo?: IGlyf }>> = ({
-  glyfInfo,
+const Glyf: FC<PropsWithChildren<IGlyf>> = ({
+  glyfStyleID,
+  onClick,
   children,
 }) => {
-  const type = glyfInfo ? glyfInfo.type : GlyfType.NONE;
   return (
-    <div
-      className={classnames({
-        [css.mainContainer]: true,
-        [css.clickable]:
-          type === GlyfType.ADVANTAGE ||
-          type === GlyfType.DELIVERY ||
-          type === GlyfType.ABOUT,
-      })}
-      onClick={() => handleClick(type)}
-    >
+    <div className={css.mainContainer} onClick={onClick} id={glyfStyleID}>
       {children}
     </div>
   );
