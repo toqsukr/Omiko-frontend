@@ -14,11 +14,15 @@ const Profile: FC<IShow> = ({ isShow, setShow }) => {
       <div className={css.signinContainer}>
         <Icon src='icons/shoppingcart.svg' id={css.cart} />
         {isLogin ? (
-          <Icon src='icons/profile.svg' onClick={() => setShowProfile(true)} />
+          <Icon
+            src='icons/profile.svg'
+            id={css.icon}
+            onClick={() => setShowProfile(true)}
+          />
         ) : (
           <Icon
             src='icons/signin.svg'
-            id={css.signin}
+            id={css.icon}
             onClick={() => setShow(!isShow)}
           />
         )}

@@ -10,12 +10,12 @@ function LocationWrapper() {
   const { location, setLocation, showWrapper, setShowWrapper } =
     useContext(LocationContext);
 
-  const handleChangeLocation = (i: number) => {
+  const handleChangeLocation = (index: number) => {
     setShowWrapper(false);
     setLocation({
-      city: locations[i].city,
-      phoneNumbers: locations[i].phoneNumbers,
-      description: locations[i].description,
+      city: locations[index].city,
+      phoneNumbers: locations[index].phoneNumbers,
+      description: locations[index].description,
     });
   };
   return (
