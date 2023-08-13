@@ -1,29 +1,31 @@
 import 'typeface-inter';
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import ContactInfo from '../contactInfo/contactInfo.component';
+import { SignShowContext } from '../../providers/showProviders/SignShowProvider';
 import LogoNav from '../nav/logoNav/logoNav.component';
 import Profile from '../profile/profile.component';
 import Sign from '../sign/sign.component';
+import HeaderShowProvider from '../../providers/showProviders/unitProviders/HeaderShowProvider';
 import Location from '../location/location.component';
 
-import type { IShow } from '../popupWindow/popup';
 import css from './Header.module.css';
 
-const Header: FC<IShow> = ({ isShow, setShow }) => {
+const Header: FC = () => {
+  const { sign, setSign } = useContext(SignShowContext);
   return (
-    <>
+    <HeaderShowProvider>
       <header className={css.headerContainer}>
         <div className={css.headerInnerContainer}>
           <div className={css.headerUpperContainer}>
             <Location />
             <ContactInfo />
-            <Profile isShow={isShow} setShow={setShow} />
+            <Profile isShow={sign} setShow={setSign} />
           </div>
           <LogoNav />
         </div>
       </header>
-      <Sign isShow={isShow} setShow={setShow} />
-    </>
+      <Sign isShow={sign} setShow={setSign} />
+    </HeaderShowProvider>
   );
 };
 

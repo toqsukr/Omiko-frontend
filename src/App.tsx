@@ -10,26 +10,21 @@ import './App.css';
 import SectionContainer from './components/sectionContainer/sectionContainer.component';
 import AdvantageSection from './components/advantageSection/advantageSection.component';
 import LocationProvider from './providers/LocationProvider';
-import RootShowProvider from './providers/showProviders/RootShowProvider';
+import RootShowProvider from './providers/showProviders/unitProviders/RootShowProvider';
 
 const App: FC = () => {
-  const [deliveryDetail, setDeliveryDetail] = useState(false);
-  const [sign, setSign] = useState(false);
   return (
     <>
       <RootShowProvider>
         <LocationProvider>
-          <Header isShow={sign} setShow={setSign} />
+          <Header />
           <div id='bodyContainer'>
             <Element name='top'>
               <SectionContainer />
             </Element>
             <PopularProducts />
             <Element name='delivery'>
-              <DeliverySection
-                isShow={deliveryDetail}
-                setShow={setDeliveryDetail}
-              />
+              <DeliverySection />
             </Element>
             <Element name='advantage'>
               <AdvantageSection />

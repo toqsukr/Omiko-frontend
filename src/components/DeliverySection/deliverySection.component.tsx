@@ -5,12 +5,13 @@ import DeliveryDetail from '../deliveryDetail/deliveryDetail.component';
 import { deliveryInfo } from '../../utils/data';
 import PopupWindow from '../popupWindow/popupWindow.component';
 import { LocationContext } from '../../providers/LocationProvider';
+import { DeliveryDetailShowContext } from '../../providers/showProviders/DeliveryDetailShowProvider';
 
-import type { IShow } from '../popupWindow/popup';
 import css from './DeliverySection.module.css';
 
-const DeliverySection: FC<IShow> = ({ isShow, setShow }) => {
+const DeliverySection: FC = () => {
   const { location } = useContext(LocationContext);
+  const { showDetail, setShowDetail } = useContext(DeliveryDetailShowContext);
   const cityRef = useRef(
     location.city === 'Другой' ? 'в регионы России' : `г. ${location.city}`
   );
@@ -51,7 +52,7 @@ const DeliverySection: FC<IShow> = ({ isShow, setShow }) => {
           <button
             type='button'
             className={css.infoButton}
-            onClick={() => setShow(true)}
+            onClick={() => setShowDetail(true)}
           >
             <p id={css.infoButtonText}>детали доставки</p>
           </button>
@@ -73,8 +74,8 @@ const DeliverySection: FC<IShow> = ({ isShow, setShow }) => {
       </div>
       <PopupWindow
         windowStyleID={css.detailWindow}
-        isShow={isShow}
-        setShow={setShow}
+        isShow={showDetail}
+        setShow={setShowDetail}
       >
         <DeliveryDetail />
       </PopupWindow>
