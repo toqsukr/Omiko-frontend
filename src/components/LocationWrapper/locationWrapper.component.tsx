@@ -3,12 +3,13 @@ import { locations } from '../../utils/data';
 import Wrapper from '../wrapper/wrapper.component';
 import LocationElement from './locationElement/locationElement.component';
 import { LocationContext } from '../../providers/LocationProvider';
+import { LocationShowContext } from '../../providers/showProviders/LocationShowProvider';
 
 import css from './locationWrapper.module.css';
 
 function LocationWrapper() {
-  const { location, setLocation, showWrapper, setShowWrapper } =
-    useContext(LocationContext);
+  const { location, setLocation } = useContext(LocationContext);
+  const { showWrapper, setShowWrapper } = useContext(LocationShowContext);
 
   const handleChangeLocation = (index: number) => {
     setShowWrapper(false);
@@ -23,6 +24,7 @@ function LocationWrapper() {
       isShow={showWrapper}
       setShow={setShowWrapper}
       windowStyleID={css.locationWrapper}
+      onMouseLeave={() => setShowWrapper(false)}
     >
       <>
         {locations.map(

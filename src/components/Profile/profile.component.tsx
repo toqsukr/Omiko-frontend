@@ -1,14 +1,15 @@
-import { FC, useContext, useState } from 'react';
+import { FC, useContext } from 'react';
 import Icon from '../icon/icon.component';
 import ProfileWrapper from '../profileWrapper/profileWrapper.component';
-import { LoginContext } from '../../providers/LoginProvider';
+import { LoginShowContext } from '../../providers/showProviders/LoginShowProvider';
+import { ProfileContext } from '../../providers/showProviders/ProfileShowProvider';
 
 import type { IShow } from '../popupWindow/popup';
 import css from './Profile.module.css';
 
 const Profile: FC<IShow> = ({ isShow, setShow }) => {
-  const { isLogin } = useContext(LoginContext);
-  const [showProfile, setShowProfile] = useState(false);
+  const { isLogin } = useContext(LoginShowContext);
+  const { showProfile, setShowProfile } = useContext(ProfileContext);
   return (
     <div className={css.profileContainer}>
       <div className={css.signinContainer}>

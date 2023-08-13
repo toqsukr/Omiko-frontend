@@ -1,7 +1,6 @@
 import { useState, FC } from 'react';
 import { Element } from 'react-scroll';
-import LocationProvider from './providers/LocationProvider';
-import LoginProvider from './providers/LoginProvider';
+
 import Header from './components/header/header.component';
 import PopularProducts from './components/popularProducts/popularProducts.component';
 import DeliverySection from './components/deliverySection/deliverySection.component';
@@ -10,14 +9,16 @@ import AboutSection from './components/aboutSection/aboutSection.component';
 import './App.css';
 import SectionContainer from './components/sectionContainer/sectionContainer.component';
 import AdvantageSection from './components/advantageSection/advantageSection.component';
+import LocationProvider from './providers/LocationProvider';
+import RootShowProvider from './providers/showProviders/RootShowProvider';
 
 const App: FC = () => {
   const [deliveryDetail, setDeliveryDetail] = useState(false);
   const [sign, setSign] = useState(false);
   return (
     <>
-      <LocationProvider>
-        <LoginProvider>
+      <RootShowProvider>
+        <LocationProvider>
           <Header isShow={sign} setShow={setSign} />
           <div id='bodyContainer'>
             <Element name='top'>
@@ -38,8 +39,8 @@ const App: FC = () => {
             </Element>
             <Footer />
           </div>
-        </LoginProvider>
-      </LocationProvider>
+        </LocationProvider>
+      </RootShowProvider>
     </>
   );
 };

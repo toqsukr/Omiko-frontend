@@ -1,13 +1,13 @@
 import { useContext, FC } from 'react';
 import { ReactSVG } from 'react-svg';
 import { scroller } from 'react-scroll';
-import { LocationContext } from '../../../providers/LocationProvider';
+import { LocationShowContext } from '../../../providers/showProviders/LocationShowProvider';
 import { catigories } from '../../../utils/data';
 
 import css from './LogoNav.module.css';
 
 const LogoNav: FC = () => {
-  const { setShowWrapper } = useContext(LocationContext);
+  const { setShowWrapper } = useContext(LocationShowContext);
   return (
     <div
       onMouseEnter={() => setShowWrapper(false)}

@@ -1,13 +1,13 @@
 import { FC, PropsWithChildren } from 'react';
 import { useTransition, animated } from 'react-spring';
-import { IPopupWindow } from '../popupWindow/popup';
 
 import css from './wrapper.module.css';
+import { IWrapper } from './wrapper';
 
-const Wrapper: FC<PropsWithChildren<IPopupWindow>> = ({
+const Wrapper: FC<PropsWithChildren<IWrapper>> = ({
   isShow,
-  setShow,
   windowStyleID,
+  onMouseLeave,
   children,
 }) => {
   const wrapperTransition = useTransition(isShow, {
@@ -32,7 +32,7 @@ const Wrapper: FC<PropsWithChildren<IPopupWindow>> = ({
             <animated.div
               className={css.wrapper}
               id={windowStyleID}
-              onMouseLeave={() => setShow(false)}
+              onMouseLeave={onMouseLeave}
               style={style}
             >
               {children}

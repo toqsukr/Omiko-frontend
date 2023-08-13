@@ -1,13 +1,13 @@
 import { FC, useContext } from 'react';
 import Wrapper from '../wrapper/wrapper.component';
 import ProfileElement from './profileElement/profileElement.component';
-import { LoginContext } from '../../providers/LoginProvider';
+import { LoginShowContext } from '../../providers/showProviders/LoginShowProvider';
 
 import css from './profileWrapper.module.css';
 import { IShow } from '../popupWindow/popup';
 
 const ProfileWrapper: FC<IShow> = ({ isShow, setShow }) => {
-  const { setIsLogin } = useContext(LoginContext);
+  const { setIsLogin } = useContext(LoginShowContext);
   const handleExitClick = () => {
     setShow(false);
     setIsLogin(false);

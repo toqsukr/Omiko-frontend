@@ -1,5 +1,5 @@
 import { useRef, useState, useContext, FC, SyntheticEvent } from 'react';
-import { LoginContext } from '../../providers/LoginProvider';
+import { LoginShowContext } from '../../providers/showProviders/LoginShowProvider';
 import PopupWindow from '../popupWindow/popupWindow.component';
 import Input from '../input/input.component';
 
@@ -16,7 +16,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [repeatPasswordValue, setRepeatPasswordValue] = useState('');
-  const { setIsLogin } = useContext(LoginContext);
+  const { setIsLogin } = useContext(LoginShowContext);
 
   function handleModeBtn() {
     setSignMode(

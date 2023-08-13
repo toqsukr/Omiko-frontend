@@ -1,4 +1,4 @@
-import { useState, createContext, FC, PropsWithChildren } from 'react';
+import { useState, FC, PropsWithChildren, createContext } from 'react';
 import { locations } from '../utils/data';
 
 export interface ILocation {
@@ -12,19 +12,12 @@ export const LocationContext = createContext({
   setLocation: (value: ILocation) => {
     value;
   },
-  showWrapper: false,
-  setShowWrapper: (value: boolean) => {
-    value;
-  },
 });
 
 const LocationProvider: FC<PropsWithChildren> = ({ children }) => {
   const [location, setLocation] = useState(locations[0]);
-  const [showWrapper, setShowWrapper] = useState(false);
   return (
-    <LocationContext.Provider
-      value={{ location, setLocation, showWrapper, setShowWrapper }}
-    >
+    <LocationContext.Provider value={{ location, setLocation }}>
       {children}
     </LocationContext.Provider>
   );
