@@ -1,6 +1,6 @@
 import { useRef, useContext, FC } from 'react';
 import { useTransition, animated } from 'react-spring';
-import { LocationContext } from '../../providers/LocationProvider';
+import { LocationContext } from '../../../providers/LocationProvider';
 
 import css from './ContactInfo.module.css';
 

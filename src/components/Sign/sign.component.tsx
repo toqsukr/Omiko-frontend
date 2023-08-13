@@ -9,10 +9,10 @@ import css from './Sign.module.css';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
   //   const { isLogin, setIsLogin } = useContext(LoginContext);
-  const [signMode, setSignMode] = useState(SignMode.Enter);
   const emailRef = useRef<HTMLInputElement>(null);
   const passRef = useRef<HTMLInputElement>(null);
   const repeatPassRef = useRef<HTMLInputElement>(null);
+  const [signMode, setSignMode] = useState(SignMode.Enter);
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [repeatPasswordValue, setRepeatPasswordValue] = useState('');

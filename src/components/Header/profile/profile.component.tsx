@@ -1,10 +1,10 @@
 import { FC, useContext } from 'react';
-import Icon from '../icon/icon.component';
+import Icon from '../../icon/icon.component';
 import ProfileWrapper from '../profileWrapper/profileWrapper.component';
-import { LoginShowContext } from '../../providers/showProviders/LoginShowProvider';
-import { ProfileContext } from '../../providers/showProviders/ProfileShowProvider';
+import { LoginShowContext } from '../../../providers/showProviders/LoginShowProvider';
+import { ProfileContext } from '../../../providers/showProviders/ProfileShowProvider';
 
-import type { IShow } from '../popupWindow/popup';
+import type { IShow } from '../../popupWindow/popup';
 import css from './Profile.module.css';
 
 const Profile: FC<IShow> = ({ isShow, setShow }) => {

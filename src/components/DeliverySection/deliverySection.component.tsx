@@ -1,9 +1,8 @@
 import { useRef, useContext, FC } from 'react';
 import { ReactSVG } from 'react-svg';
 import { useTransition, animated } from 'react-spring';
-import DeliveryDetail from '../deliveryDetail/deliveryDetail.component';
+import DeliveryDetail from './deliveryDetail/deliveryDetail.component';
 import { deliveryInfo } from '../../utils/data';
-import PopupWindow from '../popupWindow/popupWindow.component';
 import { LocationContext } from '../../providers/LocationProvider';
 import { DeliveryDetailShowContext } from '../../providers/showProviders/DeliveryDetailShowProvider';
 
@@ -72,13 +71,8 @@ const DeliverySection: FC = () => {
           </div>
         </div>
       </div>
-      <PopupWindow
-        windowStyleID={css.detailWindow}
-        isShow={showDetail}
-        setShow={setShowDetail}
-      >
-        <DeliveryDetail />
-      </PopupWindow>
+
+      <DeliveryDetail isShow={showDetail} setShow={setShowDetail} />
     </div>
   );
 };

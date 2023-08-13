@@ -1,8 +1,8 @@
 import { useContext, FC } from 'react';
 import { ReactSVG } from 'react-svg';
 import { scroller } from 'react-scroll';
-import { LocationShowContext } from '../../../providers/showProviders/LocationShowProvider';
-import { catigories } from '../../../utils/data';
+import { LocationShowContext } from '../../../../providers/showProviders/LocationShowProvider';
+import { catigories } from '../../../../utils/data';
 
 import css from './LogoNav.module.css';
 
