@@ -1,8 +1,8 @@
 import { useRef, useContext, FC } from 'react';
-import { ReactSVG } from 'react-svg';
 import { useTransition, animated } from 'react-spring';
 import DeliveryDetail from './deliveryDetail/deliveryDetail.component';
 import { deliveryInfo } from '../../utils/data';
+import Convertor from './convertor/convertor.component';
 import { LocationContext } from '../../providers/LocationProvider';
 import { DeliveryDetailShowContext } from '../../providers/showProviders/DeliveryDetailShowProvider';
 
@@ -56,22 +56,8 @@ const DeliverySection: FC = () => {
             <p id={css.infoButtonText}>детали доставки</p>
           </button>
         </div>
-        <div className={css.convertor}>
-          <div className={css.convertorData}>
-            <input id={css.boxCount} type='text' />
-            <p className={css.boxText}>коробок</p>
-            <div id={css.productionComboBox}>
-              <p className={css.boxText}>тапочек</p>
-              <ReactSVG id={css.buttonArrow} src='icons/buttonArrow.svg' />
-            </div>
-          </div>
-          <ReactSVG src='icons/arrow.svg' />
-          <div className={css.convertorResult}>
-            <p id={css.price}>600₽</p>
-          </div>
-        </div>
+        <Convertor />
       </div>
-
       <DeliveryDetail isShow={showDetail} setShow={setShowDetail} />
     </div>
   );
