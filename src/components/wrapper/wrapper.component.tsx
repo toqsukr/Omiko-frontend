@@ -1,5 +1,6 @@
 import { FC, PropsWithChildren } from 'react';
 import { useTransition, animated } from 'react-spring';
+import { wrapperAnimation } from './wrapper.animation';
 
 import css from './wrapper.module.css';
 import { IWrapper } from './wrapper';
@@ -10,20 +11,7 @@ const Wrapper: FC<PropsWithChildren<IWrapper>> = ({
   onMouseLeave,
   children,
 }) => {
-  const wrapperTransition = useTransition(isShow, {
-    from: {
-      opacity: 0,
-    },
-    enter: {
-      opacity: 1,
-    },
-    leave: {
-      opacity: 0,
-    },
-    config: {
-      duration: 200,
-    },
-  });
+  const wrapperTransition = useTransition(isShow, wrapperAnimation);
   return (
     <>
       {wrapperTransition(

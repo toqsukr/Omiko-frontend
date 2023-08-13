@@ -4,7 +4,7 @@ import ProfileElement from './profileElement/profileElement.component';
 import { LoginShowContext } from '../../../providers/showProviders/LoginShowProvider';
 
 import css from './profileWrapper.module.css';
-import { IShow } from '../../popupWindow/popup';
+import { IShow } from '../../popupWindow/popupWindow';
 
 const ProfileWrapper: FC<IShow> = ({ isShow, setShow }) => {
   const { setIsLogin } = useContext(LoginShowContext);

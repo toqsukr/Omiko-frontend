@@ -4,7 +4,7 @@ import ProfileWrapper from '../profileWrapper/profileWrapper.component';
 import { LoginShowContext } from '../../../providers/showProviders/LoginShowProvider';
 import { ProfileContext } from '../../../providers/showProviders/ProfileShowProvider';
 
-import type { IShow } from '../../popupWindow/popup';
+import type { IShow } from '../../popupWindow/popupWindow';
 import css from './Profile.module.css';
 
 const Profile: FC<IShow> = ({ isShow, setShow }) => {

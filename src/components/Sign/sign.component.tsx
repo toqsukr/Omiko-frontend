@@ -4,7 +4,7 @@ import PopupWindow from '../popupWindow/popupWindow.component';
 import Input from '../input/input.component';
 
 import { SignMode } from './sign.d';
-import type { IShow } from '../popupWindow/popup.d';
+import type { IShow } from '../popupWindow/popupWindow';
 import css from './Sign.module.css';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {

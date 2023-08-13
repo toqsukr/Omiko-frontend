@@ -1,8 +1,8 @@
 import { FC, PropsWithChildren } from 'react';
 import { useTransition, animated } from 'react-spring';
 import { ReactSVG } from 'react-svg';
-
-import type { IPopupWindow } from './popup';
+import { popupAnimation } from './popupWindow.animation';
+import type { IPopupWindow } from './popupWindow';
 import css from './PopupWindow.module.css';
 
 const PopupWindow: FC<PropsWithChildren<IPopupWindow>> = ({
@@ -11,22 +11,7 @@ const PopupWindow: FC<PropsWithChildren<IPopupWindow>> = ({
   windowStyleID,
   children,
 }) => {
-  const transition = useTransition(isShow, {
-    from: {
-      scale: 0,
-      opacity: 0,
-      transform: 'translateY(-50%)',
-    },
-    enter: {
-      scale: 1,
-      opacity: 1,
-    },
-    leave: {
-      scale: 0,
-      opacity: 0,
-      transform: 'translateY(-50%)',
-    },
-  });
+  const transition = useTransition(isShow, popupAnimation);
   return (
     <>
       {transition(

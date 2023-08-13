@@ -3,7 +3,7 @@ import { deliveryDetails } from '../../../utils/data';
 import PopupWindow from '../../popupWindow/popupWindow.component';
 
 import css from './DeliveryDetail.module.css';
-import { IShow } from '../../popupWindow/popup';
+import { IShow } from '../../popupWindow/popupWindow';
 
 const DeliveryDetail: FC<IShow> = ({ isShow, setShow }) => {
   return (
