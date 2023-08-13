@@ -6,6 +6,7 @@ import Convertor from './convertor/convertor.component';
 import { LocationContext } from '../../providers/LocationProvider';
 import { DeliveryDetailShowContext } from '../../providers/showProviders/DeliveryDetailShowProvider';
 
+import { cityAnimation } from './deliverySection.animation';
 import css from './DeliverySection.module.css';
 
 const DeliverySection: FC = () => {
@@ -15,13 +16,7 @@ const DeliverySection: FC = () => {
     location.city === 'Другой' ? 'в регионы России' : `г. ${location.city}`
   );
   const cityTransition = useTransition(location, {
-    from: { opacity: 0, transform: 'translateX(-50px)' },
-    enter: { opacity: 1, transform: 'translateX(0px)' },
-    leave: { opacity: 0, transform: 'translateX(50px)' },
-    exitBeforeEnter: true,
-    config: {
-      duration: 300,
-    },
+    ...cityAnimation,
     onRest: () =>
       (cityRef.current =
         location.city === 'Другой'

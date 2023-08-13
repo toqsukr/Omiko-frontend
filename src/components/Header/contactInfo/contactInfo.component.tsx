@@ -2,6 +2,7 @@ import { useRef, useContext, FC } from 'react';
 import { useTransition, animated } from 'react-spring';
 import { LocationContext } from '../../../providers/LocationProvider';
 
+import { contactAnimation } from './contactInfo.animation';
 import css from './ContactInfo.module.css';
 
 const ContactInfo: FC = () => {
@@ -12,13 +13,7 @@ const ContactInfo: FC = () => {
   });
 
   const numberTransition = useTransition(location, {
-    from: { opacity: 0, scale: 0, transform: 'translateY(-100px)' },
-    enter: { opacity: 1, scale: 1, transform: 'translateY(0px)' },
-    leave: { opacity: 0, scale: 0, transform: 'translateY(-100px)' },
-    exitBeforeEnter: true,
-    config: {
-      duration: 300,
-    },
+    ...contactAnimation,
     onRest: () =>
       (phoneNumberRef.current = {
         phoneNumber: location.phoneNumbers[0],
