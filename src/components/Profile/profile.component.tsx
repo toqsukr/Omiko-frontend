@@ -13,11 +13,12 @@ const Profile: FC<IShow> = ({ isShow, setShow }) => {
     <div className={css.profileContainer}>
       <div className={css.signinContainer}>
         <Icon src='icons/shoppingcart.svg' id={css.cart} />
+        {showProfile && <p>ilya.pakylov@gmail.com</p>}
         {isLogin ? (
           <Icon
             src='icons/profile.svg'
             id={css.icon}
-            onClick={() => setShowProfile(true)}
+            onClick={() => setShowProfile(!showProfile)}
           />
         ) : (
           <Icon

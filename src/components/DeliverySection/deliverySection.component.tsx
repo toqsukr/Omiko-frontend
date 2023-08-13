@@ -73,7 +73,8 @@ const DeliverySection: FC<IShow> = ({ isShow, setShow }) => {
       </div>
       <PopupWindow
         windowStyleID={css.detailWindow}
-        windowVisualization={{ isShow, setShow }}
+        isShow={isShow}
+        setShow={setShow}
       >
         <DeliveryDetail />
       </PopupWindow>

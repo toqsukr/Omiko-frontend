@@ -20,7 +20,8 @@ function LocationWrapper() {
   };
   return (
     <Wrapper
-      windowVisualization={{ isShow: showWrapper, setShow: setShowWrapper }}
+      isShow={showWrapper}
+      setShow={setShowWrapper}
       windowStyleID={css.locationWrapper}
     >
       <>

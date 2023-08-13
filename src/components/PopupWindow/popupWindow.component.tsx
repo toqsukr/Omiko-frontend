@@ -6,12 +6,11 @@ import type { IPopupWindow } from './popup';
 import css from './PopupWindow.module.css';
 
 const PopupWindow: FC<PropsWithChildren<IPopupWindow>> = ({
-  windowVisualization,
+  isShow,
+  setShow,
   windowStyleID,
   children,
 }) => {
-  const { isShow, setShow } = windowVisualization;
-
   const transition = useTransition(isShow, {
     from: {
       scale: 0,

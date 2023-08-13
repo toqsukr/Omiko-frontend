@@ -14,7 +14,8 @@ const ProfileWrapper: FC<IShow> = ({ isShow, setShow }) => {
   };
   return (
     <Wrapper
-      windowVisualization={{ isShow, setShow }}
+      isShow={isShow}
+      setShow={setShow}
       windowStyleID={css.profileWrapper}
     >
       <ProfileElement>Личные данные</ProfileElement>

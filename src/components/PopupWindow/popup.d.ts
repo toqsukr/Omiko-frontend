@@ -1,5 +1,4 @@
-export interface IPopupWindow {
-  windowVisualization: IShow;
+export interface IPopupWindow extends IShow {
   windowStyleID?: string;
 }
 

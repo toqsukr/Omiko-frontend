@@ -5,11 +5,11 @@ import { IPopupWindow } from '../popupWindow/popup';
 import css from './wrapper.module.css';
 
 const Wrapper: FC<PropsWithChildren<IPopupWindow>> = ({
-  windowVisualization,
+  isShow,
+  setShow,
   windowStyleID,
   children,
 }) => {
-  const { isShow, setShow } = windowVisualization;
   const wrapperTransition = useTransition(isShow, {
     from: {
       opacity: 0,

@@ -40,7 +40,8 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
   return (
     <PopupWindow
       windowStyleID={css.signWindow}
-      windowVisualization={{ isShow, setShow }}
+      isShow={isShow}
+      setShow={setShow}
     >
       <div className={css.signInnerContainer}>
         <div className={css.titleContainer}>
