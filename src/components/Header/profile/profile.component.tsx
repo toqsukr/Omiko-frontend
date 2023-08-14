@@ -1,20 +1,29 @@
 import { FC, useContext } from 'react';
+import { useTransition, animated } from 'react-spring';
 import Icon from '../../icon/icon.component';
 import ProfileWrapper from '../profileWrapper/profileWrapper.component';
 import { LoginShowContext } from '../../../providers/showProviders/LoginShowProvider';
 import { ProfileContext } from '../../../providers/showProviders/ProfileShowProvider';
 
 import type { IShow } from '../../popupWindow/popupWindow';
+import { nameAnimation } from './profile.animation';
 import css from './Profile.module.css';
 
 const Profile: FC<IShow> = ({ isShow, setShow }) => {
   const { isLogin } = useContext(LoginShowContext);
   const { showProfile, setShowProfile } = useContext(ProfileContext);
+  const nameTransition = useTransition(showProfile, nameAnimation);
+
   return (
     <div className={css.profileContainer}>
       <div className={css.signinContainer}>
         <Icon src='icons/shoppingcart.svg' id={css.cart} />
-        {showProfile && <p>ilya.pakylov@gmail.com</p>}
+        {nameTransition(
+          (style, showProfile) =>
+            showProfile && (
+              <animated.p style={style}>ilya.pakylov@gmail.com</animated.p>
+            )
+        )}
         {isLogin ? (
           <Icon
             src='icons/profile.svg'
