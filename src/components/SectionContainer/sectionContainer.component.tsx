@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import SectionGlyf from './sectionGlyf/sectionGlyf.component';
 import { scroller } from 'react-scroll';
-import GlyfContainer from '../glyfContainer/glyfContainer.component';
-import { sectionGlyfs } from '../../utils/data';
+import GlyfContainer from '@components/glyfContainer/glyfContainer.component';
+import { sectionGlyfs } from '@utils/data';
 
 import css from './SectionContainer.module.css';
 

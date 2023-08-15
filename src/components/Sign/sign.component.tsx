@@ -1,10 +1,10 @@
 import { useRef, useState, useContext, FC, SyntheticEvent } from 'react';
-import { LoginShowContext } from '../../providers/showProviders/LoginShowProvider';
-import PopupWindow from '../popupWindow/popupWindow.component';
-import Input from '../input/input.component';
+import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
+import PopupWindow from '@components/popupWindow/popupWindow.component';
+import Input from '@components/input/input.component';
 
 import { SignMode } from './sign.d';
-import type { IShow } from '../popupWindow/popupWindow';
+import type { IShow } from '@components/popupWindow/popupWindow';
 import css from './Sign.module.css';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {

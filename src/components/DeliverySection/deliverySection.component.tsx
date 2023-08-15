@@ -1,10 +1,10 @@
 import { useRef, useContext, FC } from 'react';
 import { useTransition, animated } from 'react-spring';
 import DeliveryDetail from './deliveryDetail/deliveryDetail.component';
-import { deliveryInfo } from '../../utils/data';
+import { deliveryInfo } from '@utils/data';
 import Convertor from './convertor/convertor.component';
-import { LocationContext } from '../../providers/LocationProvider';
-import { DeliveryDetailShowContext } from '../../providers/showProviders/DeliveryDetailShowProvider';
+import { LocationContext } from '@providers/LocationProvider';
+import { DeliveryDetailShowContext } from '@providers/showProviders/DeliveryDetailShowProvider';
 
 import { cityAnimation } from './deliverySection.animation';
 import css from './DeliverySection.module.css';

@@ -1,11 +1,11 @@
 import { FC, useContext } from 'react';
 import { useTransition, animated } from 'react-spring';
-import Icon from '../../icon/icon.component';
+import Icon from '@components/icon/icon.component';
 import ProfileWrapper from '../profileWrapper/profileWrapper.component';
-import { LoginShowContext } from '../../../providers/showProviders/LoginShowProvider';
-import { ProfileContext } from '../../../providers/showProviders/ProfileShowProvider';
+import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
+import { ProfileContext } from '@providers/showProviders/ProfileShowProvider';
 
-import type { IShow } from '../../popupWindow/popupWindow';
+import type { IShow } from '@components/popupWindow/popupWindow';
 import { nameAnimation } from './profile.animation';
 import css from './Profile.module.css';
 

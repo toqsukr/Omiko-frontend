@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { aboutInfo } from '../../utils/data';
+import { aboutInfo } from '@utils/data';
 
 import css from './AboutSection.module.css';
 

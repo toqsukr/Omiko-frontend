@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ReactSVG } from 'react-svg';
-import { footer } from '../../utils/data';
+import { footer } from '@utils/data';
 
 import css from './Footer.module.css';
 

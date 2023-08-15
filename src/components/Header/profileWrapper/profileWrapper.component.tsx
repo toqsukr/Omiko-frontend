@@ -1,10 +1,10 @@
 import { FC, useContext } from 'react';
-import Wrapper from '../../wrapper/wrapper.component';
+import Wrapper from '@components/wrapper/wrapper.component';
 import ProfileElement from './profileElement/profileElement.component';
-import { LoginShowContext } from '../../../providers/showProviders/LoginShowProvider';
+import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
 
+import { IShow } from '@components/popupWindow/popupWindow';
 import css from './profileWrapper.module.css';
-import { IShow } from '../../popupWindow/popupWindow';
 
 const ProfileWrapper: FC<IShow> = ({ isShow, setShow }) => {
   const { setIsLogin } = useContext(LoginShowContext);

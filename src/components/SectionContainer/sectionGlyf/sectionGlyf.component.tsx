@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ISectionGlyf } from './sectionGlyf';
-import Glyf from '../../glyf/glyf.component';
+import Glyf from '@components/glyf/glyf.component';
 import css from './sectionGlyf.module.css';
 
 const SectionGlyf: FC<ISectionGlyf> = ({ title, description, onClick }) => {
