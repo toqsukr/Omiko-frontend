@@ -12,23 +12,17 @@ import css from './DeliverySection.module.css';
 const DeliverySection: FC = () => {
   const { location } = useContext(LocationContext);
   const { showDetail, setShowDetail } = useContext(DeliveryDetailShowContext);
-  const cityRef = useRef(
-    location.city === 'Другой' ? 'в регионы России' : `г. ${location.city}`
-  );
+  const cityRef = useRef(location.city === 'Другой' ? 'в регионы России' : `г. ${location.city}`);
   const cityTransition = useTransition(location, {
     ...cityAnimation,
-    onRest: () =>
-      (cityRef.current =
-        location.city === 'Другой'
-          ? 'в регионы России'
-          : `г. ${location.city}`),
+    onRest: () => (cityRef.current = location.city === 'Другой' ? 'в регионы России' : `г. ${location.city}`)
   });
 
   return (
     <div className={css.sectionContainer}>
       <div className={css.titleContainer}>
         <h1 id={css.title}>Доставка</h1>
-        {cityTransition((style) => (
+        {cityTransition(style => (
           <animated.p style={style} id={css.city}>
             {cityRef.current}
           </animated.p>
@@ -43,11 +37,7 @@ const DeliverySection: FC = () => {
               </p>
             ))}
           </div>
-          <button
-            type='button'
-            className={css.infoButton}
-            onClick={() => setShowDetail(true)}
-          >
+          <button type="button" className={css.infoButton} onClick={() => setShowDetail(true)}>
             <p id={css.infoButtonText}>детали доставки</p>
           </button>
         </div>

@@ -4,7 +4,7 @@ export const DeliveryDetailShowContext = createContext({
   showDetail: false,
   setShowDetail: (value: boolean) => {
     value;
-  },
+  }
 });
 
 const DeliveryDetailShowProvider: FC<PropsWithChildren> = ({ children }) => {

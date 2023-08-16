@@ -19,9 +19,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const { setIsLogin } = useContext(LoginShowContext);
 
   function handleModeBtn() {
-    setSignMode(
-      signMode === SignMode.Register ? SignMode.Enter : SignMode.Register
-    );
+    setSignMode(signMode === SignMode.Register ? SignMode.Enter : SignMode.Register);
   }
 
   function handleRegisterSubmit(event: SyntheticEvent) {
@@ -38,39 +36,29 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
     setIsLogin(true);
   }
   return (
-    <PopupWindow
-      windowStyleID={css.signWindow}
-      isShow={isShow}
-      setShow={setShow}
-    >
+    <PopupWindow windowStyleID={css.signWindow} isShow={isShow} setShow={setShow}>
       <div className={css.signInnerContainer}>
         <div className={css.titleContainer}>
-          <h1 id={css.title}>
-            {signMode === SignMode.Enter ? 'Вход' : 'Регистрация'}
-          </h1>
+          <h1 id={css.title}>{signMode === SignMode.Enter ? 'Вход' : 'Регистрация'}</h1>
         </div>
         <form
-          onSubmit={
-            signMode === SignMode.Enter
-              ? handleEnterSubmit
-              : handleRegisterSubmit
-          }
+          onSubmit={signMode === SignMode.Enter ? handleEnterSubmit : handleRegisterSubmit}
           className={css.form}
         >
           <Input
             ref={emailRef}
             required={true}
             className={css.input}
-            label='Email'
-            type='email'
+            label="Email"
+            type="email"
             onChange={setEmailValue}
           />
           <Input
             ref={passRef}
             required={true}
             className={css.input}
-            label='Пароль'
-            type='password'
+            label="Пароль"
+            type="password"
             onChange={setPasswordValue}
           />
           {signMode === SignMode.Register && (
@@ -78,8 +66,8 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
               ref={repeatPassRef}
               required={true}
               className={css.input}
-              label='Подтвердите пароль'
-              type='password'
+              label="Подтвердите пароль"
+              type="password"
               onChange={setRepeatPasswordValue}
             />
           )}

@@ -7,17 +7,8 @@ interface IGlyfContainer {
   style: string;
 }
 
-const GlyfContainer: FC<PropsWithChildren<IGlyfContainer>> = ({
-  children,
-  style,
-}) => {
-  return (
-    <section
-      className={classnames({ [css.mainContainer]: true, [style]: style })}
-    >
-      {children}
-    </section>
-  );
+const GlyfContainer: FC<PropsWithChildren<IGlyfContainer>> = ({ children, style }) => {
+  return <section className={classnames({ [css.mainContainer]: true, [style]: style })}>{children}</section>;
 };
 
 export default GlyfContainer;

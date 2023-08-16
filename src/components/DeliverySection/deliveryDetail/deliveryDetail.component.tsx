@@ -7,11 +7,7 @@ import { IShow } from '../../popupWindow/popupWindow';
 
 const DeliveryDetail: FC<IShow> = ({ isShow, setShow }) => {
   return (
-    <PopupWindow
-      windowStyleID={css.detailWindow}
-      isShow={isShow}
-      setShow={setShow}
-    >
+    <PopupWindow windowStyleID={css.detailWindow} isShow={isShow} setShow={setShow}>
       <div className={css.sideInnerContainer}>
         <div className={css.titleSideContainer}>
           <h1 id={css.titleText}>{deliveryDetails.title}</h1>

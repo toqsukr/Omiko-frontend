@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import Card from '../card/card.component';
-import { products } from '../../utils/data';
+import Card from '@components/card/card.component';
+import { products } from '@utils/data';
 
 import css from './PopularProducts.module.css';
 

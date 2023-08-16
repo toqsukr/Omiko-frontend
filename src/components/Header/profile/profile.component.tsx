@@ -17,25 +17,14 @@ const Profile: FC<IShow> = ({ isShow, setShow }) => {
   return (
     <div className={css.profileContainer}>
       <div className={css.signinContainer}>
-        <Icon src='icons/shoppingcart.svg' id={css.cart} />
+        <Icon src="icons/shoppingcart.svg" id={css.cart} />
         {nameTransition(
-          (style, showProfile) =>
-            showProfile && (
-              <animated.p style={style}>ilya.pakylov@gmail.com</animated.p>
-            )
+          (style, showProfile) => showProfile && <animated.p style={style}>ilya.pakylov@gmail.com</animated.p>
         )}
         {isLogin ? (
-          <Icon
-            src='icons/profile.svg'
-            id={css.icon}
-            onClick={() => setShowProfile(!showProfile)}
-          />
+          <Icon src="icons/profile.svg" id={css.icon} onClick={() => setShowProfile(!showProfile)} />
         ) : (
-          <Icon
-            src='icons/signin.svg'
-            id={css.icon}
-            onClick={() => setShow(!isShow)}
-          />
+          <Icon src="icons/signin.svg" id={css.icon} onClick={() => setShow(!isShow)} />
         )}
       </div>
       <ProfileWrapper isShow={showProfile} setShow={setShowProfile} />

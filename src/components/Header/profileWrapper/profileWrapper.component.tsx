@@ -13,11 +13,7 @@ const ProfileWrapper: FC<IShow> = ({ isShow, setShow }) => {
     setIsLogin(false);
   };
   return (
-    <Wrapper
-      isShow={isShow}
-      setShow={setShow}
-      windowStyleID={css.profileWrapper}
-    >
+    <Wrapper isShow={isShow} setShow={setShow} windowStyleID={css.profileWrapper}>
       <ProfileElement>Личные данные</ProfileElement>
       <ProfileElement>История заказов</ProfileElement>
       <ProfileElement>Избранное</ProfileElement>

@@ -10,11 +10,8 @@ const Location: FC = () => {
   const { location } = useContext(LocationContext);
   const { setShowWrapper } = useContext(LocationShowContext);
   return (
-    <div
-      className={css.locationContainer}
-      onMouseEnter={() => setShowWrapper(true)}
-    >
-      <ReactSVG id={css.locationPoint} src='icons/location.svg' />
+    <div className={css.locationContainer} onMouseEnter={() => setShowWrapper(true)}>
+      <ReactSVG id={css.locationPoint} src="icons/location.svg" />
       <p id={css.city}>{location.city}</p>
       <LocationWrapper />
     </div>

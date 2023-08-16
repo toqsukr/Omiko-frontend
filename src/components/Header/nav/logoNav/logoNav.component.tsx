@@ -9,10 +9,7 @@ import css from './LogoNav.module.css';
 const LogoNav: FC = () => {
   const { setShowWrapper } = useContext(LocationShowContext);
   return (
-    <div
-      onMouseEnter={() => setShowWrapper(false)}
-      className={css.iconInnerContainer}
-    >
+    <div onMouseEnter={() => setShowWrapper(false)} className={css.iconInnerContainer}>
       {
         <div className={css.catigoryContainer} id={css.left}>
           {catigories.map((el: string, index: number) => {
@@ -27,14 +24,14 @@ const LogoNav: FC = () => {
         </div>
       }
       <ReactSVG
-        type='button'
+        type="button"
         id={css.logo}
-        src='icons/fulllogo.svg'
+        src="icons/fulllogo.svg"
         onClick={() =>
           scroller.scrollTo('top', {
             offset: -124,
             duration: 1200,
-            smooth: 'easeInOutQuart',
+            smooth: 'easeInOutQuart'
           })
         }
       ></ReactSVG>

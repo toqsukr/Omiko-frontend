@@ -17,18 +17,18 @@ const App: FC = () => {
       <RootShowProvider>
         <LocationProvider>
           <Header />
-          <div id='bodyContainer'>
-            <Element name='top'>
+          <div id="bodyContainer">
+            <Element name="top">
               <SectionContainer />
             </Element>
             <PopularProducts />
-            <Element name='delivery'>
+            <Element name="delivery">
               <DeliverySection />
             </Element>
-            <Element name='advantage'>
+            <Element name="advantage">
               <AdvantageSection />
             </Element>
-            <Element name='about'>
+            <Element name="about">
               <AboutSection />
             </Element>
             <Footer />

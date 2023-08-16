@@ -4,6 +4,6 @@ export const cityAnimation = {
   leave: { opacity: 0, transform: 'translateX(50px)' },
   exitBeforeEnter: true,
   config: {
-    duration: 300,
-  },
+    duration: 300
+  }
 };

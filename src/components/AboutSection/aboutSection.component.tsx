@@ -23,7 +23,7 @@ const AboutSection: FC = () => {
         <AboutGlyf glyfStyleID={css.mapContainer}>
           <iframe
             id={css.map}
-            src='https://yandex.ru/map-widget/v1/?from=mapframe&ll=30.360769%2C60.061988&mode=usermaps&source=mapframe&um=constructor%3Ae3419638af8c4855e7960a3838a18977b385e2d404b841d1d26d11fa1e0aba81&utm_source=mapframe&z=17'
+            src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=30.360769%2C60.061988&mode=usermaps&source=mapframe&um=constructor%3Ae3419638af8c4855e7960a3838a18977b385e2d404b841d1d26d11fa1e0aba81&utm_source=mapframe&z=17"
           />
         </AboutGlyf>
       </div>

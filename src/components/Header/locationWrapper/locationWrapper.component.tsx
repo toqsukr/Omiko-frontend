@@ -15,7 +15,7 @@ function LocationWrapper() {
     setLocation({
       city: locations[index].city,
       phoneNumbers: locations[index].phoneNumbers,
-      description: locations[index].description,
+      description: locations[index].description
     });
   };
   return (

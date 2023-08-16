@@ -4,7 +4,7 @@ export const LocationShowContext = createContext({
   showWrapper: false,
   setShowWrapper: (value: boolean) => {
     value;
-  },
+  }
 });
 
 const LocationShowProvider: FC<PropsWithChildren> = ({ children }) => {

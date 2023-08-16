@@ -9,7 +9,7 @@ const ContactInfo: FC = () => {
   const { location } = useContext(LocationContext);
   const phoneNumberRef = useRef({
     phoneNumber: location.phoneNumbers[0],
-    description: location.description,
+    description: location.description
   });
 
   const numberTransition = useTransition(location, {
@@ -17,12 +17,12 @@ const ContactInfo: FC = () => {
     onRest: () =>
       (phoneNumberRef.current = {
         phoneNumber: location.phoneNumbers[0],
-        description: location.description,
-      }),
+        description: location.description
+      })
   });
   return (
     <div className={css.infoContainer}>
-      {numberTransition((style) => (
+      {numberTransition(style => (
         <>
           <>
             <animated.p
@@ -31,10 +31,7 @@ const ContactInfo: FC = () => {
             >
               {phoneNumberRef.current.phoneNumber}
             </animated.p>
-            <animated.p
-              style={{ opacity: style.opacity, scale: style.scale }}
-              id={css.phoneNumberInfo}
-            >
+            <animated.p style={{ opacity: style.opacity, scale: style.scale }} id={css.phoneNumberInfo}>
               {phoneNumberRef.current.description}
             </animated.p>
           </>
