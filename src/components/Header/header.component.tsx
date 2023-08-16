@@ -1,4 +1,3 @@
-import 'typeface-inter';
 import { FC, useContext } from 'react';
 import ContactInfo from './contactInfo/contactInfo.component';
 import Sign from '@components/sign/sign.component';
