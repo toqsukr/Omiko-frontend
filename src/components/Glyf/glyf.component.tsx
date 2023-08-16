@@ -1,9 +1,9 @@
 import { FC, PropsWithChildren } from 'react';
-import { IGlyf } from './glyf.d';
+import { IClickGlyf } from './glyf.d';
 
 import css from './Glyf.module.css';
 
-const Glyf: FC<PropsWithChildren<IGlyf>> = ({
+const Glyf: FC<PropsWithChildren<IClickGlyf>> = ({
   glyfStyleID,
   onClick,
   children,
