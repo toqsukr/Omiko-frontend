@@ -13,9 +13,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const [signMode, setSignMode] = useState(SignMode.Enter);
   const { setIsLogin } = useContext(LoginShowContext);
 
-  const { register, reset, handleSubmit } = useForm({
-    mode: 'onChange'
-  });
+  const { register, reset, handleSubmit } = useForm();
 
   function handleModeBtn() {
     setSignMode(signMode === SignMode.Register ? SignMode.Enter : SignMode.Register);
