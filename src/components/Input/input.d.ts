@@ -1,8 +1,9 @@
+import { UseFormRegisterReturn } from 'react-hook-form';
+
 export interface IInput {
+  register: UseFormRegisterReturn;
   label?: string;
   type?: string;
-  required?: boolean;
-  onChange?: (value: string) => void;
   className?: string;
   id?: string;
 }

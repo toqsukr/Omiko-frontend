@@ -1,4 +1,4 @@
-import { useRef, useState, useContext, FC, SyntheticEvent } from 'react';
+import { useState, useContext, FC } from 'react';
 import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
 import PopupWindow from '@components/popupWindow/popupWindow.component';
 import Input from '@components/input/input.component';
@@ -6,35 +6,36 @@ import Input from '@components/input/input.component';
 import { SignMode } from './sign.d';
 import type { IShow } from '@components/popupWindow/popupWindow';
 import css from './Sign.module.css';
+import { useForm } from 'react-hook-form';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
   //   const { isLogin, setIsLogin } = useContext(LoginContext);
-  const emailRef = useRef<HTMLInputElement>(null);
-  const passRef = useRef<HTMLInputElement>(null);
-  const repeatPassRef = useRef<HTMLInputElement>(null);
   const [signMode, setSignMode] = useState(SignMode.Enter);
-  const [emailValue, setEmailValue] = useState('');
-  const [passwordValue, setPasswordValue] = useState('');
-  const [repeatPasswordValue, setRepeatPasswordValue] = useState('');
   const { setIsLogin } = useContext(LoginShowContext);
+
+  const { register, reset, handleSubmit } = useForm({
+    mode: 'onChange'
+  });
 
   function handleModeBtn() {
     setSignMode(signMode === SignMode.Register ? SignMode.Enter : SignMode.Register);
   }
 
-  function handleRegisterSubmit(event: SyntheticEvent) {
-    event.preventDefault();
-    if (passwordValue === repeatPasswordValue) {
+  const registerSubmit = (data: any) => {
+    if (data.passwordValue === data.repeatPasswordValue) {
       setShow(false);
       setIsLogin(true);
+      console.log(data);
+      reset();
     } else return "Passwords don't equal";
-  }
+  };
 
-  function handleEnterSubmit(event: SyntheticEvent) {
-    event.preventDefault();
+  const enterSubmit = (data: any) => {
     setShow(false);
     setIsLogin(true);
-  }
+    console.log(data);
+    reset();
+  };
   return (
     <PopupWindow windowStyleID={css.signWindow} isShow={isShow} setShow={setShow}>
       <div className={css.signInnerContainer}>
@@ -42,33 +43,27 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
           <h1 id={css.title}>{signMode === SignMode.Enter ? 'Вход' : 'Регистрация'}</h1>
         </div>
         <form
-          onSubmit={signMode === SignMode.Enter ? handleEnterSubmit : handleRegisterSubmit}
+          onSubmit={handleSubmit(signMode === SignMode.Enter ? enterSubmit : registerSubmit)}
           className={css.form}
         >
           <Input
-            ref={emailRef}
-            required={true}
             className={css.input}
             label="Email"
             type="email"
-            onChange={setEmailValue}
+            register={register('email', { required: 'Email is required' })}
           />
           <Input
-            ref={passRef}
-            required={true}
             className={css.input}
             label="Пароль"
             type="password"
-            onChange={setPasswordValue}
+            register={register('password', { required: 'Password is required' })}
           />
           {signMode === SignMode.Register && (
             <Input
-              ref={repeatPassRef}
-              required={true}
               className={css.input}
               label="Подтвердите пароль"
               type="password"
-              onChange={setRepeatPasswordValue}
+              register={register('repeatPassword', { required: 'Repeat password is required' })}
             />
           )}
           {signMode === SignMode.Register ? (
