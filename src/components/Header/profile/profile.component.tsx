@@ -5,7 +5,7 @@ import ProfileWrapper from '../profileWrapper/profileWrapper.component';
 import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
 import { ProfileContext } from '@providers/showProviders/ProfileShowProvider';
 
-import type { IShow } from '@components/popupWindow/popupWindow';
+import type { IShow } from '@interfaces/show.interface';
 import { nameAnimation } from './profile.animation';
 import css from './Profile.module.css';
 

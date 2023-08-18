@@ -3,10 +3,10 @@ import { useForm } from 'react-hook-form';
 import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
 import PopupWindow from '@components/popupWindow/popupWindow.component';
 import Input from '@components/input/input.component';
-import { ILogin, ISignInput } from 'src/types/sign.interface';
+import type { ILogin, ISignInput } from '@interfaces/sign.interface';
 
 import { SignMode } from './sign.d';
-import type { IShow } from '@components/popupWindow/popupWindow';
+import type { IShow } from '@interfaces/show.interface';
 import css from './Sign.module.css';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {

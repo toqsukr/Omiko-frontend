@@ -3,7 +3,7 @@ import Wrapper from '@components/wrapper/wrapper.component';
 import ProfileElement from './profileElement/profileElement.component';
 import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
 
-import { IShow } from '@components/popupWindow/popupWindow';
+import type { IShow } from '@interfaces/show.interface';
 import css from './profileWrapper.module.css';
 
 const ProfileWrapper: FC<IShow> = ({ isShow, setShow }) => {
