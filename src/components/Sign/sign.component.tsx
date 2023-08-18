@@ -1,34 +1,35 @@
 import { useState, useContext, FC } from 'react';
+import { useForm } from 'react-hook-form';
 import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
 import PopupWindow from '@components/popupWindow/popupWindow.component';
 import Input from '@components/input/input.component';
+import { ILogin, ISignInput } from 'src/types/sign.interface';
 
 import { SignMode } from './sign.d';
 import type { IShow } from '@components/popupWindow/popupWindow';
 import css from './Sign.module.css';
-import { useForm } from 'react-hook-form';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
   //   const { isLogin, setIsLogin } = useContext(LoginContext);
   const [signMode, setSignMode] = useState(SignMode.Enter);
   const { setIsLogin } = useContext(LoginShowContext);
 
-  const { register, reset, handleSubmit } = useForm();
+  const { register, reset, handleSubmit } = useForm<ISignInput>();
 
   function handleModeBtn() {
     setSignMode(signMode === SignMode.Register ? SignMode.Enter : SignMode.Register);
   }
 
-  const registerSubmit = (data: any) => {
-    if (data.passwordValue === data.repeatPasswordValue) {
+  const registerSubmit = (data: ISignInput) => {
+    if (data.password === data.repeatPassword) {
       setShow(false);
       setIsLogin(true);
       console.log(data);
       reset();
-    } else return "Passwords don't equal";
+    } else alert("Passwods don't equal");
   };
 
-  const enterSubmit = (data: any) => {
+  const enterSubmit = (data: ILogin) => {
     setShow(false);
     setIsLogin(true);
     console.log(data);
