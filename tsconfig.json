@@ -20,7 +20,8 @@
       "@providers/*": ["src/providers/*"],
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@interfaces/*": ["src/interfaces/*"]
+      "@interfaces/*": ["src/interfaces/*"],
+      "@services/*": ["src/services/*"]
     },
 
     /* Linting */

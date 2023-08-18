@@ -22,6 +22,7 @@ This is the frontend part of the Omiko Store web application. It is built using 
 │   ├── pages/          # Component-based pages
 │   ├── providers/      # Application providers
 │   ├── interfaces/     # Used custom types
+│   ├── services/       # Application services
 │   ├── utils/          # Utility functions
 │   ├── App.css         # Main component stylesheets
 │   └── App.tsx         # Main component
