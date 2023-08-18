@@ -6,13 +6,13 @@ import css from './Input.module.css';
 
 const Input: FC<IInput> = ({ label, type, register, ...props }) => {
   const [focused, setFocused] = useState(false);
-  const { onBlur, ...registerWithoutOnBlur } = register;
+  const { onBlur, onChange, ...registerWithoutOnBlur } = register;
   return (
     <div {...props}>
       <label className={css.label}>
         <input
           onFocus={() => setFocused(true)}
-          onBlur={e => setFocused(e.target.value ? true : false)}
+          onBlur={e => setFocused(!!e.target.value)}
           className={css.input}
           type={type}
           {...registerWithoutOnBlur}

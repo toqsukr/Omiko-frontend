@@ -8,7 +8,7 @@ import { SignMode } from '@components/sign/sign.d';
 export function useSign({ setShow }: Omit<IShow, 'isShow'>) {
   const [signMode, setSignMode] = useState(SignMode.Enter);
   const { setIsLogin } = useContext(LoginShowContext);
-  const { register, reset, handleSubmit } = useForm<ISignInput>({ mode: 'onChange' });
+  const { register, reset, handleSubmit } = useForm<ISignInput>();
 
   const registerSubmit = (data: ISignInput) => {
     if (data.password === data.repeatPassword) {
