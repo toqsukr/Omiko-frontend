@@ -1,23 +1,16 @@
-import { useState, FC } from 'react';
-import { useForm } from 'react-hook-form';
+import { FC } from 'react';
 import PopupWindow from '@components/popupWindow/popupWindow.component';
 import Input from '@components/input/input.component';
-import type { ISignInput } from '@interfaces/sign.interface';
+import { useSign } from '@hooks/useSign.hook';
 
 import { SignMode } from './sign.d';
 import type { IShow } from '@interfaces/show.interface';
 import css from './Sign.module.css';
-import { useSign } from '@hooks/useSign.hook';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
-  //   const { isLogin, setIsLogin } = useContext(LoginContext);
-  const [signMode, setSignMode] = useState(SignMode.Enter);
-  const { enterSubmit, registerSubmit } = useSign({ setShow });
-  const { register, handleSubmit } = useForm<ISignInput>();
-
-  function handleModeBtn() {
-    setSignMode(signMode === SignMode.Register ? SignMode.Enter : SignMode.Register);
-  }
+  const { signMode, register, handleSubmit, registerSubmit, enterSubmit, handleModeBtn } = useSign({
+    setShow
+  });
 
   return (
     <PopupWindow windowStyleID={css.signWindow} isShow={isShow} setShow={setShow}>
