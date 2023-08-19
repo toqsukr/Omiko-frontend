@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Glyf from '../../glyf/glyf.component';
+import Glyf from '@components/glyf/glyf.component';
 import { IAdvantageGlyf } from './advantageGlyf';
 
 import css from './advantageGlyf.module.css';

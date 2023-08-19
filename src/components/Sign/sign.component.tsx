@@ -1,17 +1,16 @@
 import { FC, useContext } from 'react';
+import { useMutation } from 'react-query';
+import { useForm } from 'react-hook-form';
+import Cookies from 'js-cookie';
 import PopupWindow from '@components/popupWindow/popupWindow.component';
 import Input from '@components/input/input.component';
-import { useSignMode } from '@hooks/useSignMode.hook';
-
-import { SignMode } from './sign.d';
-import type { IShow } from '@interfaces/show.interface';
-import css from './Sign.module.css';
-import { ISignInput, ILogin } from '@interfaces/sign.interface';
-import { useForm } from 'react-hook-form';
-import { useMutation } from 'react-query';
 import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
-import Cookies from 'js-cookie';
+import { useSignMode } from '@hooks/useSignMode.hook';
 import authService from '@services/auth.service';
+import type { IShow } from '@interfaces/show.interface';
+import { ISignInput, ILogin } from '@interfaces/sign.interface';
+import { SignMode } from './sign.d';
+import css from './Sign.module.css';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const { register, reset, handleSubmit } = useForm<ISignInput>();
@@ -23,7 +22,10 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
     {
       onSuccess(data) {
         alert(`Registered new user ${data.data}`);
-        Cookies.set('auth', data?.data);
+        setShow(false);
+        setIsLogin(true);
+        reset();
+        Cookies.set('auth', data?.data?.access_token);
       },
       onError(error) {
         alert(error);
@@ -32,8 +34,11 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
   );
   const loginMutation = useMutation(['login'], (userData: ILogin) => authService.login(userData), {
     onSuccess(data) {
-      alert(`Registered new user ${data.data}`);
-      Cookies.set('auth', data?.data);
+      // alert('Welcome back');
+      setShow(false);
+      setIsLogin(true);
+      reset();
+      Cookies.set('auth', data?.data?.access_token);
     },
     onError(error) {
       alert(error);
@@ -45,9 +50,6 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
       if (data.password === data.repeatPassword) {
         console.log(data);
         registerMutation.mutate(data);
-        setShow(false);
-        setIsLogin(true);
-        reset();
       } else alert("Passwords don't equal");
     } catch (e) {
       console.log(e);
@@ -58,9 +60,6 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
     try {
       console.log(data);
       loginMutation.mutate(data);
-      setShow(false);
-      setIsLogin(true);
-      reset();
     } catch (e) {
       console.log(e);
     }

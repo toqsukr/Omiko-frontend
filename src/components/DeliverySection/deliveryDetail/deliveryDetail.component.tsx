@@ -1,9 +1,8 @@
 import { FC } from 'react';
-import { deliveryDetails } from '@utils/data';
 import PopupWindow from '@components/popupWindow/popupWindow.component';
-
-import css from './DeliveryDetail.module.css';
+import { deliveryDetails } from '@utils/data';
 import { IShow } from '@interfaces/show.interface';
+import css from './DeliveryDetail.module.css';
 
 const DeliveryDetail: FC<IShow> = ({ isShow, setShow }) => {
   return (

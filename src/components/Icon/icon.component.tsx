@@ -1,5 +1,4 @@
 import { FC } from 'react';
-
 import type { IIcon } from './icon';
 import css from './Icon.module.css';
 
