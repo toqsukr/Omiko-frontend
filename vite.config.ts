@@ -13,7 +13,9 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, './src/utils'),
       '@providers': path.resolve(__dirname, './src/providers'),
       '@interfaces': path.resolve(__dirname, './src/interfaces'),
-      '@services': path.resolve(__dirname, './src/services')
+      '@services': path.resolve(__dirname, './src/services'),
+      '@api': path.resolve(__dirname, './src/api'),
+      '@constants': path.resolve(__dirname, './src/constants')
     }
   }
 });

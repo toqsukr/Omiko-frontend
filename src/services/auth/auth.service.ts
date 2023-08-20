@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { SERVER_URL } from 'src/constants/constants';
 import Cookies from 'js-cookie';
-import { getContentType } from 'src/api/api.helper';
-import { IAuthResponse, saveToStorage } from './auth.helper';
+import { SERVER_URL } from '@constants/constants';
+import { getContentType } from '@api/api.helper';
+import { instance } from '@api/api.interceptor';
 import { ILogin } from '@interfaces/sign.interface';
-import { instance } from 'src/api/api.interceptor';
+import { IAuthResponse, saveToStorage } from './auth.helper';
 
 export const AuthService = {
   async main(type: 'login' | 'register', data: ILogin) {

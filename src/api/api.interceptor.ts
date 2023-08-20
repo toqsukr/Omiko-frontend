@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { SERVER_URL } from 'src/constants/constants';
-import { errorCatch, getContentType } from './api.helper';
+import { SERVER_URL } from '@constants/constants';
 import { getAccessToken, removeFromStorage } from '@services/auth/auth.helper';
 import { AuthService } from '@services/auth/auth.service';
+import { errorCatch, getContentType } from './api.helper';
 
 export const instance = axios.create({
   baseURL: SERVER_URL,
