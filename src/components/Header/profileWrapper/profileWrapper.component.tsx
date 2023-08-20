@@ -9,7 +9,7 @@ import Cookies from 'js-cookie';
 const ProfileWrapper: FC<IShow> = ({ isShow, setShow }) => {
   const { setIsLogin } = useContext(LoginShowContext);
   const handleExitClick = () => {
-    Cookies.remove('auth');
+    Cookies.remove('accessToken');
     setShow(false);
     setIsLogin(false);
   };
