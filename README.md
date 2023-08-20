@@ -17,7 +17,9 @@ This is the frontend part of the Omiko Store web application. It is built using 
 ```
 ├── public/             # Static files
 ├── src/                # Source code
+│   ├── api/            # Functions responsible for interacting with the server
 │   ├── components/     # Reusable components
+│   ├── constants/      # Used constants
 │   ├── hooks/          # Custom hooks
 │   ├── pages/          # Component-based pages
 │   ├── providers/      # Application providers
