@@ -3,15 +3,32 @@ import PopupWindow from '@components/popupWindow/popupWindow.component';
 import Input from '@components/input/input.component';
 import { useSignMode } from '@hooks/useSignMode.hook';
 import type { IShow } from '@interfaces/show.interface';
-import { useAuth } from '@hooks/useAuth.hook';
 import { SignMode } from './sign.d';
 import css from './Sign.module.css';
+import { useForm } from 'react-hook-form';
+import { ISignInput, ILogin } from '@interfaces/sign.interface';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
-  const { register, handleSubmit, enterSubmit, registerSubmit } = useAuth({ setShow });
+  const { register, handleSubmit } = useForm();
   const { signMode, handleModeBtn } = useSignMode();
+  // const { register, handleSubmit, enterSubmit, registerSubmit } = useAuth({ setShow });
+  const registerSubmit = (data: ISignInput) => {
+    try {
+      if (data.password === data.repeatPassword) {
+        console.log(data);
+      } else alert("Passwords don't equal");
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
-  const handleAuthSubmit = handleSubmit(signMode === SignMode.Enter ? enterSubmit : registerSubmit);
+  const enterSubmit = (data: ILogin) => {
+    try {
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <PopupWindow windowStyleID={css.signWindow} isShow={isShow} setShow={setShow}>
@@ -19,7 +36,10 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
         <div className={css.titleContainer}>
           <h1 id={css.title}>{signMode === SignMode.Enter ? 'Вход' : 'Регистрация'}</h1>
         </div>
-        <form onSubmit={handleAuthSubmit} className={css.form}>
+        <form
+          /*onSubmit={handleSubmit(signMode === SignMode.Enter ? enterSubmit : registerSubmit)}*/
+          className={css.form}
+        >
           <Input
             className={css.input}
             label="Email"
