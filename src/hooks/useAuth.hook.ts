@@ -17,10 +17,6 @@ export const useAuth = ({ setShow }: Omit<IShow, 'isShow'>) => {
     {
       onSuccess(data) {
         alert(`Registered new user ${data.data}`);
-        setShow(false);
-        setIsLogin(true);
-        reset();
-        Cookies.set('accessToken', data?.data?.access_token);
       },
       onError(error) {
         alert(error);
@@ -45,6 +41,7 @@ export const useAuth = ({ setShow }: Omit<IShow, 'isShow'>) => {
       if (data.password === data.repeatPassword) {
         console.log(data);
         registerMutation.mutate(data);
+        loginMutation.mutate(data);
       } else alert("Passwords don't equal");
     } catch (e) {
       console.log(e);

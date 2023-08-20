@@ -3,9 +3,9 @@ import PopupWindow from '@components/popupWindow/popupWindow.component';
 import Input from '@components/input/input.component';
 import { useSignMode } from '@hooks/useSignMode.hook';
 import type { IShow } from '@interfaces/show.interface';
+import { useAuth } from '@hooks/useAuth.hook';
 import { SignMode } from './sign.d';
 import css from './Sign.module.css';
-import { useAuth } from '@hooks/useAuth.hook';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const { register, handleSubmit, enterSubmit, registerSubmit } = useAuth({ setShow });

@@ -3,8 +3,8 @@ import { ILogin } from '@interfaces/sign.interface';
 
 class AuthService {
   private URL = 'https://omiko-auth.onrender.com/';
-  async registration(data: ILogin) {
-    return await axios.post(`${this.URL}user`, data);
+  registration(data: ILogin) {
+    return axios.post(`${this.URL}user`, data);
   }
 
   async login(data: ILogin) {
