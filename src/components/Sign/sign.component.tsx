@@ -11,6 +11,7 @@ import { ISignInput } from '@interfaces/sign.interface';
 import { validEmail } from './valid-email';
 import { SignMode } from './sign.d';
 import css from './Sign.module.css';
+import Loader from '@components/ui/Loader/Loader';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const { isLoading } = useAuth();
@@ -19,7 +20,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
     reset,
     formState: { errors },
     handleSubmit
-  } = useForm<ISignInput>({ mode: 'onChange' });
+  } = useForm<ISignInput>();
 
   const { signMode, handleModeBtn } = useSignMode();
   const onSubmit: SubmitHandler<IEmailPassword> = data => {
@@ -38,12 +39,12 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
           <Input
             className={css.input}
             placeholder="Email"
-            type="email"
+            type="text"
             {...formRegister('email', {
-              required: 'Email is required',
+              required: 'Введите ваш email',
               pattern: {
                 value: validEmail,
-                message: 'Invalid email address'
+                message: 'Введен некорректный email'
               }
             })}
             error={errors.email?.message}
@@ -53,8 +54,8 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
             placeholder="Пароль"
             type="password"
             {...formRegister('password', {
-              required: 'Password is required',
-              minLength: { value: 6, message: 'Password length should more 6 symbols' }
+              required: 'Введите ваш пароль',
+              minLength: { value: 6, message: 'Пароль должен состоять минимум из 6 символов' }
             })}
             error={errors.password?.message}
           />
@@ -64,13 +65,15 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
               placeholder="Подтвердите пароль"
               type="password"
               {...formRegister('repeatPassword', {
-                required: 'Repeat password is required',
-                minLength: { value: 6, message: 'Password length should more 6 symbols' }
+                required: 'Подтвердите ваш пароль',
+                minLength: { value: 6, message: 'Пароль должен состоять минимум из 6 символов' }
               })}
               error={errors.repeatPassword?.message}
             />
           )}
-          {signMode === SignMode.Register ? (
+          {isLoading ? (
+            <Loader />
+          ) : signMode === SignMode.Register ? (
             <button className={css.button} id={css.submitBtn}>
               Зарегистрироваться
             </button>

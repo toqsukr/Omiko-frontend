@@ -29,6 +29,7 @@ const Input = forwardRef<HTMLInputElement, IInput>(
             {placeholder}
           </span>
         </label>
+        {error && <div className={css.error}>{error}</div>}
       </div>
     );
   }
