@@ -1,63 +1,73 @@
 import { FC } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import PopupWindow from '@components/popupWindow/popupWindow.component';
 import Input from '@components/input/input.component';
+import { IEmailPassword } from '@store/user/user.interface';
+import { login, register } from '@store/user/user.actions';
 import { useSignMode } from '@hooks/useSignMode.hook';
+import { useAuth } from '@hooks/useAuth.hook';
 import type { IShow } from '@interfaces/show.interface';
+import { ISignInput } from '@interfaces/sign.interface';
+import { validEmail } from './valid-email';
 import { SignMode } from './sign.d';
 import css from './Sign.module.css';
-import { useForm } from 'react-hook-form';
-import { ISignInput, IEmailPassword } from '@interfaces/sign.interface';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
-  const { register, handleSubmit } = useForm();
-  const { signMode, handleModeBtn } = useSignMode();
-  // const { register, handleSubmit, enterSubmit, registerSubmit } = useAuth({ setShow });
-  const registerSubmit = (data: ISignInput) => {
-    try {
-      if (data.password === data.repeatPassword) {
-        console.log(data);
-      } else alert("Passwords don't equal");
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  const { isLoading } = useAuth();
+  const {
+    register: formRegister,
+    reset,
+    formState: { errors },
+    handleSubmit
+  } = useForm<ISignInput>({ mode: 'onChange' });
 
-  const enterSubmit = (data: IEmailPassword) => {
-    try {
-      console.log(data);
-    } catch (e) {
-      console.log(e);
-    }
+  const { signMode, handleModeBtn } = useSignMode();
+  const onSubmit: SubmitHandler<IEmailPassword> = data => {
+    if (signMode === SignMode.Login) login(data);
+    else register(data);
+    reset();
   };
 
   return (
     <PopupWindow windowStyleID={css.signWindow} isShow={isShow} setShow={setShow}>
       <div className={css.signInnerContainer}>
         <div className={css.titleContainer}>
-          <h1 id={css.title}>{signMode === SignMode.Enter ? 'Вход' : 'Регистрация'}</h1>
+          <h1 id={css.title}>{signMode === SignMode.Login ? 'Вход' : 'Регистрация'}</h1>
         </div>
-        <form
-          /*onSubmit={handleSubmit(signMode === SignMode.Enter ? enterSubmit : registerSubmit)}*/
-          className={css.form}
-        >
+        <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
           <Input
             className={css.input}
-            label="Email"
+            placeholder="Email"
             type="email"
-            register={register('email', { required: 'Email is required' })}
+            {...formRegister('email', {
+              required: 'Email is required',
+              pattern: {
+                value: validEmail,
+                message: 'Invalid email address'
+              }
+            })}
+            error={errors.email?.message}
           />
           <Input
             className={css.input}
-            label="Пароль"
+            placeholder="Пароль"
             type="password"
-            register={register('password', { required: 'Password is required' })}
+            {...formRegister('password', {
+              required: 'Password is required',
+              minLength: { value: 6, message: 'Password length should more 6 symbols' }
+            })}
+            error={errors.password?.message}
           />
           {signMode === SignMode.Register && (
             <Input
               className={css.input}
-              label="Подтвердите пароль"
+              placeholder="Подтвердите пароль"
               type="password"
-              register={register('repeatPassword', { required: 'Repeat password is required' })}
+              {...formRegister('repeatPassword', {
+                required: 'Repeat password is required',
+                minLength: { value: 6, message: 'Password length should more 6 symbols' }
+              })}
+              error={errors.repeatPassword?.message}
             />
           )}
           {signMode === SignMode.Register ? (
@@ -75,7 +85,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
           <a className={css.button} id={css.otherBtn} onClick={handleModeBtn}>
             {signMode === SignMode.Register ? 'Вход' : 'Регистрация'}
           </a>
-          {signMode === SignMode.Enter && (
+          {signMode === SignMode.Login && (
             <a className={css.button} id={css.otherBtn}>
               Забыли пароль?
             </a>

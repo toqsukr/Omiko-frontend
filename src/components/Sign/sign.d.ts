@@ -1,4 +1,4 @@
 export enum SignMode {
   Register,
-  Enter
+  Login
 }

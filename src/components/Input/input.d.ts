@@ -1,9 +1,7 @@
+import { InputHTMLAttributes } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
-export interface IInput {
-  register: UseFormRegisterReturn;
-  label?: string;
-  type?: string;
-  className?: string;
-  id?: string;
+export interface IInput extends InputHTMLAttributes<HTMLInputElement> {
+  placeholder: string;
+  error?: string;
 }
