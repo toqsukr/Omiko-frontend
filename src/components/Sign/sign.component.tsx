@@ -7,7 +7,7 @@ import { useSignMode } from '@hooks/useSignMode.hook';
 import { useAuth } from '@hooks/useAuth.hook';
 import type { IShow } from '@interfaces/show.interface';
 import { ISignInput } from '@interfaces/sign.interface';
-import { validEmail } from './valid-email';
+import { validEmail, validPassword } from './sign-validation';
 import { SignMode } from './sign.d';
 import css from './Sign.module.css';
 import Loader from '@components/ui/Loader/Loader';
@@ -58,7 +58,11 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
             type="password"
             {...formRegister('password', {
               required: 'Введите ваш пароль',
-              minLength: { value: 6, message: 'Пароль должен состоять минимум из 6 символов' }
+              minLength: { value: 6, message: 'Пароль должен состоять минимум из 6 символов' },
+              pattern: {
+                value: validPassword,
+                message: 'Пароль должен содержать заглавные буквы, цифры, спецсимволы'
+              }
             })}
             error={errors.password?.message}
           />
@@ -70,7 +74,11 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
               type="password"
               {...formRegister('repeatPassword', {
                 required: 'Подтвердите ваш пароль',
-                minLength: { value: 6, message: 'Пароль должен состоять минимум из 6 символов' }
+                minLength: { value: 6, message: 'Пароль должен состоять минимум из 6 символов' },
+                pattern: {
+                  value: validPassword,
+                  message: 'Пароль должен содержать заглавные буквы, цифры, спецсимволы'
+                }
               })}
               error={errors.repeatPassword?.message}
             />
