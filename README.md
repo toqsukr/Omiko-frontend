@@ -40,6 +40,7 @@ This is the frontend part of the Omiko Store web application. It is built using 
 - TypeScript: Programming language for adding static typing to JavaScript
 - HTML: Markup language for structuring the application
 - CSS: Styling language for designing the user interface
+- React-Query: library for managing server state in React applications, providing caching, invalidation, and data updates from API requests.
 - React Router: Library for managing navigation and routing in the application
 - React Hook Form: Library for managing forms in React with easy-to-use hooks and performance optimizations
 - React Spring: Library for creating smooth animations and transitions in React applications.
