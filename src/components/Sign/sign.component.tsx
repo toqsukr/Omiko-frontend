@@ -30,7 +30,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
   };
 
   return (
-    <PopupWindow windowStyleID={css.signWindow} isShow={isShow} setShow={setShow}>
+    <PopupWindow windowStyleID={css.signWindow} isShow={isShow} setShow={isLoading ? () => {} : setShow}>
       <div className={css.signInnerContainer}>
         <div className={css.titleContainer}>
           <h1 id={css.title}>{signMode === SignMode.Login ? 'Вход' : 'Регистрация'}</h1>
@@ -39,6 +39,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
           <Input
             className={css.input}
             placeholder="Email"
+            disabled={isLoading}
             type="text"
             {...formRegister('email', {
               required: 'Введите ваш email',
@@ -52,6 +53,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
           <Input
             className={css.input}
             placeholder="Пароль"
+            disabled={isLoading}
             type="password"
             {...formRegister('password', {
               required: 'Введите ваш пароль',
@@ -62,6 +64,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
           {signMode === SignMode.Register && (
             <Input
               className={css.input}
+              disabled={isLoading}
               placeholder="Подтвердите пароль"
               type="password"
               {...formRegister('repeatPassword', {
@@ -85,7 +88,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
         </form>
 
         <div className={css.buttonContainer}>
-          <a className={css.button} id={css.otherBtn} onClick={handleModeBtn}>
+          <a className={css.button} id={css.otherBtn} onClick={!isLoading ? handleModeBtn : () => {}}>
             {signMode === SignMode.Register ? 'Вход' : 'Регистрация'}
           </a>
           {signMode === SignMode.Login && (
