@@ -4,12 +4,12 @@ import ProfileElement from './profileElement/profileElement.component';
 import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
 import type { IShow } from '@interfaces/show.interface';
 import css from './profileWrapper.module.css';
-import Cookies from 'js-cookie';
+import { logout } from '@store/user/user.actions';
 
 const ProfileWrapper: FC<IShow> = ({ isShow, setShow }) => {
   const { setIsLogin } = useContext(LoginShowContext);
   const handleExitClick = () => {
-    Cookies.remove('accessToken');
+    logout();
     setShow(false);
     setIsLogin(false);
   };
