@@ -1,10 +1,10 @@
 import { useContext, FC } from 'react';
-import { ReactSVG } from 'react-svg';
 import { scroller } from 'react-scroll';
 import { LocationShowContext } from '@providers/showProviders/LocationShowProvider';
 import { catigories } from '@utils/data';
 
 import css from './LogoNav.module.css';
+import LogoIcon from '@components/ui/icons/LogoIcon';
 
 const LogoNav: FC = () => {
   const { setShowWrapper } = useContext(LocationShowContext);
@@ -23,10 +23,9 @@ const LogoNav: FC = () => {
           })}
         </div>
       }
-      <ReactSVG
+      <LogoIcon
         type="button"
         id={css.logo}
-        src="icons/fulllogo.svg"
         onClick={() =>
           scroller.scrollTo('top', {
             offset: -124,
@@ -34,7 +33,7 @@ const LogoNav: FC = () => {
             smooth: 'easeInOutQuart'
           })
         }
-      ></ReactSVG>
+      />
       <div className={css.catigoryContainer} id={css.right}>
         {catigories.map((el: string, index: number) => {
           if (index >= 3)

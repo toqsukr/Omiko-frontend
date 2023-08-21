@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ReactSVG } from 'react-svg';
+import GithubIcon from '@components/ui/icons/GithubIcon';
 import { footer } from '@utils/data';
 
 import css from './Footer.module.css';
@@ -20,7 +20,7 @@ const Footer: FC = () => {
               skeesh24
             </a>
           </div>
-          <ReactSVG src="icons/github.svg" href="https://github.com/toqsukr/Omiko-frontend" />
+          <GithubIcon href="https://github.com/toqsukr/Omiko-frontend" />
         </div>
       </div>
     </footer>
