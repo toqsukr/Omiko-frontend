@@ -23,7 +23,8 @@
       "@interfaces/*": ["src/interfaces/*"],
       "@services/*": ["src/services/*"],
       "@api/*": ["src/api/*"],
-      "@constants/*": ["src/constants/*"]
+      "@constants/*": ["src/constants/*"],
+      "@store/*": ["src/store/*"]
     },
 
     /* Linting */

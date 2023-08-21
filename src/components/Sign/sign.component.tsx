@@ -6,7 +6,7 @@ import type { IShow } from '@interfaces/show.interface';
 import { SignMode } from './sign.d';
 import css from './Sign.module.css';
 import { useForm } from 'react-hook-form';
-import { ISignInput, ILogin } from '@interfaces/sign.interface';
+import { ISignInput, IEmailPassword } from '@interfaces/sign.interface';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const { register, handleSubmit } = useForm();
@@ -22,7 +22,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
     }
   };
 
-  const enterSubmit = (data: ILogin) => {
+  const enterSubmit = (data: IEmailPassword) => {
     try {
       console.log(data);
     } catch (e) {

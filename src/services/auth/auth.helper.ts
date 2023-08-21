@@ -1,14 +1,5 @@
 import Cookies from 'js-cookie';
-import { IUser } from '@interfaces/user.interface';
-
-export interface ITokens {
-  accessToken: string;
-  refreshToken: string;
-}
-
-export interface IAuthResponse extends ITokens {
-  user: IUser;
-}
+import { IAuthResponse, ITokens } from 'src/store/user/user.interface';
 
 export const getAccessToken = () => {
   const accessToken = Cookies.get('accessToken');

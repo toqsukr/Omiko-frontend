@@ -3,11 +3,12 @@ import Cookies from 'js-cookie';
 import { SERVER_URL } from '@constants/constants';
 import { getContentType } from '@api/api.helper';
 import { instance } from '@api/api.interceptor';
-import { ILogin } from '@interfaces/sign.interface';
-import { IAuthResponse, saveToStorage } from './auth.helper';
+import { IEmailPassword } from 'src/store/user/user.interface';
+import { saveToStorage } from './auth.helper';
+import { IAuthResponse } from 'src/store/user/user.interface';
 
 export const AuthService = {
-  async main(type: 'login' | 'register', data: ILogin) {
+  async main(type: 'login' | 'register', data: IEmailPassword) {
     const response = await instance<IAuthResponse>({
       url: `${SERVER_URL}/auth/${type}`,
       method: 'POST',

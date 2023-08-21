@@ -11,16 +11,18 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "@tanstack/react-query": "^4.33.0",
     "axios": "^1.4.0",
     "classnames": "^2.3.2",
     "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.4",
-    "react-query": "^3.39.3",
+    "react-redux": "^8.1.2",
     "react-scroll": "^1.8.9",
     "react-spring": "^9.7.2",
     "react-svg": "^16.1.19",
+    "redux-persist": "^6.0.0",
     "typeface-inter": "^3.18.1"
   },
   "devDependencies": {
@@ -29,6 +31,7 @@
     "@types/react-dom": "^18.2.7",
     "@types/react-scroll": "^1.8.7",
     "@types/react-transition-group": "^4.4.6",
+    "@types/redux-persist": "^4.3.1",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
