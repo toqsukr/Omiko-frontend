@@ -2,8 +2,7 @@ import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import PopupWindow from '@components/popupWindow/popupWindow.component';
 import Input from '@components/input/input.component';
-import { IEmailPassword } from '@store/user/user.interface';
-import { login, register } from '@store/user/user.actions';
+import { IUsernamePassword } from '@store/user/user.interface';
 import { useSignMode } from '@hooks/useSignMode.hook';
 import { useAuth } from '@hooks/useAuth.hook';
 import type { IShow } from '@interfaces/show.interface';
@@ -12,9 +11,11 @@ import { validEmail } from './valid-email';
 import { SignMode } from './sign.d';
 import css from './Sign.module.css';
 import Loader from '@components/ui/Loader/Loader';
+import { useActions } from '@hooks/useActions.hook';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const { isLoading } = useAuth();
+  const { login, register } = useActions();
   const {
     register: formRegister,
     reset,
@@ -23,8 +24,8 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
   } = useForm<ISignInput>();
 
   const { signMode, handleModeBtn } = useSignMode();
-  const onSubmit: SubmitHandler<IEmailPassword> = data => {
-    if (signMode === SignMode.Login) login(data);
+  const onSubmit: SubmitHandler<IUsernamePassword> = data => {
+    if (signMode === SignMode.LOGIN) login(data);
     else register(data);
     reset();
   };
@@ -33,7 +34,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
     <PopupWindow windowStyleID={css.signWindow} isShow={isShow} setShow={isLoading ? () => {} : setShow}>
       <div className={css.signInnerContainer}>
         <div className={css.titleContainer}>
-          <h1 id={css.title}>{signMode === SignMode.Login ? 'Вход' : 'Регистрация'}</h1>
+          <h1 id={css.title}>{signMode === SignMode.LOGIN ? 'Вход' : 'Регистрация'}</h1>
         </div>
         <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
           <Input
@@ -41,14 +42,14 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
             placeholder="Email"
             disabled={isLoading}
             type="text"
-            {...formRegister('email', {
+            {...formRegister('username', {
               required: 'Введите ваш email',
               pattern: {
                 value: validEmail,
                 message: 'Введен некорректный email'
               }
             })}
-            error={errors.email?.message}
+            error={errors.username?.message}
           />
           <Input
             className={css.input}
@@ -61,7 +62,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
             })}
             error={errors.password?.message}
           />
-          {signMode === SignMode.Register && (
+          {signMode === SignMode.REGISTER && (
             <Input
               className={css.input}
               disabled={isLoading}
@@ -76,7 +77,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
           )}
           {isLoading ? (
             <Loader />
-          ) : signMode === SignMode.Register ? (
+          ) : signMode === SignMode.REGISTER ? (
             <button className={css.button} id={css.submitBtn}>
               Зарегистрироваться
             </button>
@@ -89,9 +90,9 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
 
         <div className={css.buttonContainer}>
           <a className={css.button} id={css.otherBtn} onClick={!isLoading ? handleModeBtn : () => {}}>
-            {signMode === SignMode.Register ? 'Вход' : 'Регистрация'}
+            {signMode === SignMode.REGISTER ? 'Вход' : 'Регистрация'}
           </a>
-          {signMode === SignMode.Login && (
+          {signMode === SignMode.LOGIN && (
             <a className={css.button} id={css.otherBtn}>
               Забыли пароль?
             </a>

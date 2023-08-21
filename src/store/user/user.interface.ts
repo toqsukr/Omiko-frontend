@@ -1,7 +1,7 @@
 import { IUser } from '@interfaces/user.interface';
 
 export interface IUserState {
-  email: string;
+  username: string;
 }
 
 export interface ITokens {
@@ -14,8 +14,8 @@ export interface IInitialState {
   isLoading: boolean;
 }
 
-export interface IEmailPassword {
-  email: string;
+export interface IUsernamePassword {
+  username: string;
   password: string;
 }
 
