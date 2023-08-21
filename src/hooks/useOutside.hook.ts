@@ -1,18 +1,17 @@
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
+import { IShow } from '@interfaces/show.interface';
+import { useEffect, useRef, useState } from 'react';
 
-type TypeOut = {
+interface TypeOut extends IShow {
   ref: any;
-  isShow: boolean;
-  setIsShow: Dispatch<SetStateAction<boolean>>;
-};
+}
 
 export const useOutside = (initialIsVisible: boolean): TypeOut => {
-  const [isShow, setIsShow] = useState(initialIsVisible);
+  const [isShow, setShow] = useState(initialIsVisible);
   const ref = useRef<HTMLElement>(null);
 
   const handleClickOutside = (event: any) => {
     if (ref.current && !ref.current.contains(event.target)) {
-      setIsShow(false);
+      setShow(false);
     }
   };
 
@@ -23,5 +22,5 @@ export const useOutside = (initialIsVisible: boolean): TypeOut => {
     };
   });
 
-  return { ref, isShow, setIsShow };
+  return { ref, isShow, setShow };
 };

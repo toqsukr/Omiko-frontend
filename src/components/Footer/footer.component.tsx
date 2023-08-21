@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import GithubIcon from '@components/ui/icons/GithubIcon';
+import GithubIcon from '@components/ui/icons/GithubIcon.component';
 import { footer } from '@utils/data';
 
 import css from './Footer.module.css';

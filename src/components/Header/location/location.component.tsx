@@ -1,5 +1,5 @@
 import { useContext, FC } from 'react';
-import LocationIcon from '@components/ui/icons/LocationIcon';
+import LocationIcon from '@components/ui/icons/LocationIcon.component';
 import { LocationContext } from '@providers/LocationProvider';
 import { LocationShowContext } from '@providers/showProviders/LocationShowProvider';
 import LocationWrapper from '../locationWrapper/locationWrapper.component';

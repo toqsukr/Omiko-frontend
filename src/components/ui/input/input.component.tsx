@@ -6,7 +6,7 @@ import css from './Input.module.css';
 
 const Input = forwardRef<HTMLInputElement, IInput>(
   ({ placeholder, error, type, className, id, ...rest }, ref) => {
-    const [focused, setFocused] = useState(false);
+    const [focused, setFocused] = useState(true);
     const { onBlur, ...otherRest } = rest;
     return (
       <div className={className} id={id}>

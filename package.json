@@ -21,7 +21,6 @@
     "react-redux": "^8.1.2",
     "react-scroll": "^1.8.9",
     "react-spring": "^9.7.2",
-    "react-svg": "^16.1.19",
     "redux-persist": "^6.0.0",
     "typeface-inter": "^3.18.1"
   },

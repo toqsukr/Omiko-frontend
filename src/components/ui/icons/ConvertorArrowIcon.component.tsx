@@ -18,8 +18,8 @@ const ConvertorArrowIcon: FC<IIcon> = ({ ...props }) => {
         <path
           d="M11.5 0V66.4646M11.5 94L2 66.4646H11.5M11.5 94L21 66.4646H11.5M11.5 94V66.4646"
           stroke="#D9D9D9"
-          stroke-width="3"
-          stroke-linejoin="round"
+          strokeWidth="3"
+          strokeLinejoin="round"
         />
       </svg>
     </Icon>

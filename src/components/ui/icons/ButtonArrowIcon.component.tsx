@@ -17,7 +17,7 @@ const ButtonArrowIcon: FC<IIcon> = ({ ...props }) => {
         <path
           d="M1.26953 0V45M23.7383 29.5L13.7522 19.5H33.2251L23.7383 29.5Z"
           stroke="black"
-          stroke-linejoin="round"
+          strokeLinejoin="round"
         />
       </svg>
     </Icon>
