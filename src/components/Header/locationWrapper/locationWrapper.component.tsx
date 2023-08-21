@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import Wrapper from '@components/wrapper/wrapper.component';
+import Wrapper from '@components/ui/wrapper/wrapper.component';
 import LocationElement from './locationElement/locationElement.component';
 import { locations } from '@utils/data';
 import { LocationContext } from '@providers/LocationProvider';

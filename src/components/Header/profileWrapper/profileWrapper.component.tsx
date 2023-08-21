@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import Wrapper from '@components/wrapper/wrapper.component';
+import Wrapper from '@components/ui/wrapper/wrapper.component';
 import ProfileElement from './profileElement/profileElement.component';
 import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
 import type { IShow } from '@interfaces/show.interface';

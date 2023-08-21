@@ -2,32 +2,29 @@ import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import PopupWindow from '@components/popupWindow/popupWindow.component';
 import Input from '@components/input/input.component';
-import { IUsernamePassword } from '@store/user/user.interface';
+import Loader from '@components/ui/Loader/Loader';
 import { useSignMode } from '@hooks/useSignMode.hook';
 import { useAuth } from '@hooks/useAuth.hook';
+import { useActions } from '@hooks/useActions.hook';
 import type { IShow } from '@interfaces/show.interface';
 import { ISignInput } from '@interfaces/sign.interface';
 import { validEmail, validPassword } from './sign-validation';
 import { SignMode } from './sign.d';
 import css from './Sign.module.css';
-import Loader from '@components/ui/Loader/Loader';
-import { useActions } from '@hooks/useActions.hook';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const { isLoading } = useAuth();
   const { login, register } = useActions();
   const {
     register: formRegister,
-    reset,
     formState: { errors },
     handleSubmit
   } = useForm<ISignInput>();
 
   const { signMode, handleModeBtn } = useSignMode();
-  const onSubmit: SubmitHandler<IUsernamePassword> = data => {
+  const onSubmit: SubmitHandler<ISignInput> = ({ repeatPassword, ...data }) => {
     if (signMode === SignMode.LOGIN) login(data);
     else register(data);
-    reset();
   };
 
   return (
@@ -77,7 +74,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
                 minLength: { value: 6, message: 'Пароль должен состоять минимум из 6 символов' },
                 pattern: {
                   value: validPassword,
-                  message: 'Пароль должен содержать заглавные буквы, цифры, спецсимволы'
+                  message: 'Пароль должен содержать заглавные буквы, цифры и спецсимволы'
                 }
               })}
               error={errors.repeatPassword?.message}

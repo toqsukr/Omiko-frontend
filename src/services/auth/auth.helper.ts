@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie';
 import { IAuthResponse, ITokens } from 'src/store/user/user.interface';
 import { Tokens } from './auth.enum';
+import { cookieConfig } from './cookie.config';
 
 export const getAccessToken = () => {
   const accessToken = Cookies.get(Tokens.ACCESS_TOKEN);
@@ -12,8 +13,8 @@ export const getUserFromStorage = () => {
 };
 
 export const saveTokensStorage = (data: ITokens) => {
-  Cookies.set(Tokens.ACCESS_TOKEN, data.accessToken);
-  Cookies.set(Tokens.REFRESH_TOKEN, data.refreshToken);
+  Cookies.set(Tokens.ACCESS_TOKEN, data.accessToken, cookieConfig);
+  Cookies.set(Tokens.REFRESH_TOKEN, data.refreshToken, cookieConfig);
 };
 
 export const deleteTokensStorage = () => {

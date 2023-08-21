@@ -1,7 +1,5 @@
-export interface IIcon {
-  src: string;
-  className?: string;
+import { ButtonHTMLAttributes } from 'react';
+
+export interface IIcon extends ImageHTMLAttributes<HTMLImageElement> {
   onClick?: React.MouseEventHandler<HTMLSpanElement> | undefined;
-  id?: string;
-  alt?: string;
 }
