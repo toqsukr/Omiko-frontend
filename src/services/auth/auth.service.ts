@@ -13,7 +13,7 @@ export const AuthService = {
       method: 'POST',
       data
     });
-    if (response.data.accessToken) saveToStorage(response.data);
+    if (response.data.tokens) saveToStorage(response.data);
 
     return response.data;
   },
@@ -28,7 +28,7 @@ export const AuthService = {
         headers: getContentType()
       }
     );
-    if (response.data.accessToken) saveToStorage(response.data);
+    if (response.data.tokens) saveToStorage(response.data);
     return response;
   }
 };

@@ -19,6 +19,7 @@ export interface IUsernamePassword {
   password: string;
 }
 
-export interface IAuthResponse extends ITokens {
+export interface IAuthResponse {
+  tokens: ITokens;
   user: IUser;
 }
