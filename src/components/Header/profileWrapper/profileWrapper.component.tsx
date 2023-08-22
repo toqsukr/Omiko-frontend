@@ -1,17 +1,15 @@
-import { FC, useContext } from 'react';
 import Wrapper from '@components/ui/wrapper/wrapper.component';
-import ProfileElement from './profileElement/profileElement.component';
-import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
+import { useActions } from '@hooks/useActions.hook';
 import type { IShow } from '@interfaces/show.interface';
+import { FC } from 'react';
+import ProfileElement from './profileElement/profileElement.component';
 import css from './profileWrapper.module.css';
-import { logout } from '@store/user/user.actions';
 
 const ProfileWrapper: FC<IShow> = ({ isShow, setShow }) => {
-  const { setIsLogin } = useContext(LoginShowContext);
+  const { logout } = useActions();
   const handleExitClick = () => {
     logout();
     setShow(false);
-    setIsLogin(false);
   };
   return (
     <Wrapper isShow={isShow} setShow={setShow} windowStyleID={css.profileWrapper}>

@@ -1,5 +1,7 @@
 #cart {
   position: relative;
+  width: 49px;
+  height: 35px;
 }
 
 #productCountContainer {
@@ -7,10 +9,10 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 3px;
-  right: 4px;
+  width: 14px;
+  height: 14px;
+  top: 1px;
+  right: 2px;
 }
 
 #productCount {

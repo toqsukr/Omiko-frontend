@@ -13,7 +13,7 @@ import { validEmail, validPassword } from './sign-validation';
 import { SignMode } from './sign.d';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
-  const { isLoading } = useAuth();
+  const { user, isLoading } = useAuth();
   const { login, register } = useActions();
   const {
     register: formRegister,
@@ -31,7 +31,11 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const passwordMatch = () => watch('password') === watch('repeatPassword') || 'Пароли не совпадают';
 
   return (
-    <PopupWindow windowStyleID={css.signWindow} isShow={isShow} setShow={isLoading ? () => {} : setShow}>
+    <PopupWindow
+      windowStyleID={css.signWindow}
+      isShow={!!!user && isShow}
+      setShow={isLoading ? () => {} : setShow}
+    >
       <div className={css.signInnerContainer}>
         <div className={css.titleContainer}>
           <h1 id={css.title}>{signMode === SignMode.LOGIN ? 'Вход' : 'Регистрация'}</h1>

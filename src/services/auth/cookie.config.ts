@@ -1,1 +1,1 @@
-export const cookieConfig = { expires: 7, secure: true };
+export const cookieConfig = { secure: true };
