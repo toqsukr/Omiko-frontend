@@ -5,15 +5,6 @@ import { removeFromStorage } from '@services/auth/auth.helper';
 import { AuthService } from '@services/auth/auth.service';
 import { SignMode } from '@components/sign/sign.d';
 
-export const register = createAsyncThunk<IAuthResponse, IUsernamePassword>('user', async (data, thunkApi) => {
-  try {
-    const response = await AuthService.main(SignMode.REGISTER, data);
-    return response;
-  } catch (error) {
-    return thunkApi.rejectWithValue(error);
-  }
-});
-
 export const login = createAsyncThunk<IAuthResponse, IUsernamePassword>(
   'auth/login',
   async (data, thunkApi) => {
@@ -26,6 +17,16 @@ export const login = createAsyncThunk<IAuthResponse, IUsernamePassword>(
     }
   }
 );
+
+export const register = createAsyncThunk<IAuthResponse, IUsernamePassword>('user', async (data, thunkApi) => {
+  try {
+    await AuthService.main(SignMode.REGISTER, data);
+    const response = await AuthService.main(SignMode.LOGIN, data);
+    return response;
+  } catch (error) {
+    return thunkApi.rejectWithValue(error);
+  }
+});
 
 export const logout = createAsyncThunk('auth/logout', async () => {
   removeFromStorage();

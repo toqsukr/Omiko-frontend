@@ -18,7 +18,8 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const {
     register: formRegister,
     formState: { errors },
-    handleSubmit
+    handleSubmit,
+    watch
   } = useForm<ISignInput>();
 
   const { signMode, handleModeBtn } = useSignMode();
@@ -26,6 +27,8 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
     if (signMode === SignMode.LOGIN) login(data);
     else register(data);
   };
+
+  const passwordMatch = () => watch('password') === watch('repeatPassword') || 'Пароли не совпадают';
 
   return (
     <PopupWindow windowStyleID={css.signWindow} isShow={isShow} setShow={isLoading ? () => {} : setShow}>
@@ -58,7 +61,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
               minLength: { value: 6, message: 'Пароль должен состоять минимум из 6 символов' },
               pattern: {
                 value: validPassword,
-                message: 'Пароль должен содержать заглавные буквы, цифры, спецсимволы'
+                message: 'Пароль должен содержать заглавные буквы, цифры и спецсимволы'
               }
             })}
             error={errors.password?.message}
@@ -72,10 +75,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
               {...formRegister('repeatPassword', {
                 required: 'Подтвердите ваш пароль',
                 minLength: { value: 6, message: 'Пароль должен состоять минимум из 6 символов' },
-                pattern: {
-                  value: validPassword,
-                  message: 'Пароль должен содержать заглавные буквы, цифры и спецсимволы'
-                }
+                validate: passwordMatch
               })}
               error={errors.repeatPassword?.message}
             />

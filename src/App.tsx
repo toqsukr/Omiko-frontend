@@ -13,29 +13,27 @@ import './App.css';
 
 const App: FC = () => {
   return (
-    <>
-      <RootShowProvider>
-        <LocationProvider>
-          <Header />
-          <div id="bodyContainer">
-            <Element name="top">
-              <SectionContainer />
-            </Element>
-            <PopularProducts />
-            <Element name="delivery">
-              <DeliverySection />
-            </Element>
-            <Element name="advantage">
-              <AdvantageSection />
-            </Element>
-            <Element name="about">
-              <AboutSection />
-            </Element>
-            <Footer />
-          </div>
-        </LocationProvider>
-      </RootShowProvider>
-    </>
+    <RootShowProvider>
+      <LocationProvider>
+        <Header />
+        <div id="bodyContainer">
+          <Element name="top">
+            <SectionContainer />
+          </Element>
+          <PopularProducts />
+          <Element name="delivery">
+            <DeliverySection />
+          </Element>
+          <Element name="advantage">
+            <AdvantageSection />
+          </Element>
+          <Element name="about">
+            <AboutSection />
+          </Element>
+          <Footer />
+        </div>
+      </LocationProvider>
+    </RootShowProvider>
   );
 };
 

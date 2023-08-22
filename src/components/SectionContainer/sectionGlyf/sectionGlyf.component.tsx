@@ -8,9 +8,9 @@ const SectionGlyf: FC<ISectionGlyf> = ({ title, description, onClick }) => {
     <Glyf id={css.sectionGlyf} onClick={onClick}>
       <h1 className={css.title}>{title}</h1>
       <div className={css.descriptionContainer}>
-        {description.map((pEl, pIndex) => (
-          <p key={pIndex} className={css.description}>
-            {pEl}
+        {description.map((el, index) => (
+          <p key={index} className={css.description}>
+            {el}
           </p>
         ))}
         <p className={css.detail}>подробнее</p>
