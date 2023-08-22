@@ -1,4 +1,5 @@
-import { IClickGlyf } from '@components/glyf/glyf';
-export interface IAdvantageGlyf extends IClickGlyf {
+import { IGlyf } from '@components/glyf/glyf';
+
+export interface IAdvantageGlyf extends IGlyf {
   description: string[];
 }

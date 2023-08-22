@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import PopupWindow from '@components/popupWindow/popupWindow.component';
+import PopupWindow from '@components/ui/popupWindow/popupWindow.component';
 import { deliveryDetails } from '@utils/data';
 import { IShow } from '@interfaces/show.interface';
 import css from './DeliveryDetail.module.css';

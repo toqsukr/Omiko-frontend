@@ -1,11 +1,11 @@
 import { FC, PropsWithChildren } from 'react';
-import { IClickGlyf } from './glyf.d';
+import { IGlyf } from './glyf';
 
 import css from './Glyf.module.css';
 
-const Glyf: FC<PropsWithChildren<IClickGlyf>> = ({ glyfStyleID, onClick, children }) => {
+const Glyf: FC<PropsWithChildren<IGlyf>> = ({ id, onClick, children }) => {
   return (
-    <div className={css.mainContainer} onClick={onClick} id={glyfStyleID}>
+    <div className={css.mainContainer} onClick={onClick} id={id}>
       {children}
     </div>
   );

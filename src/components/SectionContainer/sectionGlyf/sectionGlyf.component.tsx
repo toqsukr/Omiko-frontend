@@ -5,7 +5,7 @@ import css from './sectionGlyf.module.css';
 
 const SectionGlyf: FC<ISectionGlyf> = ({ title, description, onClick }) => {
   return (
-    <Glyf glyfStyleID={css.sectionGlyf} onClick={onClick}>
+    <Glyf id={css.sectionGlyf} onClick={onClick}>
       <h1 className={css.title}>{title}</h1>
       <div className={css.descriptionContainer}>
         {description.map((pEl, pIndex) => (

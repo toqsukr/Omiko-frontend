@@ -1,7 +1,5 @@
-export interface IClickGlyf extends IStaticGlyf {
-  onClick?: MouseEventHandler<HTMLDivElement> | undefined;
-}
+import { AllHTMLAttributes } from 'react';
 
-export interface IStaticGlyf {
-  glyfStyleID?: string;
+export interface IGlyf extends AllHTMLAttributes<HTMLDivElement> {
+  onClick?: MouseEventHandler<HTMLDivElement> | undefined;
 }

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import PopupWindow from '@components/popupWindow/popupWindow.component';
+import PopupWindow from '@components/ui/popupWindow/popupWindow.component';
 import Input from '@components/ui/input/input.component';
 import Loader from '@components/ui/loader/loader';
 import { useSignMode } from '@hooks/useSignMode.hook';
