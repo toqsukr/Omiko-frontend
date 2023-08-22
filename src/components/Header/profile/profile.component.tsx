@@ -1,14 +1,14 @@
-import { FC, useContext } from 'react';
-import { useTransition, animated } from 'react-spring';
-import ProfileWrapper from '../profileWrapper/profileWrapper.component';
+import ProfileIcon from '@components/ui/icons/ProfileIcon.component';
+import SignIcon from '@components/ui/icons/SignIcon.component';
+import CartIcon from '@components/ui/icons/cartIcon/CartIcon.component';
+import type { IShow } from '@interfaces/show.interface';
 import { LoginShowContext } from '@providers/showProviders/LoginShowProvider';
 import { ProfileContext } from '@providers/showProviders/ProfileShowProvider';
-import type { IShow } from '@interfaces/show.interface';
-import { nameAnimation } from './profile.animation';
+import { FC, useContext } from 'react';
+import { animated, useTransition } from 'react-spring';
+import ProfileWrapper from '../profileWrapper/profileWrapper.component';
 import css from './Profile.module.css';
-import SignIcon from '@components/ui/icons/SignIcon.component';
-import CartIcon from '@components/ui/icons/CartIcon.component';
-import ProfileIcon from '@components/ui/icons/ProfileIcon.component';
+import { nameAnimation } from './profile.animation';
 
 const Profile: FC<IShow> = ({ isShow, setShow }) => {
   const { isLogin } = useContext(LoginShowContext);

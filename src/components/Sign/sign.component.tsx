@@ -1,16 +1,16 @@
-import { FC } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import PopupWindow from '@components/ui/popupWindow/popupWindow.component';
 import Input from '@components/ui/input/input.component';
 import Loader from '@components/ui/loader/loader';
-import { useSignMode } from '@hooks/useSignMode.hook';
-import { useAuth } from '@hooks/useAuth.hook';
+import PopupWindow from '@components/ui/popupWindow/popupWindow.component';
 import { useActions } from '@hooks/useActions.hook';
+import { useAuth } from '@hooks/useAuth.hook';
+import { useSignMode } from '@hooks/useSignMode.hook';
 import type { IShow } from '@interfaces/show.interface';
 import { ISignInput } from '@interfaces/sign.interface';
+import { FC } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import css from './Sign.module.css';
 import { validEmail, validPassword } from './sign-validation';
 import { SignMode } from './sign.d';
-import css from './Sign.module.css';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const { isLoading } = useAuth();
