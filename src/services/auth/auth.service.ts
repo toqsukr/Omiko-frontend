@@ -1,19 +1,30 @@
 import { getContentType } from '@api/api.helper';
 import { instance } from '@api/api.interceptor';
 import { SignMode } from '@components/sign/sign.d';
+import { SERVER_URL } from '@constants/constants';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { IAuthResponse, IUsernamePassword } from 'src/store/user/user.interface';
 import { saveToStorage } from './auth.helper';
 
 export const AuthService = {
-  async main(type: SignMode, data: IUsernamePassword) {
+  async login(data: IUsernamePassword) {
     const response = await instance<IAuthResponse>({
-      url: type === SignMode.LOGIN ? `/auth/${SignMode.LOGIN}` : '/user',
+      url: `/auth/${SignMode.LOGIN}`,
       method: 'POST',
-      data: data
+      data
     });
     if (response.data.tokens) saveToStorage(response.data);
+
+    return response.data;
+  },
+
+  async register(data: IUsernamePassword) {
+    const response = await axios.post<{ data: IAuthResponse }>(SERVER_URL + '/user', data, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
 
     return response.data;
   },

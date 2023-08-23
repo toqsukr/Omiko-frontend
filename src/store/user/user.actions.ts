@@ -1,5 +1,4 @@
 import { errorCatch } from '@api/api.helper';
-import { SignMode } from '@components/sign/sign.d';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { removeFromStorage } from '@services/auth/auth.helper';
 import { AuthService } from '@services/auth/auth.service';
@@ -9,7 +8,7 @@ export const login = createAsyncThunk<IAuthResponse, IUsernamePassword>(
   '/auth/login',
   async (data, thunkApi) => {
     try {
-      const response = await AuthService.main(SignMode.LOGIN, data);
+      const response = await AuthService.login(data);
       return response;
     } catch (error) {
       return thunkApi.rejectWithValue(error);
@@ -21,8 +20,8 @@ export const register = createAsyncThunk<IAuthResponse, IUsernamePassword>(
   '/user',
   async (data, thunkApi) => {
     try {
-      await AuthService.main(SignMode.REGISTER, data);
-      const response = await AuthService.main(SignMode.LOGIN, data);
+      await AuthService.register(data);
+      const response = await AuthService.login(data);
       return response;
     } catch (error) {
       return thunkApi.rejectWithValue(error);
