@@ -1,17 +1,16 @@
-import { useRef, useContext, FC } from 'react';
-import { useTransition, animated } from 'react-spring';
-import DeliveryDetail from './deliveryDetail/deliveryDetail.component';
-import { deliveryInfo } from '@utils/data';
-import Convertor from './convertor/convertor.component';
+import { useOutside } from '@hooks/useOutside.hook';
 import { LocationContext } from '@providers/LocationProvider';
-import { DeliveryDetailShowContext } from '@providers/showProviders/DeliveryDetailShowProvider';
-
-import { cityAnimation } from './deliverySection.animation';
+import { deliveryInfo } from '@utils/data';
+import { FC, useContext, useRef } from 'react';
+import { animated, useTransition } from 'react-spring';
 import css from './DeliverySection.module.css';
+import Convertor from './convertor/convertor.component';
+import DeliveryDetail from './deliveryDetail/deliveryDetail.component';
+import { cityAnimation } from './deliverySection.animation';
 
 const DeliverySection: FC = () => {
   const { location } = useContext(LocationContext);
-  const { showDetail, setShowDetail } = useContext(DeliveryDetailShowContext);
+  const { ref, isShow, setShow } = useOutside(false);
   const cityRef = useRef(location.city === 'Другой' ? 'в регионы России' : `г. ${location.city}`);
   const cityTransition = useTransition(location, {
     ...cityAnimation,
@@ -37,13 +36,13 @@ const DeliverySection: FC = () => {
               </p>
             ))}
           </div>
-          <button type="button" className={css.infoButton} onClick={() => setShowDetail(true)}>
+          <button type="button" className={css.infoButton} onClick={() => setShow(true)}>
             <p id={css.infoButtonText}>детали доставки</p>
           </button>
         </div>
         <Convertor />
       </div>
-      <DeliveryDetail isShow={showDetail} setShow={setShowDetail} />
+      <DeliveryDetail ref={ref} isShow={isShow} setShow={setShow} />
     </div>
   );
 };

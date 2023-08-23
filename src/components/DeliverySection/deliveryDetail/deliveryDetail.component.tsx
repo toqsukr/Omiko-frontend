@@ -1,12 +1,12 @@
-import { FC } from 'react';
 import PopupWindow from '@components/ui/popupWindow/popupWindow.component';
-import { deliveryDetails } from '@utils/data';
 import { IShow } from '@interfaces/show.interface';
+import { deliveryDetails } from '@utils/data';
+import { forwardRef } from 'react';
 import css from './DeliveryDetail.module.css';
 
-const DeliveryDetail: FC<IShow> = ({ isShow, setShow }) => {
+const DeliveryDetail = forwardRef<HTMLDivElement, IShow>(({ isShow, setShow }, ref) => {
   return (
-    <PopupWindow windowStyleID={css.detailWindow} isShow={isShow} setShow={setShow}>
+    <PopupWindow ref={ref} windowStyleID={css.detailWindow} isShow={isShow} setShow={setShow}>
       <div className={css.sideInnerContainer}>
         <div className={css.titleSideContainer}>
           <h1 id={css.titleText}>{deliveryDetails.title}</h1>
@@ -20,6 +20,6 @@ const DeliveryDetail: FC<IShow> = ({ isShow, setShow }) => {
       </div>
     </PopupWindow>
   );
-};
+});
 
 export default DeliveryDetail;
