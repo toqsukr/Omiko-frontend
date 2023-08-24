@@ -1,11 +1,12 @@
-import { getContentType } from '@api/api.helper';
 import { instance } from '@api/api.interceptor';
 import { SignMode } from '@components/sign/sign.d';
 import { SERVER_URL } from '@constants/constants';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import Cookies from 'js-cookie';
 import { IAuthResponse, IUsernamePassword } from 'src/store/user/user.interface';
-import { saveToStorage } from './auth.helper';
+import { Tokens } from './auth.enum';
+import { removeFromStorage, saveToStorage } from './auth.helper';
+import { cookieConfig } from './cookie.config';
 
 export const AuthService = {
   async login(data: IUsernamePassword) {
@@ -29,17 +30,34 @@ export const AuthService = {
     return response.data;
   },
 
+  async logout() {
+    const refreshToken = Cookies.get('refreshToken');
+    const response = await axios.post<{ data: AxiosResponse }>(
+      SERVER_URL + '/auth/logout',
+      { refreshToken },
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+    if (response.status === 200) removeFromStorage();
+    return response;
+  },
+
   async getNewTokens() {
     const refreshToken = Cookies.get('refreshToken');
 
-    const response = await axios.post<string, { data: IAuthResponse }>(
-      process.env.SERVER_URL + '/auth/refresh',
+    const response = await axios.post<string, { data: { accessToken: string } }>(
+      SERVER_URL + '/auth/refresh',
       { refreshToken },
       {
-        headers: getContentType()
+        headers: {
+          'Content-type': 'application/json'
+        }
       }
     );
-    if (response.data.tokens) saveToStorage(response.data);
+    if (response.data) Cookies.set(Tokens.ACCESS_TOKEN, response.data.accessToken, cookieConfig);
     return response;
   }
 };

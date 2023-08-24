@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { checkAuth, login, logout, register } from './user.actions';
+import { login, logout, register } from './user.actions';
 import { IInitialState } from './user.interface';
 
 const initialState: IInitialState = {
@@ -38,9 +38,6 @@ export const userSlice = createSlice({
       .addCase(logout.fulfilled, state => {
         state.isLoading = false;
         state.user = null;
-      })
-      .addCase(checkAuth.fulfilled, (state, { payload }) => {
-        state.user = payload.user;
       });
   }
 });
