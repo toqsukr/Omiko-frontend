@@ -6,20 +6,21 @@
 
 #productCountContainer {
   display: flex;
+  position: absolute;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  width: 16px;
-  height: 15px;
-  top: 0px;
-  right: 2px;
+  top: -3px;
+  right: -3px;
+  width: 19px;
+  height: 18px;
 }
 
 #productCount {
   font-family: 'Inter';
   font-weight: bold;
-  font-size: 10px;
+  font-size: 11px;
   color: rgb(255, 255, 255);
   width: auto;
   height: auto;
+  position: absolute;
 }
