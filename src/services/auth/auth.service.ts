@@ -53,7 +53,8 @@ export const AuthService = {
       { refreshToken },
       {
         headers: {
-          'Content-type': 'application/json'
+          'Content-type': 'application/json',
+          Authorization: `Bearer ${refreshToken}`
         }
       }
     );
