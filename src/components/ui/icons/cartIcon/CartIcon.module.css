@@ -1,7 +1,7 @@
 #cart {
   position: relative;
-  width: 49px;
-  height: 35px;
+  width: 56px;
+  height: 40px;
 }
 
 #productCountContainer {
@@ -9,17 +9,17 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 14px;
-  height: 14px;
-  top: 1px;
+  width: 16px;
+  height: 15px;
+  top: 0px;
   right: 2px;
 }
 
 #productCount {
-  font-family: 'Ubuntu';
-  font-weight: 500;
-  font-size: 8px;
-  color: white;
+  font-family: 'Inter';
+  font-weight: bold;
+  font-size: 10px;
+  color: rgb(255, 255, 255);
   width: auto;
   height: auto;
 }

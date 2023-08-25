@@ -16,13 +16,13 @@
 }
 
 #cart {
-  max-width: 49px;
-  max-height: 35px;
+  max-width: 55px;
+  max-height: 40px;
   cursor: pointer;
 }
 
 #icon {
-  height: 30px;
-  width: 30px;
+  height: 38px;
+  width: 38px;
   cursor: pointer;
 }
