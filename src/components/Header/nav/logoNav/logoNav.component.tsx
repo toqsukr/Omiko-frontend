@@ -1,15 +1,13 @@
-import { useContext, FC } from 'react';
-import { scroller } from 'react-scroll';
 import LogoIcon from '@components/ui/icons/LogoIcon.component';
-import { LocationShowContext } from '@providers/showProviders/LocationShowProvider';
 import { catigories } from '@utils/data';
+import { FC } from 'react';
+import { scroller } from 'react-scroll';
 
 import css from './LogoNav.module.css';
 
 const LogoNav: FC = () => {
-  const { setShowWrapper } = useContext(LocationShowContext);
   return (
-    <div onMouseEnter={() => setShowWrapper(false)} className={css.iconInnerContainer}>
+    <div className={css.iconInnerContainer}>
       {
         <div className={css.catigoryContainer} id={css.left}>
           {catigories.map((el: string, index: number) => {

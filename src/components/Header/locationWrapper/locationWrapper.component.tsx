@@ -1,17 +1,16 @@
-import { FC, useContext } from 'react';
 import Wrapper from '@components/ui/wrapper/wrapper.component';
-import LocationElement from './locationElement/locationElement.component';
-import { locations } from '@utils/data';
+import { IShow } from '@interfaces/show.interface';
 import { LocationContext } from '@providers/LocationProvider';
-import { LocationShowContext } from '@providers/showProviders/LocationShowProvider';
+import { locations } from '@utils/data';
+import { forwardRef, useContext } from 'react';
+import LocationElement from './locationElement/locationElement.component';
 import css from './locationWrapper.module.css';
 
-const LocationWrapper: FC = () => {
+const LocationWrapper = forwardRef<HTMLDivElement, IShow>(({ isShow, setShow }, ref) => {
   const { location, setLocation } = useContext(LocationContext);
-  const { showWrapper, setShowWrapper } = useContext(LocationShowContext);
 
   const handleChangeLocation = (index: number) => {
-    setShowWrapper(false);
+    setShow(false);
     setLocation({
       city: locations[index].city,
       phoneNumbers: locations[index].phoneNumbers,
@@ -20,10 +19,11 @@ const LocationWrapper: FC = () => {
   };
   return (
     <Wrapper
-      isShow={showWrapper}
-      setShow={setShowWrapper}
+      ref={ref}
+      isShow={isShow}
+      setShow={setShow}
       windowStyleID={css.locationWrapper}
-      onMouseLeave={() => setShowWrapper(false)}
+      onMouseLeave={() => setShow(false)}
     >
       <>
         {locations.map(
@@ -37,6 +37,6 @@ const LocationWrapper: FC = () => {
       </>
     </Wrapper>
   );
-};
+});
 
 export default LocationWrapper;
