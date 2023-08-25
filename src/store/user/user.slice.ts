@@ -4,7 +4,9 @@ import { IInitialState } from './user.interface';
 
 const initialState: IInitialState = {
   user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user') as string) : null,
-  isLoading: false
+  isLoading: false,
+  userNotFound: false,
+  emailExist: false
 };
 
 export const userSlice = createSlice({
@@ -15,6 +17,7 @@ export const userSlice = createSlice({
     builder
       .addCase(register.pending, state => {
         state.isLoading = true;
+        state.emailExist = false;
       })
       .addCase(register.fulfilled, (state, { payload }) => {
         state.isLoading = false;
@@ -22,10 +25,12 @@ export const userSlice = createSlice({
       })
       .addCase(register.rejected, state => {
         state.isLoading = false;
+        state.emailExist = true;
         state.user = null;
       })
       .addCase(login.pending, state => {
         state.isLoading = true;
+        state.userNotFound = false;
       })
       .addCase(login.fulfilled, (state, { payload }) => {
         state.isLoading = false;
@@ -33,6 +38,7 @@ export const userSlice = createSlice({
       })
       .addCase(login.rejected, state => {
         state.isLoading = false;
+        state.userNotFound = true;
         state.user = null;
       })
       .addCase(logout.fulfilled, state => {

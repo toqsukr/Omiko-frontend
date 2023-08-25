@@ -13,7 +13,7 @@ import { validEmail, validPassword } from './sign-validation';
 import { SignMode } from './sign.d';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
-  const { user, isLoading } = useAuth();
+  const { user, isLoading, emailExist, userNotFound } = useAuth();
   const { login, register } = useActions();
   const {
     register: formRegister,
@@ -40,6 +40,10 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
         <div className={css.titleContainer}>
           <h1 id={css.title}>{signMode === SignMode.LOGIN ? 'Вход' : 'Регистрация'}</h1>
         </div>
+        {signMode === SignMode.LOGIN && userNotFound && <div id={css.error}>Неверный логин или пароль</div>}
+        {signMode === SignMode.REGISTER && emailExist && (
+          <div id={css.error}>Пользователь с таким email уже существует</div>
+        )}
         <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
           <Input
             className={css.input}
@@ -84,6 +88,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
               error={errors.repeatPassword?.message}
             />
           )}
+
           {isLoading ? (
             <Loader />
           ) : signMode === SignMode.REGISTER ? (

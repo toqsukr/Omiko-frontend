@@ -85,3 +85,12 @@
   text-decoration: underline;
   color: rgba(0, 0, 0, 0.799);
 }
+
+#error {
+  font-family: 'Inter';
+  font-size: 18px;
+  font-weight: 400;
+  color: #ff2a2a;
+  align-self: center;
+  transition: all 0.3s;
+}
