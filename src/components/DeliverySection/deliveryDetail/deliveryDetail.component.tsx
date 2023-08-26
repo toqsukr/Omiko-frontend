@@ -1,7 +1,7 @@
 import PopupWindow from '@components/ui/popupWindow/popupWindow.component';
 import { IShow } from '@interfaces/show.interface';
-import { deliveryDetails } from '@utils/data';
 import { forwardRef } from 'react';
+import { deliveryDetails } from '../deliverySection.data';
 import css from './DeliveryDetail.module.css';
 
 const DeliveryDetail = forwardRef<HTMLDivElement, IShow>(({ isShow, setShow }, ref) => {

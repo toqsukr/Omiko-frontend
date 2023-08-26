@@ -1,6 +1,6 @@
-import { useState, FC, PropsWithChildren, createContext } from 'react';
+import { locations } from '@components/header/location/location.data';
 import type { ILocation } from '@interfaces/location.interface';
-import { locations } from '@utils/data';
+import { FC, PropsWithChildren, createContext, useState } from 'react';
 
 export const LocationContext = createContext({
   location: { city: '', phoneNumbers: [''], description: '' },

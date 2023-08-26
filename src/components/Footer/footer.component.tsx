@@ -1,6 +1,6 @@
-import { FC } from 'react';
 import GithubIcon from '@components/ui/icons/GithubIcon.component';
-import { footer } from '@utils/data';
+import { FC } from 'react';
+import { footer } from './footer.data';
 
 import css from './Footer.module.css';
 

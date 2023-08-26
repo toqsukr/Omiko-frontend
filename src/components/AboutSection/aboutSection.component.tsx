@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import AboutGlyf from './aboutGlyf/aboutGlyf.component';
-import { aboutInfo } from '@utils/data';
+import { aboutInfo } from './aboutSection.data';
 
 import css from './AboutSection.module.css';
 

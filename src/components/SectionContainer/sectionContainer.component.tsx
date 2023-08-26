@@ -1,13 +1,13 @@
-import { FC } from 'react';
-import SectionGlyf from './sectionGlyf/sectionGlyf.component';
-import { scroller } from 'react-scroll';
 import GlyfContainer from '@components/glyfContainer/glyfContainer.component';
-import { sectionGlyfs } from '@utils/data';
+import { FC } from 'react';
+import { scroller } from 'react-scroll';
+import { sectionGlyfs } from './sectionContainer.data';
+import SectionGlyf from './sectionGlyf/sectionGlyf.component';
 
 import {
-  deliveryScrollAnimation,
+  aboutScrollAnimation,
   advantageScrollAnimation,
-  aboutScrollAnimation
+  deliveryScrollAnimation
 } from './sectionContainer.animation';
 import css from './SectionContainer.module.css';
 

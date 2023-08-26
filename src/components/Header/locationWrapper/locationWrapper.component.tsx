@@ -1,8 +1,8 @@
 import Wrapper from '@components/ui/wrapper/wrapper.component';
 import { IShow } from '@interfaces/show.interface';
 import { LocationContext } from '@providers/LocationProvider';
-import { locations } from '@utils/data';
 import { forwardRef, useContext } from 'react';
+import { locations } from '../location/location.data';
 import LocationElement from './locationElement/locationElement.component';
 import css from './locationWrapper.module.css';
 

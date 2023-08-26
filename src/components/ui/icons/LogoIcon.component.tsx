@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import Icon from './icon/icon.component';
 import { IIcon } from './icon/icon';
+import Icon from './icon/icon.component';
 
 const LogoIcon: FC<IIcon> = ({ ...props }) => {
   return (
