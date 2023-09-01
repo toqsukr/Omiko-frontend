@@ -3,10 +3,9 @@ import Loader from '@components/ui/loader/loader';
 import PopupWindow from '@components/ui/popupWindow/popupWindow.component';
 import { useActions } from '@hooks/useActions.hook';
 import { useAuth } from '@hooks/useAuth.hook';
-import { useSignMode } from '@hooks/useSignMode.hook';
 import type { IShow } from '@interfaces/show.interface';
 import { ISignInput } from '@interfaces/sign.interface';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import css from './Sign.module.css';
 import { validEmail, validPassword } from './sign-validation';
@@ -22,10 +21,19 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
     watch
   } = useForm<ISignInput>();
 
-  const { signMode, handleModeBtn } = useSignMode();
+  const [signMode, setSignMode] = useState<SignMode>(SignMode.LOGIN);
+
   const onSubmit: SubmitHandler<ISignInput> = ({ repeatPassword, ...data }) => {
-    if (signMode === SignMode.LOGIN) login(data);
-    else register(data);
+    switch (signMode) {
+      case SignMode.LOGIN:
+        login(data);
+        break;
+      case SignMode.REGISTER:
+        register(data);
+        break;
+      case SignMode.FORGOT_PASSWORD:
+        break;
+    }
   };
 
   const passwordMatch = () => watch('password') === watch('repeatPassword') || 'Пароли не совпадают';
@@ -38,7 +46,7 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
     >
       <div className={css.signInnerContainer}>
         <div className={css.titleContainer}>
-          <h1 id={css.title}>{signMode === SignMode.LOGIN ? 'Вход' : 'Регистрация'}</h1>
+          <h1 id={css.title}>{signMode}</h1>
         </div>
         {signMode === SignMode.LOGIN && userNotFound && <div id={css.error}>Неверный логин или пароль</div>}
         {signMode === SignMode.REGISTER && emailExist && (
@@ -59,21 +67,23 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
             })}
             error={errors.username?.message}
           />
-          <Input
-            className={css.input}
-            placeholder="Пароль"
-            disabled={isLoading}
-            type="password"
-            {...formRegister('password', {
-              required: 'Введите ваш пароль',
-              minLength: { value: 6, message: 'Пароль должен состоять минимум из 6 символов' },
-              pattern: {
-                value: validPassword,
-                message: 'Пароль должен содержать заглавные буквы, цифры и спецсимволы'
-              }
-            })}
-            error={errors.password?.message}
-          />
+          {(signMode === SignMode.LOGIN || signMode === SignMode.REGISTER) && (
+            <Input
+              className={css.input}
+              placeholder="Пароль"
+              disabled={isLoading}
+              type="password"
+              {...formRegister('password', {
+                required: 'Введите ваш пароль',
+                minLength: { value: 6, message: 'Пароль должен состоять минимум из 6 символов' },
+                pattern: {
+                  value: validPassword,
+                  message: 'Пароль должен содержать заглавные буквы, цифры и спецсимволы'
+                }
+              })}
+              error={errors.password?.message}
+            />
+          )}
           {signMode === SignMode.REGISTER && (
             <Input
               className={css.input}
@@ -89,25 +99,46 @@ const Sign: FC<IShow> = ({ isShow, setShow }) => {
             />
           )}
 
+          {signMode === SignMode.FORGOT_PASSWORD && (
+            <Input
+              className={css.input}
+              disabled={isLoading}
+              placeholder="Код подтверждения"
+              type="text"
+              {...formRegister('repeatPassword', {
+                required: 'Введите код из электронного письма'
+              })}
+              error={errors.repeatPassword?.message}
+            />
+          )}
+
           {isLoading ? (
             <Loader />
-          ) : signMode === SignMode.REGISTER ? (
-            <button className={css.button} id={css.submitBtn}>
-              Зарегистрироваться
-            </button>
           ) : (
             <button className={css.button} id={css.submitBtn}>
-              Войти
+              {signMode === SignMode.LOGIN
+                ? 'Войти'
+                : signMode === SignMode.REGISTER
+                ? 'Зарегистрироваться'
+                : 'Получить код'}
             </button>
           )}
         </form>
 
         <div className={css.buttonContainer}>
-          <a className={css.button} id={css.otherBtn} onClick={!isLoading ? handleModeBtn : () => {}}>
-            {signMode === SignMode.REGISTER ? 'Вход' : 'Регистрация'}
+          <a
+            className={css.button}
+            id={css.otherBtn}
+            onClick={
+              !isLoading
+                ? () => setSignMode(signMode === SignMode.LOGIN ? SignMode.REGISTER : SignMode.LOGIN)
+                : () => {}
+            }
+          >
+            {signMode === SignMode.LOGIN ? 'Регистрация' : 'Вход'}
           </a>
           {signMode === SignMode.LOGIN && (
-            <a className={css.button} id={css.otherBtn}>
+            <a className={css.button} id={css.otherBtn} onClick={() => setSignMode(SignMode.FORGOT_PASSWORD)}>
               Забыли пароль?
             </a>
           )}

@@ -1,4 +1,5 @@
 export enum SignMode {
-  REGISTER = 'register',
-  LOGIN = 'login'
+  REGISTER = 'Регистрация',
+  LOGIN = 'Вход',
+  FORGOT_PASSWORD = 'Восстановление пароля'
 }
