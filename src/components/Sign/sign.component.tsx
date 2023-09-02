@@ -4,7 +4,7 @@ import type { IShow } from '@interfaces/show.interface';
 import { FC, useState } from 'react';
 import css from './Sign.module.css';
 import { SignMode } from './sign.d';
-import SignForm from './signForm/SignForm.component';
+import SignForm from './signForm/signForm.component';
 
 const Sign: FC<IShow> = ({ isShow, setShow }) => {
   const { user, isLoading, emailExist, userNotFound } = useAuth();
