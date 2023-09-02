@@ -30,14 +30,6 @@
   height: auto;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  height: 60%;
-  width: 70%;
-  justify-content: space-around;
-}
-
 .button {
   font-family: 'Inter';
   font-style: normal;
@@ -54,22 +46,6 @@
   font-weight: 600;
   font-size: 30px;
   line-height: 19px;
-}
-
-#submitBtn {
-  min-width: 180px;
-  max-width: 250px;
-  padding: 15px 20px 15px 20px;
-  border: 0px solid #d9dde3;
-  background-color: #e3e3e3;
-  border-radius: 12px;
-  align-self: center;
-}
-
-#submitBtn:hover {
-  background-color: #0d69e2;
-  color: rgb(255, 255, 255);
-  transition: all 0.3s;
 }
 
 #otherBtn {
