@@ -7,8 +7,8 @@ import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { validEmail, validPassword } from '../sign-validation';
 import { SignMode } from '../sign.d';
-import { ISignForm } from './SignForm';
 import css from './SignForm.module.css';
+import { ISignForm } from './signForm.d';
 
 const SignForm: FC<ISignForm> = ({ signMode }) => {
   const { isLoading } = useAuth();
