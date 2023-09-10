@@ -1,4 +1,5 @@
 import HeaderMobile from '@components/header/headerMobile/headerMobile.component';
+import PopularProducts from '@components/popularProducts/popularProducts.component';
 import SectionContainer from '@components/sectionContainer/sectionContainer.component';
 import LocationProvider from '@providers/LocationProvider';
 import RootShowProvider from '@providers/showProviders/unitProviders/RootShowProvider';
@@ -15,8 +16,8 @@ const App: FC = () => {
           <Element name="top">
             <SectionContainer />
           </Element>
-          {/* <PopularProducts />
-          <Element name="delivery">
+          <PopularProducts />
+          {/* <Element name="delivery">
             <DeliverySection />
           </Element>
           <Element name="advantage">
@@ -25,7 +26,7 @@ const App: FC = () => {
           <Element name="about">
             <AboutSection />
           </Element>
-          <Footer /> */}
+          <Footer />  */}
         </div>
       </LocationProvider>
     </RootShowProvider>
