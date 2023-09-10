@@ -1,3 +1,4 @@
+import AdvantageSection from '@components/advantageSection/advantageSection.component';
 import HeaderMobile from '@components/header/headerMobile/headerMobile.component';
 import PopularProducts from '@components/popularProducts/popularProducts.component';
 import SectionContainer from '@components/sectionContainer/sectionContainer.component';
@@ -19,10 +20,11 @@ const App: FC = () => {
           <PopularProducts />
           {/* <Element name="delivery">
             <DeliverySection />
-          </Element>
+          </Element> */}
           <Element name="advantage">
             <AdvantageSection />
           </Element>
+          {/* 
           <Element name="about">
             <AboutSection />
           </Element>

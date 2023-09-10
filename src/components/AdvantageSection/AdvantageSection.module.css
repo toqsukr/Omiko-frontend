@@ -40,3 +40,19 @@
   max-height: 17px;
   width: 17px;
 }
+
+@media (max-width: 500px) {
+  .advantage {
+    background-size: cover;
+  }
+  .glyfContainer {
+    flex-direction: column;
+    gap: 50px;
+  }
+  #titleText {
+    font-size: 42px;
+  }
+  .titleContainer {
+    margin: 0 0 100px 0;
+  }
+}

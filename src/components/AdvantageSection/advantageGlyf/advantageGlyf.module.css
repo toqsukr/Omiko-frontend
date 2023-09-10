@@ -30,3 +30,13 @@
   align-items: center;
   gap: 24px;
 }
+
+@media (max-width: 500px) {
+  .descriptionContainer {
+    width: 250px;
+    height: 250px;
+  }
+  .description {
+    font-size: 16px;
+  }
+}
