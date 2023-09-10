@@ -49,3 +49,17 @@
 #sectionGlyf {
   cursor: pointer;
 }
+
+@media (max-width: 500px) {
+  .descriptionContainer {
+    width: 250px;
+    height: 250px;
+  }
+  .description {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}
