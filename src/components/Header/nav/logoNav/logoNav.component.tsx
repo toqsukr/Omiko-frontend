@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { scroller } from 'react-scroll';
 import { categories } from '../nav.data';
 import css from './LogoNav.module.css';
-import { topScrollAnimation } from './logoNav.animation';
+import { desktopTopScrollAnimation } from './logoNav.animation';
 
 const LogoNav: FC = () => {
   return (
@@ -21,7 +21,11 @@ const LogoNav: FC = () => {
           })}
         </div>
       }
-      <LogoIcon type="button" id={css.logo} onClick={() => scroller.scrollTo('top', topScrollAnimation)} />
+      <LogoIcon
+        type="button"
+        id={css.logo}
+        onClick={() => scroller.scrollTo('top', desktopTopScrollAnimation)}
+      />
       <div className={css.catigoryContainer} id={css.right}>
         {categories.map((el: string, index: number) => {
           if (index >= 3)

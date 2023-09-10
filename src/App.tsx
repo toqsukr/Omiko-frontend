@@ -2,7 +2,7 @@ import AboutSection from '@components/aboutSection/aboutSection.component';
 import AdvantageSection from '@components/advantageSection/advantageSection.component';
 import DeliverySection from '@components/deliverySection/deliverySection.component';
 import Footer from '@components/footer/footer.component';
-import Header from '@components/header/header.component';
+import HeaderMobile from '@components/header/headerMobile/headerMobile.component';
 import PopularProducts from '@components/popularProducts/popularProducts.component';
 import SectionContainer from '@components/sectionContainer/sectionContainer.component';
 import LocationProvider from '@providers/LocationProvider';
@@ -15,7 +15,7 @@ const App: FC = () => {
   return (
     <RootShowProvider>
       <LocationProvider>
-        <Header />
+        <HeaderMobile />
         <div id="bodyContainer">
           <Element name="top">
             <SectionContainer />
