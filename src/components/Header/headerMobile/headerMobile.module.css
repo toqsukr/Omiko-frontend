@@ -9,7 +9,7 @@
 
 #logoMobileContainer {
   display: flex;
-  width: 50%;
+  width: 50vw;
   align-items: center;
   justify-content: start;
   margin: 10px;
@@ -17,7 +17,7 @@
 
 #locationMobileContainer {
   display: flex;
-  width: 50%;
+  width: 50vw;
   align-items: center;
   justify-content: end;
   margin: 10px;

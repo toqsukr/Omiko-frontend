@@ -1,9 +1,4 @@
-import AboutSection from '@components/aboutSection/aboutSection.component';
-import AdvantageSection from '@components/advantageSection/advantageSection.component';
-import DeliverySection from '@components/deliverySection/deliverySection.component';
-import Footer from '@components/footer/footer.component';
 import HeaderMobile from '@components/header/headerMobile/headerMobile.component';
-import PopularProducts from '@components/popularProducts/popularProducts.component';
 import SectionContainer from '@components/sectionContainer/sectionContainer.component';
 import LocationProvider from '@providers/LocationProvider';
 import RootShowProvider from '@providers/showProviders/unitProviders/RootShowProvider';
@@ -20,7 +15,7 @@ const App: FC = () => {
           <Element name="top">
             <SectionContainer />
           </Element>
-          <PopularProducts />
+          {/* <PopularProducts />
           <Element name="delivery">
             <DeliverySection />
           </Element>
@@ -30,7 +25,7 @@ const App: FC = () => {
           <Element name="about">
             <AboutSection />
           </Element>
-          <Footer />
+          <Footer /> */}
         </div>
       </LocationProvider>
     </RootShowProvider>

@@ -26,5 +26,10 @@ p {
   align-items: center;
   color: #000000;
   margin: 0px;
-  padding: 3px 3px 0px 3px;
+}
+
+@media (max-width: 500px) {
+  .locationContainer {
+    width: auto;
+  }
 }

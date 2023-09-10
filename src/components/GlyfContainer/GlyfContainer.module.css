@@ -5,3 +5,10 @@
   height: 100vh;
   max-height: 963px;
 }
+
+@media (max-width: 500px) {
+  .mainContainer {
+    margin-top: 55px;
+    padding: 70px 0 70px 0;
+  }
+}
