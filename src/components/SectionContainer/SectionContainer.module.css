@@ -18,7 +18,7 @@
 @media (max-width: 500px) {
   .glyfContainer {
     flex-direction: column;
-    gap: 20px;
+    gap: 6vh;
   }
 
   .section {

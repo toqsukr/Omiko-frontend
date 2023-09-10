@@ -1,8 +1,6 @@
 .mainContainer {
   width: 28%;
   height: 50%;
-  min-width: 200px;
-  min-height: 200px;
   max-width: 320px;
   max-height: 320px;
   background: rgba(125, 125, 125, 0.28);
@@ -22,7 +20,7 @@
 
 @media (max-width: 500px) {
   .mainContainer {
-    width: 300px;
-    height: 300px;
+    width: 270px;
+    height: 270px;
   }
 }
