@@ -1,4 +1,5 @@
 import AdvantageSection from '@components/advantageSection/advantageSection.component';
+import MobileBar from '@components/bar/mobileBar/MobileBar.component';
 import HeaderMobile from '@components/header/headerMobile/headerMobile.component';
 import PopularProducts from '@components/popularProducts/popularProducts.component';
 import SectionContainer from '@components/sectionContainer/sectionContainer.component';
@@ -29,6 +30,7 @@ const App: FC = () => {
             <AboutSection />
           </Element>
           <Footer />  */}
+          <MobileBar />
         </div>
       </LocationProvider>
     </RootShowProvider>

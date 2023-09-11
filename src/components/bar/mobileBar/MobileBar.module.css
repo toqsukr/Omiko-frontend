@@ -1,0 +1,11 @@
+#barContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: fixed;
+  width: 100vw;
+  z-index: 2;
+  background-color: white;
+  bottom: 0;
+  padding: 10px 0 10px 0;
+}
