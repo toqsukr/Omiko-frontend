@@ -7,9 +7,15 @@ import css from './MobileBar.module.css';
 const MobileBar: FC = () => {
   return (
     <div id={css.barContainer}>
-      <HomeIcon />
-      <CatalogIcon />
-      <CartIcon />
+      <div className={css.iconContainer}>
+        <HomeIcon id={css.homeIcon} />
+      </div>
+      <div className={css.iconContainer}>
+        <CatalogIcon />
+      </div>
+      <div className={css.iconContainer}>
+        <CartIcon />
+      </div>
     </div>
   );
 };

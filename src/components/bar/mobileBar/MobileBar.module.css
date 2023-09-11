@@ -1,11 +1,19 @@
 #barContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   position: fixed;
   width: 100vw;
   z-index: 2;
   background-color: white;
   bottom: 0;
+  left: 0;
+}
+
+.iconContainer {
+  display: flex;
+  width: 33%;
+  align-items: center;
+  justify-content: center;
   padding: 10px 0 10px 0;
 }
