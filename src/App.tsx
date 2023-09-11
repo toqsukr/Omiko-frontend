@@ -1,3 +1,4 @@
+import AboutSection from '@components/aboutSection/aboutSection.component';
 import AdvantageSection from '@components/advantageSection/advantageSection.component';
 import MobileBar from '@components/bar/mobileBar/MobileBar.component';
 import HeaderDesktop from '@components/header/headerDesktop/headerDesktop.component';
@@ -27,9 +28,9 @@ const App: FC = () => {
           <Element name="advantage">
             <AdvantageSection />
           </Element>
-          {/* <Element name="about">
+          <Element name="about">
             <AboutSection />
-          </Element> */}
+          </Element>
           {/* <Footer /> */}
           {isMobile && <MobileBar />}
         </div>

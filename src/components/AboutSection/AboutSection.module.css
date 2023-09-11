@@ -72,3 +72,38 @@
   border: 1px solid #ffffff;
   border-radius: 18px;
 }
+
+@media (max-width: 500px) {
+  .aboutContainer {
+    background-size: cover;
+    padding: 0 0 50px 0;
+  }
+
+  #title {
+    font-size: 42px;
+  }
+
+  .aboutInnerContainer {
+    display: flex;
+    position: static;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 0;
+  }
+
+  #contactContainer {
+    position: inherit;
+    padding: 0 0 0 20px;
+  }
+
+  #mapContainer {
+    position: inherit;
+  }
+
+  #contact {
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
