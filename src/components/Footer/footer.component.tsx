@@ -1,8 +1,8 @@
-import GithubIcon from '@components/ui/icons/GithubIcon.component';
 import { FC } from 'react';
 import { footer } from './footer.data';
 
 import css from './Footer.module.css';
+import ProductBy from './productBy/productBy.component';
 
 const Footer: FC = () => {
   return (
@@ -11,17 +11,7 @@ const Footer: FC = () => {
         <div id={css.descriptionContainer}>
           <p className={css.footerText}>{footer.description}</p>
         </div>
-        <div id={css.productByContainer}>
-          <div id={css.nicknameContainer}>
-            <a className={css.footerText} href="https://github.com/toqsukr" target="_blank">
-              toqsukr
-            </a>
-            <a className={css.footerText} href="https://github.com/skeesh24" target="_blank">
-              skeesh24
-            </a>
-          </div>
-          <GithubIcon href="https://github.com/toqsukr/Omiko-frontend" />
-        </div>
+        <ProductBy />
       </div>
     </footer>
   );
