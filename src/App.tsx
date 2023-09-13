@@ -1,6 +1,7 @@
 import AboutSection from '@components/aboutSection/aboutSection.component';
 import AdvantageSection from '@components/advantageSection/advantageSection.component';
 import MobileBar from '@components/bar/mobileBar/MobileBar.component';
+import Footer from '@components/footer/footer.component';
 import HeaderDesktop from '@components/header/headerDesktop/headerDesktop.component';
 import HeaderMobile from '@components/header/headerMobile/headerMobile.component';
 import SectionContainer from '@components/sectionContainer/sectionContainer.component';
@@ -31,7 +32,7 @@ const App: FC = () => {
           <Element name="about">
             <AboutSection />
           </Element>
-          {/* <Footer /> */}
+          <Footer />
           {isMobile && <MobileBar />}
         </div>
       </LocationProvider>
