@@ -9,6 +9,7 @@
 @media (max-width: 500px) {
   .mainContainer {
     margin-top: 40px;
-    padding: 110px 0 200px 0;
+    padding: 100px 0 300px 0;
+    max-height: 1200px;
   }
 }

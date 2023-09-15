@@ -47,7 +47,7 @@
   }
   .glyfContainer {
     flex-direction: column;
-    gap: 50px;
+    gap: 6vh;
   }
   #titleText {
     font-size: 42px;
