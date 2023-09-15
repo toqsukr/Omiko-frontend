@@ -8,6 +8,7 @@
 }
 
 #bodyContainer {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   max-width: 2048px;
 }
