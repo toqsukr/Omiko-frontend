@@ -1,13 +1,13 @@
 import LocationIcon from '@components/ui/icons/LocationIcon.component';
 import { useOutside } from '@hooks/useOutside.hook';
-import { LocationContext } from '@providers/LocationProvider';
-import { FC, useContext } from 'react';
+import { FC } from 'react';
 import LocationWrapper from '../locationWrapper/locationWrapper.component';
 
+import { useLocation } from '@hooks/useLocation';
 import css from './Location.module.css';
 
 const Location: FC = () => {
-  const { location } = useContext(LocationContext);
+  const { location } = useLocation();
   const { ref, isShow, setShow } = useOutside(false);
   return (
     <div className={css.locationContainer} onMouseEnter={() => setShow(true)}>

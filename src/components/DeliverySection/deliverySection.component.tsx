@@ -1,6 +1,6 @@
+import { useLocation } from '@hooks/useLocation';
 import { useOutside } from '@hooks/useOutside.hook';
-import { LocationContext } from '@providers/LocationProvider';
-import { FC, useContext, useRef } from 'react';
+import { FC, useRef } from 'react';
 import { animated, useTransition } from 'react-spring';
 import css from './DeliverySection.module.css';
 import Convertor from './convertor/convertor.component';
@@ -9,7 +9,7 @@ import { cityAnimation } from './deliverySection.animation';
 import { deliveryInfo } from './deliverySection.data';
 
 const DeliverySection: FC = () => {
-  const { location } = useContext(LocationContext);
+  const { location } = useLocation();
   const { ref, isShow, setShow } = useOutside(false);
   const cityRef = useRef(location.city === 'Другой' ? 'в регионы России' : `г. ${location.city}`);
   const cityTransition = useTransition(location, {

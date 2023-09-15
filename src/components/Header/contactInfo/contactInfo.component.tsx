@@ -1,12 +1,12 @@
-import { useRef, useContext, FC } from 'react';
-import { useTransition, animated } from 'react-spring';
-import { LocationContext } from '@providers/LocationProvider';
+import { FC, useRef } from 'react';
+import { animated, useTransition } from 'react-spring';
 
+import { useLocation } from '@hooks/useLocation';
 import { contactAnimation } from './contactInfo.animation';
 import css from './ContactInfo.module.css';
 
 const ContactInfo: FC = () => {
-  const { location } = useContext(LocationContext);
+  const { location } = useLocation();
   const phoneNumberRef = useRef({
     phoneNumber: location.phoneNumbers[0],
     description: location.description

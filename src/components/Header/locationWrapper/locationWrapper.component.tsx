@@ -1,17 +1,19 @@
 import Wrapper from '@components/ui/wrapper/wrapper.component';
+import { useActions } from '@hooks/useActions.hook';
+import { useLocation } from '@hooks/useLocation';
 import { IShow } from '@interfaces/show.interface';
-import { LocationContext } from '@providers/LocationProvider';
-import { forwardRef, useContext } from 'react';
+import { forwardRef } from 'react';
 import { locations } from '../location/location.data';
 import LocationElement from './locationElement/locationElement.component';
 import css from './locationWrapper.module.css';
 
 const LocationWrapper = forwardRef<HTMLDivElement, IShow>(({ isShow, setShow }, ref) => {
-  const { location, setLocation } = useContext(LocationContext);
+  const { location } = useLocation();
+  const { changeLocation } = useActions();
 
   const handleChangeLocation = (index: number) => {
     setShow(false);
-    setLocation({
+    changeLocation({
       city: locations[index].city,
       phoneNumbers: locations[index].phoneNumbers,
       description: locations[index].description
