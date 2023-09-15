@@ -1,8 +1,8 @@
+import CartIcon from '@components/ui/icons/cartIcon/CartIcon.component';
 import LogoMobile from '@components/ui/icons/logoMobile.component';
 import { FC } from 'react';
 import { scroller } from 'react-scroll';
 import Header from '../header.component';
-import Location from '../location/location.component';
 import { mobileTopScrollAnimation } from './header.animation';
 import css from './headerMobile.module.css';
 
@@ -16,8 +16,8 @@ const HeaderMobile: FC = () => {
             onClick={() => scroller.scrollTo('top', mobileTopScrollAnimation)}
           />
         </div>
-        <div id={css.locationMobileContainer}>
-          <Location />
+        <div id={css.cartMobileContainer}>
+          <CartIcon />
         </div>
       </div>
     </Header>

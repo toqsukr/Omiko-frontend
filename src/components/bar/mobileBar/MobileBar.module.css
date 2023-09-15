@@ -1,3 +1,11 @@
+.iconContainer {
+  display: flex;
+  width: 33%;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0 15px 0;
+}
+
 #barContainer {
   display: flex;
   flex-direction: row;
@@ -10,10 +18,14 @@
   left: 0;
 }
 
-.iconContainer {
-  display: flex;
-  width: 33%;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 0 10px 0;
+#locationIcon {
+  scale: 1.4;
+}
+
+#profileIcon {
+  scale: 1.05;
+}
+
+#signIcon {
+  scale: 1.1;
 }
