@@ -70,3 +70,19 @@
   align-self: center;
   transition: all 0.3s;
 }
+
+@media (max-width: 500px) {
+  #signWindow {
+    width: 100vw;
+    height: 75vh;
+    padding: 0;
+    border-radius: 0;
+    left: 0;
+  }
+  #title {
+    font-size: 24px;
+  }
+  .button {
+    font-size: 14px;
+  }
+}

@@ -54,3 +54,12 @@
   line-height: 19px;
   color: #ff2a2a;
 }
+
+@media (max-width: 500px) {
+  .input {
+    font-size: 18px;
+  }
+  .labelText {
+    font-size: 18px;
+  }
+}

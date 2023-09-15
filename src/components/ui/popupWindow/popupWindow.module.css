@@ -6,6 +6,7 @@
   align-items: center;
   position: fixed;
   top: 0px;
+  left: 0px;
   z-index: 3;
   background-color: rgba(34, 34, 34, 0.5);
 }
@@ -15,6 +16,7 @@
   height: 26px;
   position: absolute;
   right: 30px;
+  top: 30px;
   transition: all 0.2s;
   cursor: pointer;
 }
@@ -22,4 +24,11 @@
 #close:hover {
   opacity: 0.6;
   transition: all 0.2s;
+}
+
+@media (max-width: 500px) {
+  #close {
+    right: 15px;
+    top: 15px;
+  }
 }
