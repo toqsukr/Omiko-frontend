@@ -6,18 +6,18 @@ import css from './ContactInfo.module.css';
 import { contactAnimation } from './contactInfo.animation';
 
 const ContactInfo: FC = () => {
-  const { description, phoneNumbers } = useLocation();
+  const { location } = useLocation();
   const phoneNumberRef = useRef({
-    phoneNumber: phoneNumbers[0],
-    description: description
+    phoneNumber: location.phoneNumbers[0],
+    description: location.description
   });
 
   const numberTransition = useTransition(location, {
     ...contactAnimation,
     onRest: () =>
       (phoneNumberRef.current = {
-        phoneNumber: phoneNumbers[0],
-        description: description
+        phoneNumber: location.phoneNumbers[0],
+        description: location.description
       })
   });
   return (
