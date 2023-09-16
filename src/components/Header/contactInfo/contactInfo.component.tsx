@@ -2,22 +2,22 @@ import { FC, useRef } from 'react';
 import { animated, useTransition } from 'react-spring';
 
 import { useLocation } from '@hooks/useLocation';
-import { contactAnimation } from './contactInfo.animation';
 import css from './ContactInfo.module.css';
+import { contactAnimation } from './contactInfo.animation';
 
 const ContactInfo: FC = () => {
-  const { location } = useLocation();
+  const { description, phoneNumbers } = useLocation();
   const phoneNumberRef = useRef({
-    phoneNumber: location.phoneNumbers[0],
-    description: location.description
+    phoneNumber: phoneNumbers[0],
+    description: description
   });
 
   const numberTransition = useTransition(location, {
     ...contactAnimation,
     onRest: () =>
       (phoneNumberRef.current = {
-        phoneNumber: location.phoneNumbers[0],
-        description: location.description
+        phoneNumber: phoneNumbers[0],
+        description: description
       })
   });
   return (

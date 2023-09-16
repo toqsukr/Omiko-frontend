@@ -9,12 +9,12 @@ import { cityAnimation } from './deliverySection.animation';
 import { deliveryInfo } from './deliverySection.data';
 
 const DeliverySection: FC = () => {
-  const { location } = useLocation();
+  const { city } = useLocation();
   const { ref, isShow, setShow } = useOutside(false);
-  const cityRef = useRef(location.city === 'Другой' ? 'в регионы России' : `г. ${location.city}`);
+  const cityRef = useRef(city === 'Другой' ? 'в регионы России' : `г. ${city}`);
   const cityTransition = useTransition(location, {
     ...cityAnimation,
-    onRest: () => (cityRef.current = location.city === 'Другой' ? 'в регионы России' : `г. ${location.city}`)
+    onRest: () => (cityRef.current = city === 'Другой' ? 'в регионы России' : `г. ${city}`)
   });
 
   return (

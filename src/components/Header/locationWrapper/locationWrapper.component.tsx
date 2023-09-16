@@ -8,7 +8,7 @@ import LocationElement from './locationElement/locationElement.component';
 import css from './locationWrapper.module.css';
 
 const LocationWrapper = forwardRef<HTMLDivElement, IShow>(({ isShow, setShow }, ref) => {
-  const { location } = useLocation();
+  const { city } = useLocation();
   const { changeLocation } = useActions();
 
   const handleChangeLocation = (index: number) => {
@@ -30,7 +30,7 @@ const LocationWrapper = forwardRef<HTMLDivElement, IShow>(({ isShow, setShow }, 
       <>
         {locations.map(
           (el, i: number) =>
-            el.city === location.city || (
+            el.city === city || (
               <LocationElement key={i} onClick={() => handleChangeLocation(i)}>
                 {el.city}
               </LocationElement>

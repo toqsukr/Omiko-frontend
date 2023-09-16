@@ -7,12 +7,12 @@ import { useLocation } from '@hooks/useLocation';
 import css from './Location.module.css';
 
 const Location: FC = () => {
-  const { location } = useLocation();
+  const { city } = useLocation();
   const { ref, isShow, setShow } = useOutside(false);
   return (
     <div className={css.locationContainer} onMouseEnter={() => setShow(true)}>
       <LocationIcon id={css.locationPoint} />
-      <p id={css.city}>{location.city}</p>
+      <p id={css.city}>{city}</p>
       <LocationWrapper ref={ref} isShow={isShow} setShow={setShow} />
     </div>
   );
