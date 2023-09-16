@@ -10,9 +10,11 @@ const Location: FC = () => {
   const { location } = useLocation();
   const { ref, isShow, setShow } = useOutside(false);
   return (
-    <div className={css.locationContainer} onMouseEnter={() => setShow(true)}>
-      <LocationIcon id={css.locationPoint} />
-      <p id={css.city}>{location.city}</p>
+    <div className={css.mainLocationContainer}>
+      <div className={css.innerLocationContainer} onMouseEnter={() => setShow(true)}>
+        <LocationIcon id={css.locationPoint} />
+        <p id={css.city}>{location.city}</p>
+      </div>
       <LocationWrapper ref={ref} isShow={isShow} setShow={setShow} />
     </div>
   );

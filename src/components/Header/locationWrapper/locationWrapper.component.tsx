@@ -20,13 +20,7 @@ const LocationWrapper = forwardRef<HTMLDivElement, IShow>(({ isShow, setShow }, 
     });
   };
   return (
-    <Wrapper
-      ref={ref}
-      isShow={isShow}
-      setShow={setShow}
-      windowStyleID={css.locationWrapper}
-      onMouseLeave={() => setShow(false)}
-    >
+    <Wrapper ref={ref} isShow={isShow} setShow={setShow} windowStyleID={css.locationWrapper}>
       <>
         {locations.map(
           (el, i: number) =>

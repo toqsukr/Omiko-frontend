@@ -1,14 +1,21 @@
-.locationContainer {
+.mainLocationContainer {
   height: auto;
   width: 20%;
   max-width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
   flex-direction: row;
   padding: 8px 0 8px 0;
   position: relative;
+}
+
+.innerLocationContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
 }
 
 #locationPoint {
