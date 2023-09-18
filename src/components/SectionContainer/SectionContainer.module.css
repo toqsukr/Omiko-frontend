@@ -15,7 +15,7 @@
   background-size: contain;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 500px) {
   .glyfContainer {
     flex-direction: column;
     gap: 6vh;

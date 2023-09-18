@@ -3,7 +3,7 @@ import { IIcon } from '../icon/icon';
 import Icon from '../icon/icon.component';
 import css from './CartIcon.module.css';
 
-const CartIcon: FC<IIcon> = ({ ...props }) => {
+const CartIcon: FC<IIcon> = ({ filled, ...props }) => {
   const [product, setProduct] = useState(0);
   return (
     <Icon>

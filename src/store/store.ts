@@ -4,6 +4,7 @@ import persistReducer from 'redux-persist/es/persistReducer';
 import persistStore from 'redux-persist/es/persistStore';
 import storage from 'redux-persist/lib/storage';
 import { locationSlice } from './location/location.slice';
+import { mobileBarSlice } from './mobileBar/mobileBar.slice';
 import { userSlice } from './user/user.slice';
 
 const persistConfig = {
@@ -14,7 +15,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   user: userSlice.reducer,
-  location: locationSlice.reducer
+  location: locationSlice.reducer,
+  mobileBar: mobileBarSlice.reducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

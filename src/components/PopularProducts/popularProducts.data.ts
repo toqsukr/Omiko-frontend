@@ -1,4 +1,6 @@
-export const products = [
+import { ICardData } from '@interfaces/data.interface';
+
+export const products: ICardData[] = [
   {
     url: 'https://omi-ko.ru/images/stories/virtuemart/product/resized/t_max_optima_plus2_33_400x400.jpg',
     price: '45,80₽',
