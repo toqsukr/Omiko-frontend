@@ -50,7 +50,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 425px) {
   .descriptionContainer {
     width: 250px;
     height: 250px;

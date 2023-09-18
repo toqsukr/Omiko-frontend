@@ -71,7 +71,7 @@
   transition: all 0.3s;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 425px) {
   #signWindow {
     width: 100vw;
     height: 75vh;

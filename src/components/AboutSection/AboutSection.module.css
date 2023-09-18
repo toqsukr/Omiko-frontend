@@ -73,7 +73,7 @@
   border-radius: 18px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 425px) {
   .aboutContainer {
     background-size: cover;
     padding: 0 0 50px 0;

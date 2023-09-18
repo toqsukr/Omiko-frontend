@@ -4,12 +4,13 @@ import { scroller } from 'react-scroll';
 import { sectionGlyfs } from './sectionContainer.data';
 import SectionGlyf from './sectionGlyf/sectionGlyf.component';
 
+import { ISectionGlyfData } from '@interfaces/data.interface';
+import css from './SectionContainer.module.css';
 import {
   aboutScrollAnimation,
   advantageScrollAnimation,
   deliveryScrollAnimation
 } from './sectionContainer.animation';
-import css from './SectionContainer.module.css';
 
 const handleDeliveryClick = () => {
   scroller.scrollTo('delivery', deliveryScrollAnimation);
@@ -23,6 +24,20 @@ const handleAboutClick = () => {
   scroller.scrollTo('about', aboutScrollAnimation);
 };
 
+function handleGlyfClick(el: ISectionGlyfData) {
+  switch (el.key) {
+    case 'delivery':
+      handleDeliveryClick();
+      break;
+    case 'advantage':
+      handleAdvantageClick();
+      break;
+    case 'about':
+      handleAboutClick();
+      break;
+  }
+}
+
 const SectionContainer: FC = () => {
   return (
     <GlyfContainer style={css.section}>
@@ -32,19 +47,7 @@ const SectionContainer: FC = () => {
             key={el.key}
             title={el.title}
             description={el.description}
-            onClick={() => {
-              switch (el.key) {
-                case 'delivery':
-                  handleDeliveryClick();
-                  break;
-                case 'advantage':
-                  handleAdvantageClick();
-                  break;
-                case 'about':
-                  handleAboutClick();
-                  break;
-              }
-            }}
+            onClick={() => handleGlyfClick(el)}
           />
         ))}
       </div>

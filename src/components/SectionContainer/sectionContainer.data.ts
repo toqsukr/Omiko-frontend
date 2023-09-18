@@ -1,4 +1,6 @@
-export const sectionGlyfs = [
+import { ISectionGlyfData } from '@interfaces/data.interface';
+
+export const sectionGlyfs: ISectionGlyfData[] = [
   {
     key: 'delivery',
     title: 'ДОСТАВКА',

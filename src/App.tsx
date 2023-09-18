@@ -1,11 +1,9 @@
 import AboutSection from '@components/aboutSection/aboutSection.component';
 import AdvantageSection from '@components/advantageSection/advantageSection.component';
 import MobileBar from '@components/bar/mobileBar/MobileBar.component';
-import DeliverySection from '@components/deliverySection/deliverySection.component';
 import Footer from '@components/footer/footer.component';
 import HeaderDesktop from '@components/header/headerDesktop/headerDesktop.component';
 import HeaderMobile from '@components/header/headerMobile/headerMobile.component';
-import PopularProducts from '@components/popularProducts/popularProducts.component';
 import SectionContainer from '@components/sectionContainer/sectionContainer.component';
 import RootShowProvider from '@providers/showProviders/unitProviders/RootShowProvider';
 import { FC } from 'react';
@@ -22,10 +20,10 @@ const App: FC = () => {
         <Element name="top">
           <SectionContainer />
         </Element>
-        <PopularProducts />
+        {/* <PopularProducts />
         <Element name="delivery">
           <DeliverySection />
-        </Element>
+        </Element> */}
         <Element name="advantage">
           <AdvantageSection />
         </Element>
