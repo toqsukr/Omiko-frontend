@@ -3,6 +3,7 @@ import AdvantageSection from '@components/advantageSection/advantageSection.comp
 import MobileBar from '@components/bar/mobileBar/MobileBar.component';
 import CatalogBarLayout from '@components/bar/mobileBar/barLayout/catalogBarLayout/CatalogBarLayout.component';
 import LocationBarLayout from '@components/bar/mobileBar/barLayout/locationBarLayout/LocationBarLayout.component';
+import ProfileBarLayout from '@components/bar/mobileBar/barLayout/profileBarLayout/profileBarLayout.component';
 import Footer from '@components/footer/footer.component';
 import HeaderDesktop from '@components/header/headerDesktop/headerDesktop.component';
 import HeaderMobile from '@components/header/headerMobile/headerMobile.component';
@@ -38,6 +39,7 @@ const App: FC = () => {
         </Element>
         {mobileBarState.barState === MobileBarState.LOCATION && <LocationBarLayout />}
         {mobileBarState.barState === MobileBarState.CATALOG && <CatalogBarLayout />}
+        {mobileBarState.barState === MobileBarState.PROFILE && <ProfileBarLayout />}
         <Footer />
         {isMobile && <MobileBar />}
       </div>

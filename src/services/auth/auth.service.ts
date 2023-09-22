@@ -1,5 +1,4 @@
 import { instance } from '@api/api.interceptor';
-import { SignMode } from '@components/sign/sign.d';
 import { SERVER_URL } from '@constants/constants';
 import axios, { AxiosResponse } from 'axios';
 import Cookies from 'js-cookie';
@@ -11,7 +10,7 @@ import { cookieConfig } from './cookie.config';
 export const AuthService = {
   async login(data: IUsernamePassword) {
     const response = await instance<IAuthResponse>({
-      url: `/auth/${SignMode.LOGIN}`,
+      url: `/auth/login`,
       method: 'POST',
       data
     });

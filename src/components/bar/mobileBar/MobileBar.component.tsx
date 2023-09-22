@@ -30,14 +30,20 @@ const MobileBar: FC = () => {
         <div className={css.iconContainer} onClick={() => changeBarState(MobileBarState.LOCATION)}>
           <LocationIcon filled={mobileBarState.barState === MobileBarState.LOCATION} id={css.locationIcon} />
         </div>
-        <div
-          onClick={() => {
-            !sign && setSign(true);
-          }}
-          className={css.iconContainer}
-        >
-          {!!user ? <ProfileIcon id={css.profileIcon} /> : <SignIcon id={css.signIcon} />}
-        </div>
+        {!!user ? (
+          <div className={css.iconContainer} onClick={() => changeBarState(MobileBarState.PROFILE)}>
+            <ProfileIcon filled={mobileBarState.barState === MobileBarState.PROFILE} id={css.profileIcon} />
+          </div>
+        ) : (
+          <div
+            onClick={() => {
+              !sign && setSign(true);
+            }}
+            className={css.iconContainer}
+          >
+            <SignIcon id={css.signIcon} />
+          </div>
+        )}
       </div>
       <Sign isShow={sign} setShow={setSign} />
     </>
