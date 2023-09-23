@@ -5,9 +5,9 @@ import { useAuth } from '@hooks/useAuth.hook';
 import { ISignInput } from '@interfaces/sign.interface';
 import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { validEmail, validPassword } from '../sign-validation';
 import { SignMode } from '../sign.d';
 import css from './SignForm.module.css';
+import { validEmail, validPassword } from './sign-validation';
 import { ISignForm } from './signForm.d';
 
 const SignForm: FC<ISignForm> = ({ signMode }) => {

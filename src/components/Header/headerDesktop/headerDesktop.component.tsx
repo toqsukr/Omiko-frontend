@@ -1,4 +1,4 @@
-import Sign from '@components/sign/sign.component';
+import SignPopup from '@components/sign/signPopup/signPopup.component';
 import { SignShowContext } from '@providers/showProviders/SignShowProvider';
 import { FC, useContext } from 'react';
 import ContactInfo from '../contactInfo/contactInfo.component';
@@ -20,7 +20,7 @@ const HeaderDesktop: FC = () => {
         </div>
         <LogoNav />
       </Header>
-      <Sign isShow={sign} setShow={setSign} />
+      <SignPopup isShow={sign} setShow={setSign} />
     </>
   );
 };

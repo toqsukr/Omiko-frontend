@@ -1,4 +1,3 @@
-import Sign from '@components/sign/sign.component';
 import CatalogIcon from '@components/ui/icons/CatalogIcon.component';
 import HomeIcon from '@components/ui/icons/HomeIcon.component';
 import LocationIcon from '@components/ui/icons/LocationIcon.component';
@@ -6,16 +5,18 @@ import ProfileIcon from '@components/ui/icons/ProfileIcon.component';
 import { useActions } from '@hooks/useActions.hook';
 import { useAuth } from '@hooks/useAuth.hook';
 import { useBarState } from '@hooks/useBarState.hook';
-import { SignShowContext } from '@providers/showProviders/SignShowProvider';
 import { MobileBarState } from '@store/mobileBar/mobileBar.interface';
-import { FC, useContext } from 'react';
+import { FC } from 'react';
 import css from './MobileBar.module.css';
+import CatalogBarLayout from './barLayout/catalogBarLayout/CatalogBarLayout.component';
+import LocationBarLayout from './barLayout/locationBarLayout/LocationBarLayout.component';
+import ProfileBarLayout from './barLayout/profileBarLayout/ProfileBarLayout.component';
+import SignBarLayout from './barLayout/signBarLayout/SignBarLayout.component';
 
 const MobileBar: FC = () => {
   const { user } = useAuth();
   const { mobileBarState } = useBarState();
   const { changeBarState } = useActions();
-  const { sign, setSign } = useContext(SignShowContext);
 
   return (
     <>
@@ -35,16 +36,24 @@ const MobileBar: FC = () => {
         </div>
         <div
           className={css.iconContainer}
-          onClick={() => (!!user ? changeBarState(MobileBarState.PROFILE) : setSign(true))}
+          onClick={() =>
+            !!user ? changeBarState(MobileBarState.PROFILE) : changeBarState(MobileBarState.SIGN)
+          }
         >
           <ProfileIcon
             colored={false}
-            filled={mobileBarState.barState === MobileBarState.PROFILE}
+            filled={
+              mobileBarState.barState === MobileBarState.PROFILE ||
+              mobileBarState.barState === MobileBarState.SIGN
+            }
             id={css.profileIcon}
           />
         </div>
       </div>
-      <Sign isShow={sign} setShow={setSign} />
+      {mobileBarState.barState === MobileBarState.LOCATION && <LocationBarLayout />}
+      {mobileBarState.barState === MobileBarState.CATALOG && <CatalogBarLayout />}
+      {mobileBarState.barState === MobileBarState.PROFILE && <ProfileBarLayout />}
+      {mobileBarState.barState === MobileBarState.SIGN && <SignBarLayout />}
     </>
   );
 };
