@@ -3,7 +3,6 @@ import CatalogIcon from '@components/ui/icons/CatalogIcon.component';
 import HomeIcon from '@components/ui/icons/HomeIcon.component';
 import LocationIcon from '@components/ui/icons/LocationIcon.component';
 import ProfileIcon from '@components/ui/icons/ProfileIcon.component';
-import SignIcon from '@components/ui/icons/SignIcon.component';
 import { useActions } from '@hooks/useActions.hook';
 import { useAuth } from '@hooks/useAuth.hook';
 import { useBarState } from '@hooks/useBarState.hook';
@@ -30,20 +29,12 @@ const MobileBar: FC = () => {
         <div className={css.iconContainer} onClick={() => changeBarState(MobileBarState.LOCATION)}>
           <LocationIcon filled={mobileBarState.barState === MobileBarState.LOCATION} id={css.locationIcon} />
         </div>
-        {!!user ? (
-          <div className={css.iconContainer} onClick={() => changeBarState(MobileBarState.PROFILE)}>
-            <ProfileIcon filled={mobileBarState.barState === MobileBarState.PROFILE} id={css.profileIcon} />
-          </div>
-        ) : (
-          <div
-            onClick={() => {
-              !sign && setSign(true);
-            }}
-            className={css.iconContainer}
-          >
-            <SignIcon id={css.signIcon} />
-          </div>
-        )}
+        <div
+          className={css.iconContainer}
+          onClick={() => (!!user ? changeBarState(MobileBarState.PROFILE) : setSign(true))}
+        >
+          <ProfileIcon filled={mobileBarState.barState === MobileBarState.PROFILE} id={css.profileIcon} />
+        </div>
       </div>
       <Sign isShow={sign} setShow={setSign} />
     </>
