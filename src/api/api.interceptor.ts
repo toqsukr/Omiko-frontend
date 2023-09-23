@@ -1,7 +1,7 @@
-import axios from 'axios';
 import { SERVER_URL } from '@constants/constants';
-import { getAccessToken, removeFromStorage } from '@services/auth/auth.helper';
+import { getAccessToken, removeFromLocalStorage } from '@services/auth/auth.helper';
 import { AuthService } from '@services/auth/auth.service';
+import axios from 'axios';
 import { errorCatch, getContentType } from './api.helper';
 
 export const instance = axios.create({
@@ -34,7 +34,7 @@ instance.interceptors.response.use(
         AuthService.getNewTokens();
         return instance.request(originalRequest);
       } catch (error) {
-        if (errorCatch(error) === 'jwt expired') removeFromStorage();
+        if (errorCatch(error) === 'jwt expired') removeFromLocalStorage('user');
       }
     }
 

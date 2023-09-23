@@ -8,8 +8,8 @@ export const getAccessToken = () => {
   return accessToken || null;
 };
 
-export const getUserFromStorage = () => {
-  return JSON.parse(localStorage.getItem('user') || '{}');
+export const getFromLocalStorage = (key: string) => {
+  return JSON.parse(localStorage.getItem(key) || '{}');
 };
 
 export const saveTokensStorage = (data: ITokens) => {
@@ -22,12 +22,12 @@ export const deleteTokensStorage = () => {
   Cookies.remove(Tokens.REFRESH_TOKEN);
 };
 
-export const removeFromStorage = () => {
+export const removeFromLocalStorage = (key: string) => {
   deleteTokensStorage();
-  localStorage.removeItem('user');
+  localStorage.removeItem(key);
 };
 
-export const saveToStorage = (data: IAuthResponse) => {
+export const saveUserToStorage = (data: IAuthResponse) => {
   saveTokensStorage(data.tokens);
   localStorage.setItem('user', JSON.stringify(data.user));
 };

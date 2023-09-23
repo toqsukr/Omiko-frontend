@@ -4,7 +4,7 @@ import axios, { AxiosResponse } from 'axios';
 import Cookies from 'js-cookie';
 import { IAuthResponse, IUsernamePassword } from 'src/store/user/user.interface';
 import { Tokens } from './auth.enum';
-import { removeFromStorage, saveToStorage } from './auth.helper';
+import { removeFromLocalStorage, saveUserToStorage } from './auth.helper';
 import { cookieConfig } from './cookie.config';
 
 export const AuthService = {
@@ -14,7 +14,7 @@ export const AuthService = {
       method: 'POST',
       data
     });
-    if (response.data.tokens) saveToStorage(response.data);
+    if (response.data.tokens) saveUserToStorage(response.data);
 
     return response.data;
   },
@@ -41,7 +41,7 @@ export const AuthService = {
         }
       }
     );
-    if (response.status === 200) removeFromStorage();
+    if (response.status === 200) removeFromLocalStorage('user');
     return response;
   },
 
