@@ -4,7 +4,7 @@ import { useActions } from '@hooks/useActions.hook';
 import { MobileBarState } from '@store/mobileBar/mobileBar.interface';
 import { FC } from 'react';
 import { scroller } from 'react-scroll';
-import Header from '../header.component';
+import HeaderLayout from '../headerLayout/HeaderLayout.component';
 import { mobileTopScrollAnimation } from './header.animation';
 import css from './headerMobile.module.css';
 
@@ -15,7 +15,7 @@ const HeaderMobile: FC = () => {
     scroller.scrollTo('top', mobileTopScrollAnimation);
   }
   return (
-    <Header>
+    <HeaderLayout>
       <div id={css.headerMobile}>
         <div id={css.logoMobileContainer} onClick={handleLogoClick}>
           <LogoMobile id={css.logoMobile} />
@@ -24,7 +24,7 @@ const HeaderMobile: FC = () => {
           <CartIcon />
         </div>
       </div>
-    </Header>
+    </HeaderLayout>
   );
 };
 

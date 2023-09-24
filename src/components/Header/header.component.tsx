@@ -1,15 +1,12 @@
-import { FC, PropsWithChildren } from 'react';
+import { MOBILE_SIZE_LARGE } from '@constants/screens';
+import { FC } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import HeaderDesktop from './headerDesktop/headerDesktop.component';
+import HeaderMobile from './headerMobile/headerMobile.component';
 
-import css from './Header.module.css';
-
-const Header: FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <>
-      <header className={css.headerContainer}>
-        <div className={css.headerInnerContainer}>{children}</div>
-      </header>
-    </>
-  );
+const Header: FC = () => {
+  const isMobile = useMediaQuery({ maxDeviceWidth: MOBILE_SIZE_LARGE });
+  return <>{isMobile ? <HeaderMobile /> : <HeaderDesktop />}</>;
 };
 
 export default Header;
