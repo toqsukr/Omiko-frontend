@@ -4,6 +4,6 @@ export const contactAnimation = {
   leave: { opacity: 0, scale: 0, transform: 'translateY(-100px)' },
   exitBeforeEnter: true,
   config: {
-    duration: 300,
-  },
+    duration: 300
+  }
 };
