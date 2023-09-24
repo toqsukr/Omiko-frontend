@@ -10,14 +10,14 @@ import RootShowProvider from '@providers/showProviders/unitProviders/RootShowPro
 import { FC } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Element } from 'react-scroll';
-import './App.css';
+import css from './Home.module.css';
 
-const App: FC = () => {
+const Home: FC = () => {
   const isMobile = useMediaQuery({ maxDeviceWidth: MOBILE_SIZE_LARGE });
   return (
     <RootShowProvider>
       {isMobile ? <HeaderMobile /> : <HeaderDesktop />}
-      <div id="bodyContainer">
+      <div id={css.bodyContainer}>
         <Element name="top">
           <SectionContainer />
         </Element>
@@ -38,4 +38,4 @@ const App: FC = () => {
   );
 };
 
-export default App;
+export default Home;
