@@ -6,15 +6,14 @@ import { trimString } from '@utils/function';
 import classNames from 'classnames';
 import css from './Card.module.css';
 import type { ICard } from './card';
+import CardImage from './cardImage/CardImage.component';
 
 const Card: FC<ICard> = ({ id, price, title, url }) => {
   const { addToCart, removeFromCart } = useActions();
   const { cart, isAtCart } = useCart();
   return (
     <div className={css.cardContainer}>
-      <div className={css.imageContainer}>
-        <img id={css.image} src={url ? url : ''} alt="" />
-      </div>
+      <CardImage url={url} />
       <div className={css.cardInfo}>
         <p id={css.price}>{price ? price : 'Цена'}</p>
         <p id={css.title} title={title}>

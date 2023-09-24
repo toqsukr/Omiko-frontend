@@ -20,11 +20,6 @@
   transition: all 0.3s;
 }
 
-.imageContainer {
-  padding: 25px 25px 8px 25px;
-  text-align: center;
-}
-
 .cardInfo {
   margin: 0 25px 0 25px;
 }
@@ -81,10 +76,4 @@
 
 #title:hover {
   text-decoration: underline;
-}
-
-#image {
-  width: 254px;
-  height: 300px;
-  border-radius: 24px;
 }

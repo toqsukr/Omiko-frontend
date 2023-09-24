@@ -1,0 +1,9 @@
+.imageContainer {
+  text-align: center;
+}
+
+#image {
+  width: 254px;
+  height: 300px;
+  border-radius: 24px;
+}

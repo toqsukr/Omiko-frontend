@@ -1,13 +1,15 @@
 .productContainer {
   width: 100%;
   padding: 0 0 0 0;
-  margin: 30px 0 30px 0;
+  margin: 30px 0 60px 0;
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr 0.5fr;
 }
 
 #bodyContainer {
   width: 100%;
   max-width: 2048px;
-  padding: 200px 0 0 0;
+  padding: 210px 0 0 0;
 }
 
 #bodyInnerContainer {
@@ -17,5 +19,18 @@
 }
 
 #cartContainer {
-  width: 80vw;
+  width: 85vw;
+  max-width: 1300px;
+  background-color: white;
+  border-radius: 24px;
+}
+
+#title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  margin: 50px 0 50px 60px;
 }

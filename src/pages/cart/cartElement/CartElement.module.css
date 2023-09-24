@@ -1,0 +1,54 @@
+.infoContainer {
+  display: flex;
+  gap: 30px;
+  margin: 0 0 0 50px;
+}
+
+.countButton {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  border-radius: 14px;
+}
+
+#title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  padding: 0 0 0 0;
+  margin: 20px 0 0 0;
+}
+
+#counter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#countText {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 0 10px 0 10px;
+}
+
+#price {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0 10px 0 10px;
+  margin: 20px 0 0 0;
+}
+
+#counterContainer {
+  margin: 20px 0 0 20px;
+}
