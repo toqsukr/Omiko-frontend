@@ -1,10 +1,14 @@
 import { FC } from 'react';
 
+import { useActions } from '@hooks/useActions.hook';
+import { useCart } from '@hooks/useCart.hook';
 import { trimString } from '@utils/function';
-import type { ICard } from './card';
 import css from './Card.module.css';
+import type { ICard } from './card';
 
-const Card: FC<ICard> = ({ price, title, url }) => {
+const Card: FC<ICard> = ({ id, price, title, url }) => {
+  const { addToCart, removeFromCart } = useActions();
+  const { cart, isAtCart } = useCart();
   return (
     <div className={css.cardContainer}>
       <div className={css.imageContainer}>
@@ -17,8 +21,12 @@ const Card: FC<ICard> = ({ price, title, url }) => {
         </p>
       </div>
       <div className={css.toCartContainer}>
-        <a type="button" className={css.toCartButton}>
-          В корзину
+        <a
+          type="button"
+          className={css.toCartButton}
+          onClick={() => (isAtCart(cart, id) ? removeFromCart(id) : addToCart({ id, price, title, url }))}
+        >
+          {isAtCart(cart, id) ? 'Удалить из корзины' : 'В корзину'}
         </a>
       </div>
     </div>

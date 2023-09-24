@@ -17,7 +17,7 @@ export const locationSlice = createSlice({
   reducers: {
     changeLocation: (state, { payload: location }) => {
       const isILocation = (location: any): location is ILocation =>
-        location && location.city && location.phoneNumbers && location.description;
+        location && 'city' in location && 'phoneNumbers' in location && 'description' in location;
       if (!isILocation(location)) return;
       state.city = location.city;
       state.description = location.description;

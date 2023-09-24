@@ -21,14 +21,15 @@ This is the frontend part of the Omiko Store web application. It is built using 
 │   ├── components/     # Reusable components
 │   ├── constants/      # Used constants
 │   ├── hooks/          # Custom hooks
+│   ├── interfaces/     # Used custom types
 │   ├── pages/          # Component-based pages
 │   ├── providers/      # Application providers
-│   ├── interfaces/     # Used custom types
+│   ├── routes/         # Application route settings
 │   ├── services/       # Application services
 │   ├── store/          # Redux client state store
 │   ├── utils/          # Utility functions
-│   ├── App.css         # Main component stylesheets
-│   └── App.tsx         # Main component
+│   ├── index.css       # Main component stylesheets
+│   └── index.tsx       # Main component
 ├── .gitignore          # Git ignore configuration
 ├── package.json        # NPM package dependencies
 └── README.md           # Project readme file

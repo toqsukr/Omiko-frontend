@@ -3,6 +3,7 @@ import AdvantageSection from '@components/advantageSection/advantageSection.comp
 import MobileBar from '@components/bar/mobileBar/MobileBar.component';
 import Footer from '@components/footer/footer.component';
 import Header from '@components/header/header.component';
+import PopularProducts from '@components/popularProducts/popularProducts.component';
 import SectionContainer from '@components/sectionContainer/sectionContainer.component';
 import RootShowProvider from '@providers/showProviders/unitProviders/RootShowProvider';
 import { FC } from 'react';
@@ -17,8 +18,8 @@ const Home: FC = () => {
         <Element name="top">
           <SectionContainer />
         </Element>
-        {/* <PopularProducts />
-            <Element name="delivery">
+        <PopularProducts />
+        {/* <Element name="delivery">
               <DeliverySection />
             </Element> */}
         <Element name="advantage">

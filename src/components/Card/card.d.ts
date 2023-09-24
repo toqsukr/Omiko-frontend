@@ -1,5 +1,6 @@
 export interface ICard {
-  price?: string;
-  title?: string;
-  url?: string;
+  id: string | number;
+  price: string;
+  title: string;
+  url: string;
 }

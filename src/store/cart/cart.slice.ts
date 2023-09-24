@@ -1,0 +1,38 @@
+import { createSlice } from '@reduxjs/toolkit';
+import { isAtCart } from '@utils/function';
+import { ICartInitialState } from './cart.interface';
+
+const initialState: ICartInitialState[] = [];
+
+const isICartInitialState = (element: any): element is ICartInitialState =>
+  element &&
+  'count' in element &&
+  'id' in element &&
+  'price' in element &&
+  'url' in element &&
+  'title' in element;
+
+export const cartSlice = createSlice({
+  name: 'cart',
+  initialState,
+  reducers: {
+    addToCart: (state, { payload: addingElement }) => {
+      addingElement = { count: 0, ...addingElement };
+      if (!isICartInitialState(addingElement)) return;
+      if (isAtCart(state, addingElement.id))
+        state.forEach(element => (element.id === addingElement.id ? (element.count += 1) : element));
+      else state.push(addingElement);
+    },
+    removeFromCart: (state, { payload: removingElementID }) => {
+      if (typeof removingElementID != 'number') return;
+      const newState = state.filter(element => element.id != removingElementID);
+      return newState;
+    },
+    reduceFromCart: (state, { payload: reducingElement }) => {
+      if (!isICartInitialState(reducingElement) || reducingElement.count === 1) return;
+      state.forEach(element => (element.id == reducingElement.id ? (element.count -= 1) : element));
+    }
+  }
+});
+
+export const { actions, reducer } = cartSlice;

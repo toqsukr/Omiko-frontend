@@ -5,6 +5,7 @@ export interface ISectionGlyfData {
 }
 
 export interface ICardData {
+  id: string | number;
   url: string;
   price: string;
   title: string;

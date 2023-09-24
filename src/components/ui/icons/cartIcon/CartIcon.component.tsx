@@ -1,16 +1,17 @@
 import Link from '@components/ui/link/Link.component';
 import { ROUTES } from '@constants/routes';
-import { FC, useState } from 'react';
+import { useCart } from '@hooks/useCart.hook';
+import { FC } from 'react';
 import { IIcon } from '../icon/icon';
 import Icon from '../icon/icon.component';
 import css from './CartIcon.module.css';
 
 const CartIcon: FC<IIcon> = ({ filled, ...props }) => {
-  const [product, setProduct] = useState(0);
+  const { cart } = useCart();
   return (
     <Link to={ROUTES.CART_ROUTE}>
       <Icon>
-        <div id={css.cart} onClick={() => setProduct(product < 99 ? product + 1 : product)}>
+        <div id={css.cart}>
           <svg
             {...props}
             width="50"
@@ -27,14 +28,12 @@ const CartIcon: FC<IIcon> = ({ filled, ...props }) => {
               strokeLinejoin="round"
             />
           </svg>
-          {!!product && (
-            <div id={css.productCountContainer}>
-              <span id={css.productCount}>{product}</span>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="9" cy="9" r="8.5" fill="#FF0000" stroke="black" />
-              </svg>
-            </div>
-          )}
+          <div id={css.productCountContainer}>
+            <span id={css.productCount}>{cart.length}</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8.5" fill="#FF0000" stroke="black" />
+            </svg>
+          </div>
         </div>
       </Icon>
     </Link>

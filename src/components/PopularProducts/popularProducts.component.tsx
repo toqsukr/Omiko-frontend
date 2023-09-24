@@ -12,7 +12,7 @@ const PopularProducts: FC = () => {
       </div>
       <div id={css.cardContainer}>
         {products.map((el, index: number) => (
-          <Card key={index} url={el.url} price={el.price} title={el.title} />
+          <Card key={index} id={el.id} url={el.url} price={el.price} title={el.title} />
         ))}
       </div>
     </div>
