@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { useActions } from '@hooks/useActions.hook';
 import { useCart } from '@hooks/useCart.hook';
 import { trimString } from '@utils/function';
+import classNames from 'classnames';
 import css from './Card.module.css';
 import type { ICard } from './card';
 
@@ -23,10 +24,10 @@ const Card: FC<ICard> = ({ id, price, title, url }) => {
       <div className={css.toCartContainer}>
         <a
           type="button"
-          className={css.toCartButton}
+          className={classNames({ [css.toCartButton]: true, [css.isAtCartButton]: isAtCart(cart, id) })}
           onClick={() => (isAtCart(cart, id) ? removeFromCart(id) : addToCart({ id, price, title, url }))}
         >
-          {isAtCart(cart, id) ? 'Удалить из корзины' : 'В корзину'}
+          {isAtCart(cart, id) ? 'В корзине' : 'В корзину'}
         </a>
       </div>
     </div>

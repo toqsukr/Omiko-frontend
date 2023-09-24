@@ -51,6 +51,11 @@
   transition: all 0.3s;
 }
 
+.isAtCartButton {
+  background: #7f7f7fc3;
+  color: white;
+}
+
 .toCartButton:hover {
   transition: all 0.3s;
   background: #7f7f7fc3;

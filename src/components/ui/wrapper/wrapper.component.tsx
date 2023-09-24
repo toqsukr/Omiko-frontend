@@ -1,4 +1,4 @@
-import { forwardRef, PropsWithChildren } from 'react';
+import { forwardRef, memo, PropsWithChildren } from 'react';
 import { animated, useTransition } from 'react-spring';
 import { wrapperAnimation } from './wrapper.animation';
 
@@ -29,4 +29,4 @@ const Wrapper = forwardRef<HTMLDivElement, PropsWithChildren<IWrapper>>(
   }
 );
 
-export default Wrapper;
+export default memo(Wrapper);
