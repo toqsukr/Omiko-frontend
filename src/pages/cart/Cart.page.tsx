@@ -14,7 +14,7 @@ const Cart: FC = () => {
       <section id={css.bodyContainer}>
         <div id={css.bodyInnerContainer}>
           <div id={css.cartContainer}>
-            <h1 id={css.title}>Корзина</h1>
+            <span id={css.title}>Корзина</span>
             {cart.map(product => (
               <div key={product.id} className={css.productContainer}>
                 <CartElement {...product} />

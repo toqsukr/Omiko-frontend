@@ -17,7 +17,7 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, { payload: addingElement }) => {
-      addingElement = { count: 0, ...addingElement };
+      addingElement = { count: 1, ...addingElement };
       if (!isICartInitialState(addingElement)) return;
       if (isAtCart(state, addingElement.id))
         state.forEach(element => (element.id === addingElement.id ? (element.count += 1) : element));
@@ -28,9 +28,13 @@ export const cartSlice = createSlice({
       const newState = state.filter(element => element.id != removingElementID);
       return newState;
     },
-    reduceFromCart: (state, { payload: reducingElement }) => {
-      if (!isICartInitialState(reducingElement) || reducingElement.count === 1) return;
-      state.forEach(element => (element.id == reducingElement.id ? (element.count -= 1) : element));
+    increaseProductNumber: (state, { payload: increasingElement }) => {
+      if (!isICartInitialState(increasingElement || increasingElement.count === 99)) return;
+      state.forEach(element => (element.id == increasingElement.id ? (element.count += 1) : element));
+    },
+    decreaseProductNumber: (state, { payload: decreasingElement }) => {
+      if (!isICartInitialState(decreasingElement) || decreasingElement.count === 1) return;
+      state.forEach(element => (element.id == decreasingElement.id ? (element.count -= 1) : element));
     }
   }
 });
