@@ -13,7 +13,7 @@ const Card: FC<ICard> = ({ id, price, title, url }) => {
   const { cart, isAtCart } = useCart();
   return (
     <div className={css.cardContainer}>
-      <CardImage url={url} />
+      <CardImage id={css.imageContainer} url={url} />
       <div className={css.cardInfo}>
         <p id={css.price}>{price ? price : 'Цена'}</p>
         <p id={css.title} title={title}>
