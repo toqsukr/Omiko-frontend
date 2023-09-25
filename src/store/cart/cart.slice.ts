@@ -35,6 +35,12 @@ export const cartSlice = createSlice({
     decreaseProductNumber: (state, { payload: decreasingElement }) => {
       if (!isICartInitialState(decreasingElement) || decreasingElement.count === 1) return;
       state.forEach(element => (element.id == decreasingElement.id ? (element.count -= 1) : element));
+    },
+    setProductCount: (state, { payload: data }) => {
+      const { id, value } = data;
+      console.log(value);
+      if (typeof value != 'number' || typeof id != 'number' || isNaN(value) || value <= 0) return;
+      state.forEach(element => (element.id == id ? (element.count = value) : element));
     }
   }
 });

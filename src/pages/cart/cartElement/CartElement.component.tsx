@@ -3,13 +3,16 @@ import TrashIcon from '@components/ui/icons/TrashIcon.component';
 import WishIcon from '@components/ui/icons/wishIcon/WishIcon.component';
 import { useActions } from '@hooks/useActions.hook';
 import { ICartInitialState } from '@store/cart/cart.interface';
-import { FC } from 'react';
+import { FC, FormEvent, useRef } from 'react';
 import { animated } from 'react-spring';
 import css from './CartElement.module.css';
 
 const CartElement: FC<ICartInitialState> = ({ count, id, price, title, url }) => {
-  const { decreaseProductNumber, increaseProductNumber, removeFromCart } = useActions();
-  function onChangeHanlder() {}
+  const { decreaseProductNumber, increaseProductNumber, removeFromCart, setProductCount } = useActions();
+  const countRef = useRef(null);
+  function onChangeHanlder(e: FormEvent<HTMLInputElement>) {
+    setProductCount({ id, value: parseInt(e.currentTarget.value) });
+  }
   return (
     <animated.div className={css.productContainer}>
       <div className={css.infoContainer}>
@@ -24,7 +27,7 @@ const CartElement: FC<ICartInitialState> = ({ count, id, price, title, url }) =>
           >
             -
           </button>
-          <input id={css.countText} value={count} onChange={onChangeHanlder} />
+          <input ref={countRef} id={css.countText} value={count} onChange={onChangeHanlder} />
           <button
             className={css.countButton}
             onClick={() => increaseProductNumber({ id, price, title, url, count })}
