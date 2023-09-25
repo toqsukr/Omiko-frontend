@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import Icon from './icon/icon.component';
 import { IIcon } from './icon/icon';
+import Icon from './icon/icon.component';
 
-const SignIcon: FC<IIcon> = ({ ...props }) => {
+const SignIcon: FC<IIcon> = ({ strokeOpacity, ...props }) => {
   return (
     <Icon>
       <svg
@@ -16,6 +16,7 @@ const SignIcon: FC<IIcon> = ({ ...props }) => {
         <path
           d="M1 14.5H18.5M18.5 14.5L13 10.5M18.5 14.5L13 18.5M14 1C14 1 22 1 23.5 1C25 1 26.5 2.5 26.5 4C26.5 5.5 26.5 23.5 26.5 25C26.5 26.5 25 28 23.5 28C22 28 14 28 14 28"
           stroke="black"
+          strokeOpacity={strokeOpacity}
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"

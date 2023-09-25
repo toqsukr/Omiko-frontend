@@ -6,7 +6,7 @@ import { IIcon } from '../icon/icon';
 import Icon from '../icon/icon.component';
 import css from './CartIcon.module.css';
 
-const CartIcon: FC<IIcon> = ({ ...props }) => {
+const CartIcon: FC<IIcon> = ({ strokeOpacity, ...props }) => {
   const { cart } = useCart();
   return (
     <Link to={ROUTES.CART_ROUTE}>
@@ -26,6 +26,7 @@ const CartIcon: FC<IIcon> = ({ ...props }) => {
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
+              strokeOpacity={strokeOpacity}
             />
           </svg>
           <div id={css.productCountContainer}>

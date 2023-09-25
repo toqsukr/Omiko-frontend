@@ -19,6 +19,8 @@
   fill-opacity: 0.8;
   stroke-opacity: 0;
   scale: 0.7;
+  cursor: pointer;
+
   transition:
     stroke-opacity,
     fill-opacity 0.3s;
@@ -26,5 +28,6 @@
 
 .heartFilled:hover {
   fill-opacity: 0.6;
+
   transition: fill-opacity 0.3s;
 }

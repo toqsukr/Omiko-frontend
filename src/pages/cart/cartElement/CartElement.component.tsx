@@ -9,6 +9,7 @@ import css from './CartElement.module.css';
 
 const CartElement: FC<ICartInitialState> = ({ count, id, price, title, url }) => {
   const { decreaseProductNumber, increaseProductNumber, removeFromCart } = useActions();
+  function onChangeHanlder() {}
   return (
     <animated.div className={css.productContainer}>
       <div className={css.infoContainer}>
@@ -23,7 +24,7 @@ const CartElement: FC<ICartInitialState> = ({ count, id, price, title, url }) =>
           >
             -
           </button>
-          <input id={css.countText} value={count} />
+          <input id={css.countText} value={count} onChange={onChangeHanlder} />
           <button
             className={css.countButton}
             onClick={() => increaseProductNumber({ id, price, title, url, count })}
