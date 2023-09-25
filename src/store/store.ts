@@ -12,7 +12,7 @@ import { wishlistSlice } from './wishlist/wishlist.slice';
 const persistConfig = {
   key: 'vkusnaya-kosmetika',
   storage,
-  whitelist: ['cart']
+  whitelist: ['cart', 'wishlist', 'location']
 };
 
 const rootReducer = combineReducers({

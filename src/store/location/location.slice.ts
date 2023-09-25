@@ -1,15 +1,8 @@
 import { locationSPB } from '@components/header/location/location.data';
 import { ILocation } from '@interfaces/location.interface';
 import { createSlice } from '@reduxjs/toolkit';
-import { removeFromLocalStorage } from '@services/auth/auth.helper';
 
-const initialState: ILocation = localStorage.getItem('location')
-  ? JSON.parse(localStorage.getItem('location') as string)
-  : locationSPB;
-
-const saveLocationToStorage = (data: ILocation) => {
-  localStorage.setItem('location', JSON.stringify(data));
-};
+const initialState: ILocation = locationSPB;
 
 export const locationSlice = createSlice({
   name: 'location',
@@ -22,10 +15,6 @@ export const locationSlice = createSlice({
       state.city = location.city;
       state.description = location.description;
       state.phoneNumbers = location.phoneNumbers;
-      if (JSON.parse(localStorage.getItem('user') as string)) {
-        removeFromLocalStorage('location');
-        saveLocationToStorage(location);
-      }
     }
   }
 });
