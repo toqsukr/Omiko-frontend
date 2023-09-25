@@ -57,37 +57,6 @@
   color: white;
 }
 
-.heart {
-  fill-opacity: 0;
-  stroke-opacity: 0.2;
-  cursor: pointer;
-  scale: 0.7;
-  transition:
-    stroke-opacity,
-    fill-opacity 0.3s;
-}
-
-.heart:hover {
-  fill-opacity: 0.6;
-  stroke-opacity: 0;
-  transition:
-    stroke-opacity,
-    fill-opacity 0.3s;
-}
-.heartFilled {
-  fill-opacity: 0.8;
-  stroke-opacity: 0;
-  scale: 0.7;
-  transition:
-    stroke-opacity,
-    fill-opacity 0.3s;
-}
-
-.heartFilled:hover {
-  fill-opacity: 0.6;
-  transition: fill-opacity 0.3s;
-}
-
 #imageContainer {
   padding: 25px 25px 8px 25px;
 }
