@@ -16,6 +16,13 @@
   border-radius: 14px;
   cursor: pointer;
 }
+.productContainer {
+  width: 100%;
+  padding: 0 0 0 0;
+  margin: 30px 0 60px 0;
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr 0.5fr;
+}
 
 #title {
   font-family: 'Inter';
@@ -40,6 +47,7 @@
   width: 40px;
   height: 40px;
   text-align: center;
+
   border: 0;
   outline: 0;
 }
@@ -61,6 +69,7 @@
   scale: 0.7;
   fill-opacity: 0.2;
   transition: fill-opacity 0.3s;
+  cursor: pointer;
 }
 
 #trash:hover {
@@ -71,6 +80,8 @@
 #heart {
   fill-opacity: 0;
   stroke-opacity: 0.2;
+  cursor: pointer;
+
   scale: 0.7;
   transition:
     stroke-opacity,

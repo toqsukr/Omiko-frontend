@@ -4,13 +4,13 @@ import TrashIcon from '@components/ui/icons/TrashIcon.component';
 import { useActions } from '@hooks/useActions.hook';
 import { ICartInitialState } from '@store/cart/cart.interface';
 import { FC } from 'react';
+import { animated } from 'react-spring';
 import css from './CartElement.module.css';
 
 const CartElement: FC<ICartInitialState> = ({ count, id, price, title, url }) => {
   const { decreaseProductNumber, increaseProductNumber, removeFromCart } = useActions();
-
   return (
-    <>
+    <animated.div className={css.productContainer}>
       <div className={css.infoContainer}>
         <CardImage url={url} />
         <h1 id={css.title}>{title}</h1>
@@ -41,7 +41,7 @@ const CartElement: FC<ICartInitialState> = ({ count, id, price, title, url }) =>
           <TrashIcon onClick={() => removeFromCart(id)} id={css.trash} />
         </div>
       </div>
-    </>
+    </animated.div>
   );
 };
 

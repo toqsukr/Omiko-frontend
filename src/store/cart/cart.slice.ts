@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { isAtCart } from '@utils/function';
+import { isAtContainer } from '@utils/function';
 import { ICartInitialState } from './cart.interface';
 
 const initialState: ICartInitialState[] = [];
 
 const isICartInitialState = (element: any): element is ICartInitialState =>
-  element &&
+  typeof element === 'object' &&
   'count' in element &&
   'id' in element &&
   'price' in element &&
@@ -19,7 +19,7 @@ export const cartSlice = createSlice({
     addToCart: (state, { payload: addingElement }) => {
       addingElement = { count: 1, ...addingElement };
       if (!isICartInitialState(addingElement)) return;
-      if (isAtCart(state, addingElement.id))
+      if (isAtContainer(state, addingElement.id))
         state.forEach(element => (element.id === addingElement.id ? (element.count += 1) : element));
       else state.push(addingElement);
     },

@@ -7,6 +7,7 @@ import { cartSlice } from './cart/cart.slice';
 import { locationSlice } from './location/location.slice';
 import { mobileBarSlice } from './mobileBar/mobileBar.slice';
 import { userSlice } from './user/user.slice';
+import { wishlistSlice } from './wishlist/wishlist.slice';
 
 const persistConfig = {
   key: 'vkusnaya-kosmetika',
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   user: userSlice.reducer,
   location: locationSlice.reducer,
   mobileBar: mobileBarSlice.reducer,
-  cart: cartSlice.reducer
+  cart: cartSlice.reducer,
+  wishlist: wishlistSlice.reducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -6,7 +6,7 @@ import { IIcon } from '../icon/icon';
 import Icon from '../icon/icon.component';
 import css from './CartIcon.module.css';
 
-const CartIcon: FC<IIcon> = ({ filled, ...props }) => {
+const CartIcon: FC<IIcon> = ({ ...props }) => {
   const { cart } = useCart();
   return (
     <Link to={ROUTES.CART_ROUTE}>
@@ -30,9 +30,6 @@ const CartIcon: FC<IIcon> = ({ filled, ...props }) => {
           </svg>
           <div id={css.productCountContainer}>
             <span id={css.productCount}>{cart.length}</span>
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="9" cy="9" r="8.5" fill="#FF0000" stroke="black" />
-            </svg>
           </div>
         </div>
       </Icon>
