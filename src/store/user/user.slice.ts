@@ -19,14 +19,12 @@ export const userSlice = createSlice({
         state.isLoading = true;
         state.emailExist = false;
       })
-      .addCase(register.fulfilled, (state, { payload }) => {
+      .addCase(register.fulfilled, state => {
         state.isLoading = false;
-        state.user = payload.user;
       })
       .addCase(register.rejected, state => {
         state.isLoading = false;
         state.emailExist = true;
-        state.user = null;
       })
       .addCase(login.pending, state => {
         state.isLoading = true;

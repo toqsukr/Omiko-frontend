@@ -16,9 +16,7 @@ const Sign: FC = () => {
       {signMode === SignMode.REGISTER && emailExist && (
         <div id={css.error}>Пользователь с таким email уже существует</div>
       )}
-
       <SignForm signMode={signMode} />
-
       <div className={css.buttonContainer}>
         <button
           className={css.button}

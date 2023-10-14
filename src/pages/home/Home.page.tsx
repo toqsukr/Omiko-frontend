@@ -20,8 +20,8 @@ const Home: FC = () => {
         </Element>
         <PopularProducts />
         {/* <Element name="delivery">
-              <DeliverySection />
-            </Element> */}
+          <DeliverySection />
+        </Element> */}
         <Element name="advantage">
           <AdvantageSection />
         </Element>

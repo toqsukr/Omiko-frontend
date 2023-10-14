@@ -1,1 +1,1 @@
-export const SERVER_URL = 'https://omiko-auth.onrender.com';
+export const SERVER_URL = 'http://omideploy.ru:10002';

@@ -18,7 +18,7 @@
   transition: background 0.3s;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 500px) {
   .mainContainer {
     width: 270px;
     height: 270px;

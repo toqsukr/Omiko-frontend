@@ -41,7 +41,7 @@ export const AuthService = {
         }
       }
     );
-    if (response.status === 200) removeFromLocalStorage('user');
+    if (response.status === 204) removeFromLocalStorage('user');
     return response;
   },
 
